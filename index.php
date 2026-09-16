@@ -146,7 +146,7 @@ include 'includes/header.php';
         <div class="container testimonial-content">
 
             <div class="testimonial-left">
-                <span class="testimonial-tag">TESTIMONIALS</span>
+                <!-- <span class="testimonial-tag">TESTIMONIALS</span> -->
                 <h2>What Our Patients Say</h2>
             </div>
 
