@@ -73,7 +73,7 @@
 
         <!-- LOGO -->
         <a href="index.php" class="logo">
-            <img src="assets/images/logo.png" alt="Neuro Care Logo" class="logo-img">
+            <img src="assets/icons/logo.png" alt="Neuro Care Logo" class="logo-img">
         </a>
 
         <!-- NAVIGATION -->

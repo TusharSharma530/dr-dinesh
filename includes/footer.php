@@ -6,12 +6,7 @@
         <!-- About -->
         <div class="footer-column">
             <a href="index.php" class="footer-logo">
-                <span class="logo-icon">✚</span>
-
-                <span class="logo-text">
-                    <strong>Neuro</strong>
-                    <small>CARE</small>
-                </span>
+                <img src="assets/icons/logo.png" alt="Neuro Care" style="height: 50px;">
             </a>
 
             <p>
@@ -28,8 +23,9 @@
             <a href="index.php">Home</a>
             <a href="about.php">About Us</a>
             <a href="services.php">Services</a>
+            <a href="gallery.php">Gallery</a>
             <a href="blogs.php">Blogs</a>
-            <a href="contact.php">Contact</a>
+            <a href="contact.php">Contact Us</a>
         </div>
 
 
@@ -72,10 +68,15 @@
     <div class="footer-bottom">
         <div class="container">
             <p>
-                © <?php echo date('Y'); ?> Neuro Care.
+                &copy; <?php echo date('Y'); ?> Neuro Care.
                 All Rights Reserved.
             </p>
         </div>
     </div>
 
 </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
