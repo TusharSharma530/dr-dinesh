@@ -132,7 +132,7 @@ include 'includes/header.php';
             </form>
 
             <p class="consultation-address">
-                📞 Call: 7982156581 | 📍 Shri Ram plaza, ( in front of Ambedkar college), Tejgarhi road Meerut ,250004
+                 Call: 7982156581 | Shri Ram plaza, ( in front of Ambedkar college), Tejgarhi road Meerut ,250004
             </p>
         </div>
 
