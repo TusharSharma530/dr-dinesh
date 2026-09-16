@@ -12,14 +12,14 @@ include 'includes/header.php';
         <div class="about-text">
             <span class="about-tag">ABOUT US</span>
 
-            <h2>Dr. Nishant Tomar</h2>
+            <h2>Dr. Dinesh</h2>
 
             <p class="about-degree">M.B.B.S, MD, DNB (Neurology)</p>
 
             <h3>Advanced Neurology Care with Accurate Diagnosis & Personalized Treatment</h3>
 
             <p>
-                Dr. Nishant Tomar is a highly qualified Consultant Neurologist with extensive experience in diagnosing and treating a wide range of neurological disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurological health and quality of life.
+                Dr. Dinesh is a highly qualified Consultant Neurologist with extensive experience in diagnosing and treating a wide range of neurological disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurological health and quality of life.
             </p>
 
             <div class="about-stats">
@@ -39,7 +39,7 @@ include 'includes/header.php';
         </div>
 
         <div class="about-image">
-            <img src="assets/images/about.png" alt="Dr. Nishant Tomar">
+            <img src="assets/images/about.png" alt="Dr. Dinesh">
         </div>
 
     </div>
@@ -132,7 +132,7 @@ include 'includes/header.php';
             </form>
 
             <p class="consultation-address">
-                📞 Call: 8679998864 | 📍 Lokpriya Hospital, Meerut
+                📞 Call: 7982156581 | 📍 Shri Ram plaza, ( in front of Ambedkar college), Tejgarhi road Meerut ,250004
             </p>
         </div>
 
@@ -156,7 +156,7 @@ include 'includes/header.php';
                     <div class="testimonial-slide active">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p>"Excellent care and professional treatment. Dr. Nishant Tomar truly listens to his patients and provides the best neurological care. Highly recommended!"</p>
+                            <p>"Excellent care and professional treatment. Dr. Dinesh truly listens to his patients and provides the best neurological care. Highly recommended!"</p>
                             <div class="testimonial-author">
                                 <span class="author-name">- Rajesh Kumar</span>
                             </div>
@@ -166,7 +166,7 @@ include 'includes/header.php';
                     <div class="testimonial-slide">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p>"Very thorough and caring doctor. After struggling with migraines for years, I finally found relief under Dr. Tomar's treatment. Thank you!"</p>
+                            <p>"Very thorough and caring doctor. After struggling with migraines for years, I finally found relief under Dr. Dinesh treatment. Thank you!"</p>
                             <div class="testimonial-author">
                                 <span class="author-name">- Priya Sharma</span>
                             </div>
@@ -176,7 +176,7 @@ include 'includes/header.php';
                     <div class="testimonial-slide">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p>"Dr. Tomar's expertise in stroke management is remarkable. His quick diagnosis and treatment helped my father recover significantly. Grateful for his care."</p>
+                            <p>"Dr. Dinesh expertise in stroke management is remarkable. His quick diagnosis and treatment helped my father recover significantly. Grateful for his care."</p>
                             <div class="testimonial-author">
                                 <span class="author-name">- Amit Verma</span>
                             </div>
@@ -217,8 +217,8 @@ function changeSlide(direction) {
         <div class="expertise-left">
             <span class="expertise-tag">OUR EXPERTISE</span>
             <h2>Advanced Neurology Care for Every Patient</h2>
-            <p>We combine clinical expertise with advanced diagnostic techniques to provide accurate and effective neurological care. Dr. Nishant Tomar focuses on identifying the root cause of neurological conditions and delivering personalized, evidence-based treatment for long-term health and recovery.</p>
-            <h4>Dr. Nishant Tomar</h4>
+            <p>We combine clinical expertise with advanced diagnostic techniques to provide accurate and effective neurological care. Dr. Dinesh focuses on identifying the root cause of neurological conditions and delivering personalized, evidence-based treatment for long-term health and recovery.</p>
+            <h4>Dr. Dinesh</h4>
             <p class="expert-neuro-designation">Consultant Neurologist</p>
         </div>
 
@@ -297,7 +297,7 @@ function toggleFaq(btn) {
 
         <div class="expert-neuro-left">
             <div class="expert-neuro-img">
-                <img src="assets/images/expert neuro.jfif" alt="Dr. Nishant Tomar">
+                <img src="assets/images/expert neuro.jfif" alt="Dr. Dinesh">
             </div>
         </div>
 
