@@ -1,15 +1,11 @@
 <?php
+$pageTitle = 'Gallery';
+$pageBreadcrumb = 'Gallery';
 include 'includes/header.php';
 ?>
 
-<!-- Banner Section -->
-<section class="banner-section">
-    <img src="assets/images/aboutusbanner.jpg" alt="Banner" class="banner-img">
-</section>
+<?php include 'includes/page-banner.php'; ?>
 
-
-
-<!-- Services Section -->
 <section class="services-section">
     <div class="container">
 

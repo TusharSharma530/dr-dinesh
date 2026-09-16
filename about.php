@@ -1,13 +1,11 @@
 <?php
+$pageTitle = 'About Us';
+$pageBreadcrumb = 'About Us';
 include 'includes/header.php';
 ?>
 
-<!-- Banner Section -->
-<section class="banner-section">
-    <img src="assets/images/aboutusbanner.jpg" alt="Banner" class="banner-img">
-</section>
+<?php include 'includes/page-banner.php'; ?>
 
-<!-- About Section -->
 <section class="about-section">
     <div class="container about-content">
 
@@ -47,7 +45,6 @@ include 'includes/header.php';
     </div>
 </section>
 
-<!-- Testimonial Section -->
 <section class="testimonial-section">
     <img src="assets/images/testinomial.png" alt="Testimonial" class="testimonial-bg">
 
@@ -120,7 +117,6 @@ function changeSlide(direction) {
 }
 </script>
 
-<!-- Expertise Section -->
 <section class="expertise-section">
     <div class="container expertise-content">
 
@@ -201,7 +197,6 @@ function toggleFaq(btn) {
 }
 </script>
 
-<!-- Expert Neuro Section -->
 <section class="expert-neuro-section">
     <div class="container expert-neuro-content">
 

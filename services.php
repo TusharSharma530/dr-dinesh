@@ -1,15 +1,11 @@
 <?php
+$pageTitle = 'Services';
+$pageBreadcrumb = 'Services';
 include 'includes/header.php';
 ?>
 
-<!-- Banner Section -->
-<section class="banner-section">
-    <img src="assets/images/aboutusbanner.jpg" alt="Banner" class="banner-img">
-</section>
+<?php include 'includes/page-banner.php'; ?>
 
-
-
-<!-- Services Section -->
 <section class="services-section">
     <div class="container">
 
@@ -31,10 +27,26 @@ include 'includes/header.php';
 
             <div class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/epilepsy treatment.png" alt="Epilepsy Treatment">
+                    <img src="assets/images/maigraine.png" alt="Epilepsy Treatment">
                 </div>
                 <div class="service-card-body">
-                    <h3>Epilepsy Treatment</h3>
+                    <h3>Maigraine Treatment</h3>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-img">
+                    <img src="assets/images/neuromascular.png" alt="Epilepsy Treatment">
+                </div>
+                <div class="service-card-body">
+                    <h3>neuromascular Treatment</h3>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-img">
+                    <img src="assets/images/paalysis1.png" alt="Epilepsy Treatment">
+                </div>
+                <div class="service-card-body">
+                    <h3>pralysis Treatment</h3>
                 </div>
             </div>
             <div class="service-card">
@@ -47,26 +59,10 @@ include 'includes/header.php';
             </div>
             <div class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/epilepsy treatment.png" alt="Epilepsy Treatment">
+                    <img src="assets/images/sleep disopder.png" alt="Epilepsy Treatment">
                 </div>
                 <div class="service-card-body">
-                    <h3>Epilepsy Treatment</h3>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/epilepsy treatment.png" alt="Epilepsy Treatment">
-                </div>
-                <div class="service-card-body">
-                    <h3>Epilepsy Treatment</h3>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/epilepsy treatment.png" alt="Epilepsy Treatment">
-                </div>
-                <div class="service-card-body">
-                    <h3>Epilepsy Treatment</h3>
+                    <h3>Sleep Disorder </h3>
                 </div>
             </div>
 

@@ -1,18 +1,15 @@
 <?php
+$pageTitle = 'Contact Us';
+$pageBreadcrumb = 'Contact Us';
 include 'includes/header.php';
 ?>
 
-<!-- Banner Section -->
-<section class="banner-section">
-    <img src="assets/images/aboutusbanner.jpg" alt="Banner" class="banner-img">
-</section>
+<?php include 'includes/page-banner.php'; ?>
 
-<!-- Map Section -->
 <section class="map-section">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5!2d77.7806!3d28.9845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLokpriya+Hospital+Meerut!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
-<!-- Contact Section -->
 <section class="contact-section">
     <div class="container contact-content">
 

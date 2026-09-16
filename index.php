@@ -2,12 +2,10 @@
 include 'includes/header.php';
 ?>
 
-<!-- Banner Section -->
 <section class="banner-section">
     <img src="assets/images/banner1.png" alt="Banner" class="banner-img">
 </section>
 
-<!-- About Section -->
 <section class="about-section">
     <div class="container about-content">
 
@@ -47,7 +45,6 @@ include 'includes/header.php';
     </div>
 </section>
 
-<!-- Services Section -->
 <section class="services-section">
     <div class="container">
 
@@ -113,7 +110,6 @@ include 'includes/header.php';
     </div>
 </section>
 
-<!-- Consultation Section -->
 <section class="consultation-section">
     <div class="container consultation-content">
 
@@ -143,7 +139,6 @@ include 'includes/header.php';
     </div>
 </section>
 
-<!-- Testimonial Section -->
 <section class="testimonial-section">
     <img src="assets/images/testinomial.png" alt="Testimonial" class="testimonial-bg">
 
@@ -216,7 +211,6 @@ function changeSlide(direction) {
 }
 </script>
 
-<!-- Expertise Section -->
 <section class="expertise-section">
     <div class="container expertise-content">
 

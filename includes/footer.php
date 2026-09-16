@@ -23,12 +23,10 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
 
     <div class="container footer-content">
 
-        <!-- Quick Links -->
         <div class="footer-column">
             <h3>Quick Links</h3>
             <div class="footer-links-grid">
@@ -40,7 +38,6 @@
             </div>
         </div>
 
-        <!-- Stay Updated -->
         <div class="footer-column footer-newsletter">
             <h3>Stay Updated</h3>
             <p>Get health tips, neurological care updates, and clinic information from Dr. Nishant Tomar.</p>
@@ -50,7 +47,6 @@
             </form>
         </div>
 
-        <!-- Clinic Hours -->
         <div class="footer-column">
             <h3>Clinic Hours</h3>
             <div class="clinic-hours">
@@ -69,7 +65,6 @@
 
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
