@@ -1,77 +1,70 @@
+<!-- Bottom Bar -->
+<section class="bottom-bar">
+    <div class="container bottom-bar-content">
+
+        <div class="bottom-bar-left">
+            <img src="assets/icons/logo.png" alt="Logo" class="bottom-logo">
+            <div class="bottom-info">
+                <p class="bottom-address">Our Clinic Address<br>Lokpriya Hospital, Meerut</p>
+                <p class="bottom-phone">Phone Number<br>+91 8679998864</p>
+            </div>
+        </div>
+
+        <div class="bottom-bar-right">
+            <span class="social-label">Follow Us</span>
+            <div class="social-links">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer">
 
     <div class="container footer-content">
 
-        <!-- About -->
-        <div class="footer-column">
-            <a href="index.php" class="footer-logo">
-                <img src="assets/icons/logo.png" alt="Neuro Care" style="height: 50px;">
-            </a>
-
-            <p>
-                Providing compassionate and advanced neurological
-                care with a patient-focused approach.
-            </p>
-        </div>
-
-
         <!-- Quick Links -->
         <div class="footer-column">
             <h3>Quick Links</h3>
-
-            <a href="index.php">Home</a>
-            <a href="about.php">About Us</a>
-            <a href="services.php">Services</a>
-            <a href="gallery.php">Gallery</a>
-            <a href="blogs.php">Blogs</a>
-            <a href="contact.php">Contact Us</a>
+            <div class="footer-links-grid">
+                <a href="index.php"><i class="bi bi-chevron-right"></i> Home</a>
+                <a href="about.php"><i class="bi bi-chevron-right"></i> About</a>
+                <a href="services.php"><i class="bi bi-chevron-right"></i> Services</a>
+                <a href="blogs.php"><i class="bi bi-chevron-right"></i> Blogs</a>
+                <a href="contact.php"><i class="bi bi-chevron-right"></i> Contact</a>
+            </div>
         </div>
 
+        <!-- Stay Updated -->
+        <div class="footer-column footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Get health tips, neurological care updates, and clinic information from Dr. Nishant Tomar.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="subscribe-btn">SUBSCRIBE <i class="bi bi-send-fill"></i></button>
+            </form>
+        </div>
 
-        <!-- Services -->
+        <!-- Clinic Hours -->
         <div class="footer-column">
-            <h3>Our Services</h3>
-
-            <a href="services.php">Neurology Consultation</a>
-            <a href="services.php">Headache Treatment</a>
-            <a href="services.php">Stroke Care</a>
-            <a href="services.php">Epilepsy Treatment</a>
-            <a href="services.php">Neuro Rehabilitation</a>
+            <h3>Clinic Hours</h3>
+            <div class="clinic-hours">
+                <div class="hours-row">
+                    <span class="day">Monday – Saturday</span>
+                    <span class="time">10:00 AM – 6:00 PM</span>
+                </div>
+                <div class="hours-row">
+                    <span class="day">Sunday</span>
+                    <span class="time closed">Closed</span>
+                </div>
+            </div>
         </div>
 
-
-        <!-- Contact -->
-        <div class="footer-column">
-            <h3>Contact Us</h3>
-
-            <p>
-                <strong>Phone</strong><br>
-                +91 8679998864
-            </p>
-
-            <p>
-                <strong>Email</strong><br>
-                drnishanttomar25@gmail.com
-            </p>
-
-            <p>
-                <strong>Available</strong><br>
-                Mon - Sat
-            </p>
-        </div>
-
-    </div>
-
-
-    <!-- Copyright -->
-    <div class="footer-bottom">
-        <div class="container">
-            <p>
-                &copy; <?php echo date('Y'); ?> Neuro Care.
-                All Rights Reserved.
-            </p>
-        </div>
     </div>
 
 </footer>
