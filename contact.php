@@ -20,7 +20,7 @@ include 'includes/header.php';
                 <i class="bi bi-telephone-fill"></i>
                 <div>
                     <h4>Phone Number</h4>
-                    <p>+91 8679998864</p>
+                    <p>+91 7982156581s</p>
                 </div>
             </div>
 
@@ -28,7 +28,7 @@ include 'includes/header.php';
                 <i class="bi bi-geo-alt-fill"></i>
                 <div>
                     <h4>Our Location</h4>
-                    <p>Lokpriya Hospital, Meerut</p>
+                    <p>Shri Ram plaza, ( in front of Ambedkar college), Tejgarhi road Meerut ,250004s</p>
                 </div>
             </div>
 
@@ -36,7 +36,7 @@ include 'includes/header.php';
                 <i class="bi bi-envelope-fill"></i>
                 <div>
                     <h4>Email Address</h4>
-                    <p>drnishanttomar25@gmail.com</p>
+                    <p>brainspine24@gmail.com</p>
                 </div>
             </div>
 

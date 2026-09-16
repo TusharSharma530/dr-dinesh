@@ -37,12 +37,12 @@
                     <div class="contact-info">
                         <span>
                             <i class="bi bi-envelope-fill"></i>
-                            Email : drnishanttomar25@gmail.com
+                            Email : brainspine24@gmail.com
                         </span>
                         <span class="separator">|</span>
                         <span>
                             <i class="bi bi-telephone-fill"></i>
-                            Phone : (+91) 8679998864
+                            Phone : (+91) 7982156581
                         </span>
                         <span class="separator">|</span>
                         <div class="social-icons">
