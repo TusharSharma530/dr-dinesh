@@ -47,8 +47,7 @@
                         <span class="separator">|</span>
                         <div class="social-icons">
                             <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-twitter-x"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.instagram.com/p/DcyMcyYhFZo/"><i class="bi bi-instagram"></i></a>
                         </div>
                     </div>
                 </div>
