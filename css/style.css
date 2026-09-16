@@ -35,6 +35,39 @@ img {
 
 
 /* =========================
+   HEADER
+========================= */
+
+.main-header {
+    background: #fff;
+    border-bottom: 1px solid #e8eef3;
+}
+
+.header-content {
+    display: flex;
+    align-items: stretch;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    /* padding: 15px 30px 15px 0; */
+    border-right: 1px solid #e8eef3;
+}
+
+.logo-img {
+    height: 110px;
+    width: auto;
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
    TOP BAR
 ========================= */
 
@@ -46,7 +79,7 @@ img {
 }
 
 .top-bar-content {
-    min-height: 42px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -104,61 +137,12 @@ img {
 ========================= */
 
 .navbar {
-    height: 90px;
+    height: 70px;
     background: #fff;
-    border-bottom: 1px solid #edf1f4;
-}
-
-.navbar-content {
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-
-/* LOGO */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #173b5e;
-}
-
-.logo-img {
-    height: 100px;
-    width: auto;
-}
-
-.logo-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: #e5f6f5;
-    color: #159b9b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
-
-.logo-text strong {
-    font-size: 21px;
-    color: #2c3e6b;
-}
-
-.logo-text small {
-    margin-top: 4px;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: #e74c6f;
+    padding: 0 30px 0 0;
 }
 
 
@@ -168,6 +152,7 @@ img {
     display: flex;
     align-items: center;
     gap: 30px;
+    padding-left: 20px;
 }
 
 .nav-links a {
@@ -229,6 +214,188 @@ img {
     height: auto;
     display: block;
     min-height: 550px;
+}
+
+
+/* =========================
+   MAP SECTION
+========================= */
+
+.map-section {
+    width: 100%;
+}
+
+.map-section iframe {
+    display: block;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+    padding: 70px 0;
+    background: #fff;
+}
+
+.contact-content {
+    display: flex;
+    gap: 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.contact-left {
+    width: 40%;
+    background: #fff;
+    padding: 45px 40px;
+}
+
+.contact-left h2 {
+    font-size: 28px;
+    color: #173b5e;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-info-item i {
+    font-size: 22px;
+    color: #e74c6f;
+    margin-top: 3px;
+}
+
+.contact-info-item h4 {
+    font-size: 16px;
+    color: #173b5e;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.contact-info-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+.contact-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.contact-social a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #e74c6f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.contact-social a:hover {
+    background: #d43d5f;
+}
+
+.contact-right {
+    width: 60%;
+    background: #2c3e6b;
+    padding: 45px 40px;
+}
+
+.contact-right h2 {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.contact-subtitle {
+    color: #b8c9d8;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row-2 {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row-2 input {
+    flex: 1;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+.contact-form textarea {
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    resize: vertical;
+}
+
+.captcha-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.captcha-box label {
+    color: #b8c9d8;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.captcha-box input {
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+.send-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background: #e74c6f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.send-btn:hover {
+    background: #d43d5f;
 }
 
 
@@ -1140,6 +1307,14 @@ img {
         padding: 11px 18px;
         font-size: 13px;
     }
+
+    .logo {
+        /* padding: 15px 20px 15px 0; */
+    }
+
+    .logo-img {
+        height: 80px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1150,6 +1325,23 @@ img {
 
     .top-bar-content {
         justify-content: center;
+    }
+
+    .logo {
+        padding: 10px 15px 10px 0;
+    }
+
+    .logo-img {
+        height: 70px;
+    }
+
+    .navbar {
+        padding: 0 15px 0 0;
+    }
+
+    .nav-links {
+        padding-left: 10px;
+        gap: 20px;
     }
 
     .footer-content {
@@ -1253,6 +1445,19 @@ img {
         border-right: none;
         padding-right: 0;
     }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%;
+    }
+
+    .form-row-2 {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1261,12 +1466,22 @@ img {
         display: none;
     }
 
-    .navbar {
-        height: 70px;
+    .logo {
+        /* padding: 10px; */
+        border-right: none;
     }
 
     .logo-img {
-        height: 70px;
+        height: 60px;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 10px 15px;
+    }
+
+    .nav-links {
+        display: none;
     }
 
     .appointment-btn {
