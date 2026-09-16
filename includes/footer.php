@@ -63,6 +63,36 @@
 
 </footer>
 
+<!-- Floating Icons -->
+<div class="floating-icons">
+    <a href="tel:+918679998864" class="floating-icon phone-icon">
+        <i class="bi bi-telephone-fill"></i>
+    </a>
+    <a href="https://wa.me/918679998864" target="_blank" class="floating-icon whatsapp-icon">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+</div>
+
+<!-- Scroll to Top -->
+<button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">
+    <i class="bi bi-chevron-up"></i>
+</button>
+
+<script>
+window.addEventListener('scroll', function() {
+    var btn = document.getElementById('scrollTopBtn');
+    if (window.scrollY > 300) {
+        btn.classList.add('show');
+    } else {
+        btn.classList.remove('show');
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

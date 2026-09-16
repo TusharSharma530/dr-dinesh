@@ -1252,6 +1252,89 @@ img {
     color: #2c3e6b;
 }
 
+
+/* =========================
+   FLOATING ICONS
+========================= */
+
+.floating-icons {
+    position: fixed;
+    left: 20px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+}
+
+.floating-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.phone-icon {
+    background: #173b5e;
+}
+
+.phone-icon:hover {
+    background: #173b5e;
+    transform: scale(1.1);
+}
+
+.whatsapp-icon {
+    background: #25d366;
+}
+
+.whatsapp-icon:hover {
+    background: #1da851;
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   SCROLL TO TOP
+========================= */
+
+.scroll-top-btn {
+    position: fixed;
+    right: 25px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #173b5e;;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    background: #173b5e;
+    transform: scale(1.1);
+}
+
+
 @media (max-width: 991px) {
 
     .nav-links {
