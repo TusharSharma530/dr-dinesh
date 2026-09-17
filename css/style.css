@@ -672,7 +672,7 @@ img {
     position: absolute;
     bottom: 15px;
     right: 15px;
-    background: #c2185b;
+    background: var(--primary-color);;
     color: #fff;
     border-radius: 10px;
     padding: 10px 15px;
@@ -720,7 +720,7 @@ img {
 .blog-read-icon {
     width: 32px;
     height: 32px;
-    background: #c2185b;
+    background: var(--primary-color);
     color: #fff;
     border-radius: 50%;
     display: flex;
