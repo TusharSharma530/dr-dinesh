@@ -39,7 +39,7 @@ include 'includes/header.php';
         </div>
 
         <div class="about-image">
-            <img src="assets/images/about.png" alt="Dr. Dinesh">
+            <img src="assets/images/dr dinesh image.png" alt="Dr. Dinesh">
         </div>
 
     </div>

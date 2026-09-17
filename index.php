@@ -3,7 +3,7 @@ include 'includes/header.php';
 ?>
 
 <section class="banner-section">
-    <img src="assets/images/banner1.png" alt="Banner" class="banner-img">
+    <img src="assets/images/dr dinesh banner.png" alt="Banner" class="banner-img">
 </section>
 
 <section class="about-section">
@@ -39,7 +39,7 @@ include 'includes/header.php';
         </div>
 
         <div class="about-image">
-            <img src="assets/images/about.png" alt="Dr. Dinesh">
+            <img src="assets/images/dr dinesh image.png" alt="Dr. Dinesh">
         </div>
 
     </div>
@@ -114,7 +114,7 @@ include 'includes/header.php';
     <div class="container consultation-content">
 
         <div class="consultation-image">
-            <img src="assets/images/book consultant.png" alt="Book Consultation">
+            <img src="assets/images/dr dinesh image.png" alt="Book Consultation">
         </div>
 
         <div class="consultation-form">
