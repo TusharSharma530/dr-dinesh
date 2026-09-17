@@ -7,7 +7,7 @@ include 'includes/header.php';
 <?php include 'includes/page-banner.php'; ?>
 
 <section class="map-section">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5!2d77.7806!3d28.9845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLokpriya+Hospital+Meerut!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.536!2d77.7074!3d28.9924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf5a44e4e0b3f%3A0xb4e9e5e5e5e5e5e5!2sShri%20Ram%20Plaza%2C%20Tejgarhi%20Road%2C%20Meerut%2C%20Uttar%20Pradesh%20250004!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 <section class="contact-section">
@@ -20,7 +20,7 @@ include 'includes/header.php';
                 <i class="bi bi-telephone-fill"></i>
                 <div>
                     <h4>Phone Number</h4>
-                    <p>+91 7982156581s</p>
+                    <p>+91 7982156581</p>
                 </div>
             </div>
 

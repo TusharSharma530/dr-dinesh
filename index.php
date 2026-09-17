@@ -216,6 +216,10 @@ function changeSlide(direction) {
     currentSlide = (currentSlide + direction + slides.length) % slides.length;
     slides[currentSlide].classList.add('active');
 }
+
+setInterval(function() {
+    changeSlide(1);
+}, 4000);
 </script>
 
 <section class="expertise-section">
