@@ -54,7 +54,7 @@
 
         <div class="footer-column footer-newsletter">
             <h3>Stay Updated</h3>
-            <p>Get health tips, neurological care updates, and clinic information from Dr. Nishant Tomar.</p>
+            <p>Get health tips, neurological care updates, and clinic information from Dr. Dinesh Singh.</p>
             <form class="newsletter-form">
                 <input type="email" placeholder="Enter your email" required>
                 <button type="submit" class="subscribe-btn">SUBSCRIBE <i class="bi bi-send-fill"></i></button>
