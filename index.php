@@ -45,7 +45,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section class="services-section">
+   <section class="services-section">
     <div class="container">
 
         <div class="services-header">
@@ -108,36 +108,40 @@ include 'includes/header.php';
         </div>
 
     </div>
-</section>
+    </section>
 
-<section class="consultation-section">
+    <section class="consultation-section">
     <div class="container consultation-content">
 
         <div class="consultation-image">
             <img src="assets/images/dr dinesh image.png" alt="Book Consultation">
         </div>
 
-        <div class="consultation-form">
-            <h2>Book Consultation</h2>
-            <h3>Schedule Your Neurology Appointment</h3>
+       <div class="consultation-form">
+    <h2>Book Consultation</h2>
+    <h3>Schedule Your Neurology Appointment</h3>
 
-            <form class="consultation-form-box">
-                <input type="text" placeholder="Full Name" required>
-                <input type="tel" placeholder="Phone Number" required>
-
-                <div class="form-row">
-                    <input type="date" required>
-                    <button type="submit" class="book-btn">Book Appointment</button>
-                </div>
-            </form>
-
-            <p class="consultation-address">
-                 Call: 7982156581 | Shri Ram plaza, ( in front of Ambedkar college), Tejgarhi road Meerut ,250004
-            </p>
+    <form class="consultation-form-box">
+        <!-- First Row: Full Name and Phone Number -->
+        <div class="form-row">
+            <input type="text" placeholder="Full Name" required>
+            <input type="tel" placeholder="Phone Number" required>
         </div>
 
-    </div>
-</section>
+        <!-- Second Row: Date and Button -->
+        <div class="form-row">
+            <input type="date" required>
+            <button type="submit" class="book-btn">Book Appointment</button>
+        </div>
+    </form>
+
+    <p class="consultation-address">
+        <i class="bi bi-telephone-fill"></i> Call: 7982156581 | <i class="bi bi-geo-alt-fill"></i> Shri Ram plaza, (in front of Ambedkar college),<br>Tejgarhi road Meerut, 250004
+    </p>
+       </div>
+
+      </div>
+   </section>
 
 <section class="testimonial-section">
     <img src="assets/images/testinomial.png" alt="Testimonial" class="testimonial-bg">

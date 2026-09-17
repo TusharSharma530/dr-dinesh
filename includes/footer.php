@@ -4,17 +4,33 @@
 
         <div class="bottom-bar-left">
             <img src="assets/icons/logo.png" alt="Logo" class="bottom-logo">
+            <div class="bottom-divider"></div>
             <div class="bottom-info">
-                <p class="bottom-address">Our Clinic Address<br>Lokpriya Hospital, Meerut</p>
-                <p class="bottom-phone">Phone Number<br>+91 8679998864</p>
+                <div class="bottom-info-item">
+                    <div class="info-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div class="info-text">
+                        <strong>Our Clinic Address</strong>
+                        <p>Shri Ram plaza, ( in front of Ambedkar college),<br> Tejgarhi road Meerut ,250004</p>
+                    </div>
+                </div>
+                <div class="bottom-info-item">
+                    <div class="info-icon">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <div class="info-text">
+                        <strong>Phone Number</strong>
+                        <p>+91 7982156581 </p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="bottom-bar-right">
-            <span class="social-label">Follow Us</span>
             <div class="social-links">
+
                 <a href="https://www.instagram.com/p/DcyMcyYhFZo/"><i class="bi bi-instagram"></i></a>
-            
             </div>
         </div>
 
