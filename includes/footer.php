@@ -10,6 +10,7 @@
                     <div class="info-icon">
                         <i class="bi bi-geo-alt-fill"></i>
                     </div>
+                    
                     <div class="info-text">
                         <strong>Our Clinic Address</strong>
                         <p>Shri Ram plaza, ( in front of Ambedkar college),<br> Tejgarhi road Meerut ,250004</p>

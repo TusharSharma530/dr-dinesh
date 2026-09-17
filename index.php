@@ -8,6 +8,7 @@ include 'includes/header.php';
 
 <section class="about-section">
     <div class="container about-content">
+       
 
         <div class="about-text">
             <span class="about-tag">ABOUT US</span>
@@ -22,19 +23,7 @@ include 'includes/header.php';
                 Dr. Dinesh is a highly qualified Consultant Neurologist with extensive experience in diagnosing and treating a wide range of neurological disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurological health and quality of life.
             </p>
 
-            <div class="about-stats">
-                <div class="stat-box">
-                    <span class="stat-number">1500+</span>
-                    <span class="stat-label">Satisfied Patients</span>
-                </div>
-            </div>
-
-            <ul class="about-list">
-                <li><i class="bi bi-check-circle-fill"></i> Expert in Stroke, Epilepsy & Migraine Treatment</li>
-                <li><i class="bi bi-check-circle-fill"></i> Advanced Neurological Evaluation & Diagnosis</li>
-                <li><i class="bi bi-check-circle-fill"></i> Personalized & Evidence-Based Care</li>
-                <li><i class="bi bi-check-circle-fill"></i> Compassionate & Patient-Centered Approach</li>
-            </ul>
+            <a href="about.php" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
 
         </div>
 
@@ -128,9 +117,23 @@ include 'includes/header.php';
             <input type="tel" placeholder="Phone Number" required>
         </div>
 
-        <!-- Second Row: Date and Button -->
+        <!-- Second Row: Date and Message -->
         <div class="form-row">
             <input type="date" required>
+            <input type="text" placeholder="Your Message" required>
+        </div>
+
+        <!-- Third Row: Services Dropdown and Book Button -->
+        <div class="form-row">
+            <select required>
+                <option value="" disabled selected>Select Service</option>
+                <option value="stroke">Stroke Management</option>
+                <option value="migraine">Migraine Treatment</option>
+                <option value="neuromuscular">Neuromuscular Treatment</option>
+                <option value="paralysis">Paralysis Treatment</option>
+                <option value="epilepsy">Epilepsy Treatment</option>
+                <option value="sleep">Sleep Disorder</option>
+            </select>
             <button type="submit" class="book-btn">Book Appointment</button>
         </div>
     </form>
@@ -348,3 +351,5 @@ function toggleFaq(btn) {
 <?php
 include 'includes/footer.php';
 ?>
+
+
