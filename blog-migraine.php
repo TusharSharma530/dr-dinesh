@@ -17,7 +17,7 @@ include 'includes/header.php';
 
             <h1>Migraine Treatment: Recurring Headaches Should Not Be Ignored</h1>
             <p class="blog-author">By Dr. Dinesh Singh<br>
-            Best Neurologist Doctor | Migraine Specialist | Headache Management | Neurological Consultation</p>
+            Neurosurgeon | Migraine Specialist | Headache Management | Neurological Consultation</p>
 
             <p>Headaches are common, but when they occur frequently and interfere with daily life, they may be a sign of migraine. Migraine is more than just a headache—it is a neurological condition that can significantly affect work performance, sleep quality, and overall well-being. Understanding migraine triggers and seeking timely treatment can help reduce the frequency and severity of attacks.</p>
 

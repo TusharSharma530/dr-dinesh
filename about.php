@@ -14,12 +14,12 @@ include 'includes/header.php';
 
             <h2>Dr. Dinesh</h2>
 
-            <p class="about-degree">M.B.B.S, MD, DNB (Neurology)</p>
+            <p class="about-degree">MCh - Neuro Surgery, MBBS, MS - General Surgery</p>
 
-            <h3>Advanced Neurology Care with Accurate Diagnosis & Personalized Treatment</h3>
+            <h3>Advanced Neurosurgery Care with Accurate Diagnosis & Personalized Treatment</h3>
 
             <p>
-                Dr. Dinesh is a highly qualified Consultant Neurologist with extensive experience in diagnosing and treating a wide range of neurological disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurological health and quality of life.
+                Dr. Dinesh Singh is a highly qualified Neurosurgeon with 9 years of experience, practising at Brain And Spine Clinic. He specializes in diagnosing and treating a wide range of neurological disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurological health and quality of life.
             </p>
 
             <div class="about-stats">

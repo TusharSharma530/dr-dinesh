@@ -15,12 +15,12 @@ include 'includes/header.php';
 
             <h2>Dr. Dinesh</h2>
 
-            <p class="about-degree">M.B.B.S, MD, DNB (Neurology)</p>
+            <p class="about-degree">MCh - Neuro Surgery, MBBS, MS - General Surgery</p>
 
-            <h3>Advanced Neurology Care with Accurate Diagnosis & Personalized Treatment</h3>
+            <h3>Advanced Neurosurgery Care with Accurate Diagnosis & Personalized Treatment</h3>
 
             <p>
-                Dr. Dinesh is a highly qualified Consultant Neurologist with extensive experience in diagnosing and treating a wide range of neurological disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurological health and quality of life.
+                Dr. Dinesh Singh is a highly qualified Neurosurgeon with 9 years of experience, practising at Brain And Spine Clinic. He specializes in diagnosing and treating a wide range of neurological disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurological health and quality of life.
             </p>
 
             <a href="about.php" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
@@ -226,7 +226,7 @@ function changeSlide(direction) {
             <h2>Advanced Neurology Care for Every Patient</h2>
             <p>We combine clinical expertise with advanced diagnostic techniques to provide accurate and effective neurological care. Dr. Dinesh focuses on identifying the root cause of neurological conditions and delivering personalized, evidence-based treatment for long-term health and recovery.</p>
             <h4>Dr. Dinesh</h4>
-            <p class="expert-neuro-designation">Consultant Neurologist</p>
+            <p class="expert-neuro-designation">Neurosurgeon</p>
         </div>
 
         <div class="expertise-right">
@@ -296,6 +296,7 @@ function toggleFaq(btn) {
         icon.classList.add('bi-plus-lg');
     }
 }
+
 </script>
 
 <!-- Expert Neuro Section -->

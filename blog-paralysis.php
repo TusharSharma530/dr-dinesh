@@ -16,7 +16,7 @@ include 'includes/header.php';
         <div class="blog-detail-content">
 
             <h1>Paralysis: Causes, Symptoms, Treatment & Recovery</h1>
-            <p class="blog-author">By Dr. Dinesh Singh – Best Neurologist Doctor in Meerut</p>
+            <p class="blog-author">By Dr. Dinesh Singh – Neurosurgeon in Meerut</p>
 
             <p>Paralysis is a serious neurological condition that affects a person's ability to move certain parts of the body. It can occur suddenly or gradually depending on the underlying cause. Early diagnosis and timely neurological treatment are extremely important for improving recovery and quality of life.</p>
 
