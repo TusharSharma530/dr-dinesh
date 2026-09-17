@@ -28,7 +28,7 @@ include 'includes/header.php';
                 <i class="bi bi-geo-alt-fill"></i>
                 <div>
                     <h4>Our Location</h4>
-                    <p>Shri Ram plaza, ( in front of Ambedkar college), Tejgarhi road Meerut ,250004s</p>
+                    <p>Shri Ram plaza, ( in front of Ambedkar college), Tejgarhi road Meerut ,250004</p>
                 </div>
             </div>
 
@@ -61,11 +61,6 @@ include 'includes/header.php';
                 </div>
 
                 <textarea placeholder="Message" rows="5" required></textarea>
-
-                <div class="captcha-box">
-                    <label>Solve: 8 + 3 = ?</label>
-                    <input type="text" placeholder="Your Answer" required>
-                </div>
 
                 <button type="submit" class="send-btn">SEND MESSAGE</button>
             </form>
