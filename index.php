@@ -66,7 +66,7 @@ include 'includes/header.php';
                     <img src="assets/images/neuromascular.png" alt="Epilepsy Treatment">
                 </div>
                 <div class="service-card-body">
-                    <h3>neuromascular Treatment</h3>
+                    <h3>Neuromascular Treatment</h3>
                 </div>
             </div>
             <div class="service-card">
@@ -74,7 +74,7 @@ include 'includes/header.php';
                     <img src="assets/images/paalysis1.png" alt="Epilepsy Treatment">
                 </div>
                 <div class="service-card-body">
-                    <h3>pralysis Treatment</h3>
+                    <h3>Pralysis Treatment</h3>
                 </div>
             </div>
             <div class="service-card">
