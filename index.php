@@ -149,7 +149,7 @@ include 'includes/header.php';
     </form>
 
     <p class="consultation-address">
-        <i class="bi bi-telephone-fill"></i> Call: 7982156581 | <i class="bi bi-geo-alt-fill"></i> Shri Ram plaza, in front of Ambedkar college,<br>Tejgarhi road Meerut, 250004
+        <i class="bi bi-telephone-fill"></i> Call: 7982156581 | <i class="bi bi-geo-alt-fill"></i> Shri Ram plaza, opposite of Ambedkar college,<br>Tejgarhi road Meerut, 250004
     </p>
        </div>
 

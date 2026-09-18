@@ -13,7 +13,7 @@
                     
                     <div class="info-text">
                         <strong>Our Clinic Address</strong>
-                        <p>Shri Ram plaza, ( in front of Ambedkar college),<br> Tejgarhi road Meerut ,250004</p>
+                        <p>Shri Ram plaza,  opposite of Ambedkar college,<br> Tejgarhi road Meerut ,250004</p>
                     </div>
                     
                 </div>
@@ -31,7 +31,7 @@
 
         <div class="bottom-bar-right">
             <div class="social-links">
-                <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.facebook.com/p/NeuroDoctorMeerut"><i class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/p/DcyMcyYhFZo/"><i class="bi bi-instagram"></i></a>
                 <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
             </div>

@@ -291,8 +291,8 @@ img {
 
 .page-banner-overlay h1 {
     font-size: 40px;
-    color: var(--primary-color);
-    font-weight: 700;
+    color: #000;
+    font-weight: 400;
     margin-bottom: 10px;
 }
 
@@ -300,7 +300,7 @@ img {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--primary-color);
+    color: #000;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -517,12 +517,11 @@ img {
 }
 
 .about-text h2 {
-    font-size: 32px;
+    font-size: 36px;
     color: var(--primary-color);
     margin-bottom: 5px;
     font-weight: 700;
 }
-
 .about-degree {
     color: var(--primary-color);
     font-size: 14px;
@@ -541,7 +540,6 @@ img {
     color: #667789;
     font-size: 15px;
     line-height: 1.8;
-    margin-bottom: 25px;
 }
 
 .about-stats {
@@ -685,9 +683,9 @@ img {
 }
 
 .service-card-body h3 {
-    font-size: 15px;
+    font-size: 24px;
     color:var(--primary-color);
-    font-weight: 600;
+    font-weight: 700;
 }
 .blog-cards {
     display: grid;
@@ -823,7 +821,7 @@ img {
 }
 
 .blog-detail-content h1 {
-    font-size: 28px;
+    font-size: 34px;
     color: var(--primary-color);
     font-weight: 700;
     margin-bottom: 10px;
@@ -847,7 +845,7 @@ img {
 }
 
 .blog-detail-content h2 {
-    font-size: 22px;
+    font-size: 34px;
     color: var(--primary-color);
     font-weight: 700;
     margin-top: 30px;
@@ -1195,6 +1193,17 @@ img {
     line-height: 1.8;
 }
 
+.expertise-left h4 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: var(--primary-color);
+}
+
+.expert-neuro-designation {
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
 .expertise-right {
     width: 55%;
 }
@@ -1305,13 +1314,6 @@ img {
     color: var(--primary-color);
     font-weight: 700;
     margin-bottom: 5px;
-}
-
-.expert-neuro-designation {
-    color: var(--primary-color);
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 25px;
 }
 
 .expert-neuro-img {
@@ -2026,7 +2028,7 @@ img {
 }
 
 .appointment-close:hover {
-    color: #e74c3c;
+    color: var(--primary-color);
 }
 
 .appointment-modal-content h2 {

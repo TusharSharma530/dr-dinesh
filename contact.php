@@ -38,7 +38,7 @@ include 'includes/header.php';
 
             <div class="contact-social">
                 <a href="https://www.instagram.com/p/DcyMcyYhFZo/"><i class="bi bi-instagram"></i></a>
-                 <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                 <a href="https://www.facebook.com/p/NeuroDoctorMeerut"><i class="bi bi-facebook"></i></a>
                   <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
             </div>
         </div>

@@ -12,7 +12,7 @@ include 'includes/header.php';
         <div class="about-text">
             <span class="about-tag">ABOUT US</span>
 
-            <h2>Dr. Dinesh</h2>
+            <h2>Dr. Dinesh Singh</h2>
 
             <p class="about-degree">MCh - Neuro Surgery, MBBS, MS - General Surgery</p>
 

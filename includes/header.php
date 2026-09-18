@@ -46,9 +46,10 @@
                         </span>
                         <span class="separator">|</span>
                         <div class="social-icons">
-                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.facebook.com/p/NeuroDoctorMeerut"><i class="bi bi-facebook"></i></a>
                             <a href="https://www.instagram.com/p/DcyMcyYhFZo/"><i class="bi bi-instagram"></i></a>
                             <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+
                         </div>
                     </div>
                 </div>

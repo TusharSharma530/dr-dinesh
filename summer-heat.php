@@ -16,8 +16,8 @@ include 'includes/header.php';
         <div class="blog-detail-content">
 
             <h1>Summer Heat and Neurological Health: Protect Your Brain This Summer</h1>
-            <p class="blog-author">By Dr. Dinesh Singh<br>
-            Neurosurgeon | Brain &amp; Spine Specialist | Neurological Consultation</p>
+            <h3 class="blog-author">By Dr. Dinesh Singh<br>
+            Neurosurgeon | Brain &amp; Spine Specialist | Neurological Consultation</h3>
 
             <p>As temperatures rise during the summer season, many people experience health issues related to excessive heat and dehydration. While most individuals focus on preventing heatstroke and dehydration, few realize that extreme heat can also affect the brain and nervous system. According to Dr. Dinesh Singh, Best Neurologist in Meerut, summer heat can trigger headaches, dizziness, sleep disturbances, and worsen existing neurological conditions.</p>
 
