@@ -111,22 +111,23 @@ include 'includes/header.php';
     <h3>Schedule Your Neurology Appointment</h3>
 
     <form class="consultation-form-box">
-        <!-- First Row: Full Name and Phone Number -->
+        <!-- First Row: Full Name and Email Address -->
         <div class="form-row">
             <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+        </div>
+
+        <!-- Second Row: Phone Number and Date -->
+        <div class="form-row">
             <input type="tel" placeholder="Phone Number" required>
-        </div>
-
-        <!-- Second Row: Date and Message -->
-        <div class="form-row">
             <input type="date" required>
-            <input type="text" placeholder="Your Message" required>
         </div>
 
-        <!-- Third Row: Services Dropdown and Book Button -->
+        <!-- Third Row: Time and Services -->
         <div class="form-row">
+            <input type="time" required>
             <select required>
-                <option value="" disabled selected>Select Service</option>
+                <option value="" disabled selected>Select Services</option>
                 <option value="stroke">Stroke Management</option>
                 <option value="migraine">Migraine Treatment</option>
                 <option value="neuromuscular">Neuromuscular Treatment</option>
@@ -134,12 +135,21 @@ include 'includes/header.php';
                 <option value="epilepsy">Epilepsy Treatment</option>
                 <option value="sleep">Sleep Disorder</option>
             </select>
+        </div>
+
+        <!-- Message -->
+        <div class="form-row">
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+        </div>
+
+        <!-- Book Button -->
+        <div class="form-row">
             <button type="submit" class="book-btn">Book Appointment</button>
         </div>
     </form>
 
     <p class="consultation-address">
-        <i class="bi bi-telephone-fill"></i> Call: 7982156581 | <i class="bi bi-geo-alt-fill"></i> Shri Ram plaza, (in front of Ambedkar college),<br>Tejgarhi road Meerut, 250004
+        <i class="bi bi-telephone-fill"></i> Call: 7982156581 | <i class="bi bi-geo-alt-fill"></i> Shri Ram plaza, in front of Ambedkar college,<br>Tejgarhi road Meerut, 250004
     </p>
        </div>
 

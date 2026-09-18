@@ -176,6 +176,63 @@ img {
     height: 2px;
     color: var(--primary-color);
 }
+
+/* ===== NAV DROPDOWN ===== */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-dropdown > a i {
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.nav-dropdown:hover > a i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background: #f0f7ff;
+    color: var(--primary-color);
+    padding-left: 25px;
+}
 .appointment-btn {
     display: flex;
     align-items: center;
@@ -699,11 +756,11 @@ img {
 }
 
 .blog-card-body h3 {
-    font-size: 17px;
+    font-size: 24px;
     color: var(--primary-color);
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 15px;
+    font-weight: 640;
+    line-height: 30px;
+    margin-bottom: 20px;
 }
 
 .blog-read-more {
@@ -910,6 +967,23 @@ img {
 .form-row .book-btn {
     flex: 1;
     width: 100%;
+}
+
+.form-row textarea {
+    flex: 1;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+    outline: none;
+}
+
+.form-row textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(26, 82, 118, 0.3);
 }
 
 .book-btn {
@@ -1854,4 +1928,133 @@ img {
 .lightbox-close:focus {
     color: #bbb;
     text-decoration: none;
+}
+
+/* ===== APPOINTMENT MODAL ===== */
+.appointment-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.appointment-modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.appointment-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #888;
+    transition: 0.3s;
+}
+
+.appointment-close:hover {
+    color: #e74c3c;
+}
+
+.appointment-modal-content h2 {
+    text-align: center;
+    color: #1a5276;
+    margin-bottom: 5px;
+    font-size: 26px;
+}
+
+.appointment-subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    transition: 0.3s;
+    outline: none;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+    border-color: #1a5276;
+    box-shadow: 0 0 5px rgba(26, 82, 118, 0.3);
+}
+
+.appointment-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.appointment-form textarea {
+    resize: vertical;
+}
+
+.appointment-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #1a5276;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.appointment-submit-btn:hover {
+    background: #154360;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 82, 118, 0.4);
+}
+
+@media (max-width: 600px) {
+    .appointment-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-modal-content {
+        padding: 25px;
+    }
 }
