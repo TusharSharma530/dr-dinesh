@@ -13,7 +13,7 @@ include 'includes/header.php';
         <div class="about-text">
             <span class="about-tag">ABOUT US</span>
 
-            <h2>Dr. Dinesh</h2>
+            <h2>Dr. Dinesh Singh</h2>
 
             <p class="about-degree">MCh - Neuro Surgery, MBBS, MS - General Surgery</p>
 
@@ -219,17 +219,29 @@ include 'includes/header.php';
 
 <script>
 let currentSlide = 0;
+let isAnimating = false;
 const slides = document.querySelectorAll('.testimonial-slide');
 
 function changeSlide(direction) {
-    slides[currentSlide].classList.remove('active');
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const current = slides[currentSlide];
+    current.classList.add('exit-left');
+
     currentSlide = (currentSlide + direction + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
+
+    setTimeout(() => {
+        current.classList.remove('active', 'exit-left');
+        slides[currentSlide].classList.add('active');
+        isAnimating = false;
+    }, 500);
 }
 
-setInterval(function() {
+setInterval(() => {
     changeSlide(1);
 }, 4000);
+</script>
 </script>
 
 <section class="expertise-section">
