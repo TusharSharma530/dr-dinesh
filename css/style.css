@@ -289,7 +289,7 @@ img {
 }
 
 .page-banner-overlay h1 {
-    font-size: 42px;
+    font-size: 40px;
     color: var(--primary-color);
     font-weight: 700;
     margin-bottom: 10px;
@@ -1593,10 +1593,12 @@ img {
 .hours-row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px dotted #ccc;
+    min-height: 28px;
 }
 
 .hours-row:last-child {
@@ -1613,10 +1615,11 @@ img {
 
 .hours-row .day::after {
     content: '';
-    flex: 1;
+    display: inline-block;
+    width: 40px;
     border-bottom: 1px dotted #999;
     margin: 0 8px;
-    min-width: 20px;
+    vertical-align: middle;
 }
 
 .hours-row .time {
@@ -1625,11 +1628,12 @@ img {
     font-weight: 600;
     white-space: nowrap;
     text-align: right;
-    min-width: 250px;
+    line-height: 1;
 }
 
 .hours-row .time.closed {
     color: var(--primary-color);
+    line-height: 1;
 }
 
 
