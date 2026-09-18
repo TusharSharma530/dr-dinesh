@@ -159,7 +159,7 @@ img {
     position: relative;
     color: #333;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     transition: 0.3s;
 }
 
@@ -697,9 +697,10 @@ img {
 .blog-card {
     background: #fff;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: 0.3s;
+    position: relative;
 }
 
 .blog-card:hover {
@@ -710,7 +711,7 @@ img {
 .blog-card-img {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .blog-card-img img {
@@ -719,6 +720,7 @@ img {
     object-fit: cover;
     display: block;
     transition: 0.3s;
+    border-radius: 12px 12px 0 0;
 }
 
 .blog-card:hover .blog-card-img img {
@@ -727,15 +729,16 @@ img {
 
 .blog-date {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
-    background: var(--primary-color);;
+    bottom: -30px;
+    right: 20px;
+    background: var(--primary-color);
     color: #fff;
     border-radius: 10px;
     padding: 10px 15px;
     text-align: center;
     line-height: 1.2;
-    z-index: 2;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .blog-date .date-day {
@@ -752,7 +755,7 @@ img {
 }
 
 .blog-card-body {
-    padding: 20px 25px 25px;
+    padding: 35px 25px 25px;
 }
 
 .blog-card-body h3 {
@@ -1430,8 +1433,8 @@ img {
 .info-text strong {
     display: block;
     color: var(--primary-color);
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 800;
     margin-bottom: 2px;
 }
 
@@ -1487,9 +1490,9 @@ img {
 }
 
 .footer-column h3 {
-    font-size: 20px;
+    font-size: 22px;
     color: var(--primary-color);
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .footer-links-grid {
