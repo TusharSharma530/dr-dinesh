@@ -147,10 +147,6 @@ include 'includes/header.php';
             <button type="submit" class="book-btn">Book Appointment</button>
         </div>
     </form>
-
-    <p class="consultation-address">
-        <i class="bi bi-telephone-fill"></i> Call: 7982156581 | <i class="bi bi-geo-alt-fill"></i> Shri Ram plaza, opposite of Ambedkar college,<br>Tejgarhi road Meerut, 250004
-    </p>
        </div>
 
       </div>
