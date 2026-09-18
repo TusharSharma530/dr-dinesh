@@ -19,12 +19,12 @@ include 'includes/header.php';
                     <p>+91 7982156581</p>
                 </div>
             </div>
-
+            
             <div class="contact-info-item">
                 <i class="bi bi-geo-alt-fill"></i>
                 <div>
                     <h4>Our Location</h4>
-                    <p>Shri Ram plaza, ( in front of Ambedkar college), Tejgarhi road Meerut ,250004</p>
+                    <p>Shri Ram plaza,opposite of Ambedkar college, Tejgarhi road Meerut ,250004</p>
                 </div>
             </div>
 
@@ -68,7 +68,7 @@ include 'includes/header.php';
 </section>
 
 <section class="map-section">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.536!2d77.7074!3d28.9924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf5a44e4e0b3f%3A0xb4e9e5e5e5e5e5e5!2sShri%20Ram%20Plaza%2C%20Tejgarhi%20Road%2C%20Meerut%2C%20Uttar%20Pradesh%20250004!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.536!2d77.7371805!3d28.9651322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65f6c7b0f123%3A0x78a5f6619a39ab3a!2sBrain%20And%20Spine%20Clinic!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 <?php
