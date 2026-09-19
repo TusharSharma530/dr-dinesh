@@ -2,71 +2,48 @@
 $pageTitle = 'Blogs';
 $pageBreadcrumb = 'Blogs';
 include 'includes/header.php';
-?>
 
-<?php include 'includes/page-banner.php'; ?>
+$blog = isset($_GET['blog']) ? $_GET['blog'] : '';
 
-<section class="services-section">
-    <div class="container">
+$blogs = [
+    'paralysis' => ['title' => 'Paralysis: Causes, Symptoms, Treatment & Recovery', 'image' => 'paralysis.png', 'alt' => 'Paralysis', 'day' => '19', 'month' => 'MAY'],
+    'summer'    => ['title' => 'Summer Heat and Neurological Health: Protect Your Brain This Summer', 'image' => 'summer heat.png', 'alt' => 'Summer Heat', 'day' => '19', 'month' => 'JUN'],
+    'migraine'  => ['title' => 'Migraine Treatment: Recurring Headaches Should Not Be Ignored', 'image' => 'maigraine.png', 'alt' => 'Migraine Treatment', 'day' => '10', 'month' => 'JUL'],
+];
 
-        <div class="blog-cards">
+if ($blog && isset($blogs[$blog])) {
+    $pageTitle = $blogs[$blog]['title'];
+}
 
-            <a href="blog-paralysis.php" class="blog-card">
-                <div class="blog-card-img">
-                    <img src="assets/images/paralysis.png" alt="Paralysis">
-                    <div class="blog-date">
-                        <span class="date-day">19</span>
-                        <span class="date-month">MAY</span>
-                    </div>
-                </div>
-                <div class="blog-card-body">
-                    <h3>Paralysis: Causes, Symptoms, Treatment & Recovery</h3>
-                    <span class="blog-read-more">
-                        <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
-                        Read More
-                    </span>
-                </div>
-            </a>
+include 'includes/page-banner.php';
 
-            <a href="summer-heat.php" class="blog-card">
-                <div class="blog-card-img">
-                    <img src="assets/images/summer heat.png" alt="Summer Heat">
-                    <div class="blog-date">
-                        <span class="date-day">19</span>
-                        <span class="date-month">JUN</span>
-                    </div>
-                </div>
-                <div class="blog-card-body">
-                    <h3>Summer Heat and Neurological Health: Protect Your Brain This Summer</h3>
-                    <span class="blog-read-more">
-                        <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
-                        Read More
-                    </span>
-                </div>
-            </a>
+if ($blog && isset($blogs[$blog])) {
+    $b = $blogs[$blog];
+    echo '<section class="blog-detail-section">';
+    echo '<div class="container blog-detail-container">';
+    echo '<div class="blog-detail-img"><img src="assets/images/' . $b['image'] . '" alt="' . $b['alt'] . '"></div>';
+    echo '<div class="blog-detail-content">';
+    echo '<h1>' . $b['title'] . '</h1>';
+    echo '<p class="blog-author">By Dr. Dinesh Singh – Neurosurgeon in Meerut</p>';
+    include 'includes/blogs/' . $blog . '.php';
+    echo '</div></div></section>';
+} else {
+    echo '<section class="services-section"><div class="container">';
+    echo '<div class="services-header"><span class="services-tag">BLOGS</span><h2>Latest Blogs</h2></div>';
+    echo '<div class="blog-cards">';
+    foreach ($blogs as $key => $b) {
+        echo '<a href="blogs.php?blog=' . $key . '" class="blog-card">';
+        echo '<div class="blog-card-img">';
+        echo '<img src="assets/images/' . $b['image'] . '" alt="' . $b['alt'] . '">';
+        echo '<div class="blog-date"><span class="date-day">' . $b['day'] . '</span><span class="date-month">' . $b['month'] . '</span></div>';
+        echo '</div>';
+        echo '<div class="blog-card-body">';
+        echo '<h3>' . $b['title'] . '</h3>';
+        echo '<span class="blog-read-more"><span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>Read More</span>';
+        echo '</div></a>';
+    }
+    echo '</div></div></section>';
+}
 
-            <a href="blog-migraine.php" class="blog-card">
-                <div class="blog-card-img">
-                    <img src="assets/images/maigraine.png" alt="Migraine Treatment">
-                    <div class="blog-date">
-                        <span class="date-day">10</span>
-                        <span class="date-month">JUL</span>
-                    </div>
-                </div>
-                <div class="blog-card-body">
-                    <h3>Migraine Treatment: Recurring Headaches Should Not Be Ignored</h3>
-                    <span class="blog-read-more">
-                        <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
-                        Read More
-                    </span>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
-</section>
-
-<?php
 include 'includes/footer.php';
 ?>

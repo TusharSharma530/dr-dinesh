@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div class="blog-cards">
 
-            <a href="blog-paralysis.php" class="blog-card">
+            <a href="blogs.php?blog=paralysis" class="blog-card">
                 <div class="blog-card-img">
                     <img src="assets/images/paralysis.png" alt="Paralysis">
                     <div class="blog-date">
@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
             </a>
 
-            <a href="summer-heat.php" class="blog-card">
+            <a href="blogs.php?blog=summer" class="blog-card">
                 <div class="blog-card-img">
                     <img src="assets/images/summer heat.png" alt="Summer Heat">
                     <div class="blog-date">
@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
             </a>
 
-            <a href="blog-migraine.php" class="blog-card">
+            <a href="blogs.php?blog=migraine" class="blog-card">
                 <div class="blog-card-img">
                     <img src="assets/images/maigraine.png" alt="Migraine Treatment">
                     <div class="blog-date">
