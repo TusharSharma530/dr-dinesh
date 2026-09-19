@@ -82,6 +82,13 @@
 
 </footer>
 
+<div class="copyright-bar">
+    <div class="container copyright-content">
+        <p>Copyright &copy; 2026 Neuro Care – By Dr. Dinesh Singh, All Rights Reserved.</p>
+        <p>Design and Developed by <a href="https://promotionparadise.in/" target="_blank">Promotion Paradise</a></p>
+    </div>
+</div>
+
 <!-- Floating Icons -->
 <div class="floating-icons">
     <a href="tel:+918679998864" class="floating-icon phone-icon">

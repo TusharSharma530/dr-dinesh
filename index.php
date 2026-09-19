@@ -223,13 +223,17 @@ function changeSlide(direction) {
     isAnimating = true;
 
     const current = slides[currentSlide];
-    current.classList.add('exit-left');
+    const nextIndex = (currentSlide + direction + slides.length) % slides.length;
+    const next = slides[nextIndex];
 
-    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    current.classList.add('exit-left');
+    next.classList.add('enter-right');
 
     setTimeout(() => {
         current.classList.remove('active', 'exit-left');
-        slides[currentSlide].classList.add('active');
+        next.classList.remove('enter-right');
+        next.classList.add('active');
+        currentSlide = nextIndex;
         isAnimating = false;
     }, 500);
 }
@@ -259,6 +263,11 @@ setInterval(() => {
                 </div>
             </div>
             <div class="gallery-card">
+                <div class="gallery-card-img">
+                    <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
+                </div>
+            </div>
+             <div class="gallery-card">
                 <div class="gallery-card-img">
                     <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
                 </div>

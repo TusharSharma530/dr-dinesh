@@ -25,6 +25,11 @@ include 'includes/header.php';
                     <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
                 </div>
             </div>
+            <div class="service-card">
+                <div class="service-card-img">
+                    <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
+                </div>
+            </div>
             
         </div>
 
