@@ -5,6 +5,7 @@ $pageBreadcrumb = $pageBreadcrumb ?? 'Home';
 
 <section class="page-banner-section">
     <img src="assets/images/banner2.png" alt="Banner" class="page-banner-bg">
+    <div class="page-banner-dark"></div>
     <div class="page-banner-overlay">
         <div class="container">
             <h1><?php echo $pageTitle; ?></h1>
@@ -16,4 +17,3 @@ $pageBreadcrumb = $pageBreadcrumb ?? 'Home';
         </div>
     </div>
 </section>
- 

@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div class="blog-cards">
 
-            <div class="blog-card">
+            <a href="blog-paralysis.php" class="blog-card">
                 <div class="blog-card-img">
                     <img src="assets/images/paralysis.png" alt="Paralysis">
                     <div class="blog-date">
@@ -313,14 +313,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div class="blog-card-body">
                     <h3>Paralysis: Causes, Symptoms, Treatment & Recovery</h3>
-                    <a href="blog-paralysis.php" class="blog-read-more">
+                    <span class="blog-read-more">
                         <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
                         Read More
-                    </a>
+                    </span>
                 </div>
-            </div>
+            </a>
 
-            <div class="blog-card">
+            <a href="summer-heat.php" class="blog-card">
                 <div class="blog-card-img">
                     <img src="assets/images/summer heat.png" alt="Summer Heat">
                     <div class="blog-date">
@@ -330,14 +330,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div class="blog-card-body">
                     <h3>Summer Heat and Neurological Health: Protect Your Brain This Summer</h3>
-                    <a href="summer-heat.php" class="blog-read-more">
+                    <span class="blog-read-more">
                         <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
                         Read More
-                    </a>
+                    </span>
                 </div>
-            </div>
+            </a>
 
-            <div class="blog-card">
+            <a href="blog-migraine.php" class="blog-card">
                 <div class="blog-card-img">
                     <img src="assets/images/maigraine.png" alt="Migraine Treatment">
                     <div class="blog-date">
@@ -347,12 +347,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div class="blog-card-body">
                     <h3>Migraine Treatment: Recurring Headaches Should Not Be Ignored</h3>
-                    <a href="blog-migraine.php" class="blog-read-more">
+                    <span class="blog-read-more">
                         <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
                         Read More
-                    </a>
+                    </span>
                 </div>
-            </div>
+            </a>
 
         </div>
 
