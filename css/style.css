@@ -467,8 +467,8 @@ img {
 .send-btn {
     display: inline-block;
     padding: 16px 40px;
-    background: var(--primary-color);
-    color: #fff;
+    background: white;
+    color: var(--primary-color);
     border: none;
     border-radius: 8px;
     font-size: 15px;
@@ -481,6 +481,7 @@ img {
 
 .send-btn:hover {
     background: var(--primary-color);
+    background: white;
 }
 .about-section {
     padding: 50px 0;
@@ -1155,6 +1156,67 @@ img {
     background: var(--primary-color);
     border-color: var(--primary-color);
 }
+.gallery-section {
+    padding: 50px 0 10px;
+    background: #f9fbfd;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.gallery-tag {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.gallery-header h2 {
+    font-size: 40px;
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+.gallery-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.gallery-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-card-img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-card-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gallery-card:hover .gallery-card-img img {
+    transform: scale(1.05);
+}
+
 .expertise-section {
     padding: 50px 0;
     background: #fff;

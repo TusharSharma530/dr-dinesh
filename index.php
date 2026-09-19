@@ -44,55 +44,55 @@ include 'includes/header.php';
 
         <div class="services-cards">
 
-            <div class="service-card">
+            <a href="stroke-management.php" class="service-card">
                 <div class="service-card-img">
                     <img src="assets/images/stroke management.png" alt="Stroke Management">
                 </div>
                 <div class="service-card-body">
                     <h3>Stroke Management</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="service-card">
+            <a href="migraine-treatment.php" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/maigraine.png" alt="Epilepsy Treatment">
+                    <img src="assets/images/maigraine.png" alt="Migraine Treatment">
                 </div>
                 <div class="service-card-body">
-                    <h3>Maigraine Treatment</h3>
+                    <h3>Migraine Treatment</h3>
                 </div>
-            </div>
-            <div class="service-card">
+            </a>
+            <a href="neuromuscular-treatment.php" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/neuromascular.png" alt="Epilepsy Treatment">
+                    <img src="assets/images/neuromascular.png" alt="Neuromuscular Treatment">
                 </div>
                 <div class="service-card-body">
-                    <h3>Neuromascular Treatment</h3>
+                    <h3>Neuromuscular Treatment</h3>
                 </div>
-            </div>
-            <div class="service-card">
+            </a>
+            <a href="paralysis-treatment.php" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/paalysis1.png" alt="Epilepsy Treatment">
+                    <img src="assets/images/paalysis1.png" alt="Paralysis Treatment">
                 </div>
                 <div class="service-card-body">
-                    <h3>Pralysis Treatment</h3>
+                    <h3>Paralysis Treatment</h3>
                 </div>
-            </div>
-            <div class="service-card">
+            </a>
+            <a href="epilepsy-treatment.php" class="service-card">
                 <div class="service-card-img">
                     <img src="assets/images/epilepsy treatment.png" alt="Epilepsy Treatment">
                 </div>
                 <div class="service-card-body">
                     <h3>Epilepsy Treatment</h3>
                 </div>
-            </div>
-            <div class="service-card">
+            </a>
+            <a href="sleep-disorder.php" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/sleep disopder.png" alt="Epilepsy Treatment">
+                    <img src="assets/images/sleep disopder.png" alt="Sleep Disorder">
                 </div>
                 <div class="service-card-body">
-                    <h3>Sleep Disorder </h3>
+                    <h3>Sleep Disorder</h3>
                 </div>
-            </div>
+            </a>
 
         </div>
 
@@ -238,141 +238,132 @@ setInterval(() => {
     changeSlide(1);
 }, 4000);
 </script>
-</script>
 
-<section class="expertise-section">
-    <div class="container expertise-content">
+<section class="gallery-section">
+    <div class="container">
 
-        <div class="expertise-left">
-            <span class="expertise-tag">OUR EXPERTISE</span>
-            <h2>Advanced Neurology Care for Every Patient</h2>
-            <p>We combine clinical expertise with advanced diagnostic techniques to provide accurate and effective neurological care. Dr. Dinesh focuses on identifying the root cause of neurological conditions and delivering personalized, evidence-based treatment for long-term health and recovery.</p>
-            <h4>Dr. Dinesh</h4>
-            <p class="expert-neuro-designation">Neurosurgeon</p>
+        <div class="gallery-header">
+            <span class="gallery-tag">GALLERY</span>
+            <h2>Our Clinic Gallery</h2>
         </div>
 
-        <div class="expertise-right">
-            <div class="faq-list">
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        <span class="faq-number">01</span>
-                        <span class="faq-title">Do you need expert neurological consultation?</span>
-                        <i class="bi bi-plus-lg faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We provide detailed neurological evaluations to diagnose conditions like stroke, epilepsy, and migraines with accuracy and care.</p>
-                    </div>
+        <div class="gallery-cards">
+            <div class="gallery-card">
+                <div class="gallery-card-img">
+                    <img src="assets/images/stroke management.png" alt="Stroke Management" class="lightbox-trigger">
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        <span class="faq-number">02</span>
-                        <span class="faq-title">Advanced diagnosis & treatment options</span>
-                        <i class="bi bi-plus-lg faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Using modern diagnostic methods and clinical expertise, we ensure early detection and effective management of neurological disorders.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        <span class="faq-number">03</span>
-                        <span class="faq-title">Personalized care for long-term neurological health</span>
-                        <i class="bi bi-plus-lg faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Every patient receives individualized care tailored to their condition, lifestyle, and long-term health goals.</p>
-                    </div>
-                </div>
-
             </div>
-
-            <p class="expertise-bottom-text">Every patient receives individualized care tailored to their condition, lifestyle, and long-term health goals.</p>
         </div>
 
     </div>
 </section>
 
+<div id="imageLightbox" class="lightbox-modal" style="display:none;">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImg" alt="Enlarged Image">
+</div>
 <script>
-function toggleFaq(btn) {
-    const faqItem = btn.closest('.faq-item');
-    const icon = btn.querySelector('.faq-icon');
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("imageLightbox");
+    const modalImg = document.getElementById("lightboxImg");
+    const closeBtn = document.querySelector(".lightbox-close");
 
-    document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== faqItem) {
-            item.classList.remove('active');
-            item.querySelector('.faq-icon').classList.remove('bi-dash-lg');
-            item.querySelector('.faq-icon').classList.add('bi-plus-lg');
+    document.querySelectorAll(".lightbox-trigger").forEach(img => {
+        img.addEventListener("click", function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+    });
+
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
         }
     });
 
-    faqItem.classList.toggle('active');
-
-    if (faqItem.classList.contains('active')) {
-        icon.classList.remove('bi-plus-lg');
-        icon.classList.add('bi-dash-lg');
-    } else {
-        icon.classList.remove('bi-dash-lg');
-        icon.classList.add('bi-plus-lg');
-    }
-}
-
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            modal.style.display = "none";
+        }
+    });
+});
 </script>
 
-<!-- Expert Neuro Section -->
-<section class="expert-neuro-section">
-    <div class="container expert-neuro-content">
+<section class="services-section">
+    <div class="container">
 
-        <div class="expert-neuro-left">
-            <div class="expert-neuro-img">
-                <img src="assets/images/expert neuro.jfif" alt="Dr. Dinesh">
-            </div>
+        <div class="services-header">
+            <span class="services-tag">BLOGS</span>
+            <h2>Latest Blogs</h2>
         </div>
 
-        <div class="expert-neuro-right">
-            <h2>Expert Neurology Care You Can Trust</h2>
-            <p>We provide prompt and reliable neurological care with a focus on accurate diagnosis and effective treatment. Our approach ensures that every patient receives personalized attention and the best possible medical support.</p>
+        <div class="blog-cards">
 
-            <div class="expert-neuro-features">
-
-                <div class="expert-feature">
-                    <i class="bi bi-check-circle-fill"></i>
-                    <div>
-                        <h4>Specialized Neurology Care</h4>
-                        <p>Expert diagnosis and treatment for stroke, epilepsy, migraine, and other neurological disorders.</p>
+            <div class="blog-card">
+                <div class="blog-card-img">
+                    <img src="assets/images/paralysis.png" alt="Paralysis">
+                    <div class="blog-date">
+                        <span class="date-day">19</span>
+                        <span class="date-month">MAY</span>
                     </div>
                 </div>
-
-                <div class="expert-feature">
-                    <i class="bi bi-check-circle-fill"></i>
-                    <div>
-                        <h4>Experienced Consultant</h4>
-                        <p>Treated at leading hospitals with extensive experience in managing complex neurological conditions.</p>
-                    </div>
+                <div class="blog-card-body">
+                    <h3>Paralysis: Causes, Symptoms, Treatment & Recovery</h3>
+                    <a href="blog-paralysis.php" class="blog-read-more">
+                        <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
+                        Read More
+                    </a>
                 </div>
-
-                <div class="expert-feature">
-                    <i class="bi bi-check-circle-fill"></i>
-                    <div>
-                        <h4>Accurate Diagnosis</h4>
-                    </div>
-                </div>
-
             </div>
 
-            <div class="expert-neuro-stat">
-                <span class="stat-percent">95%</span>
-                <span class="stat-text">Patient Satisfaction</span>
+            <div class="blog-card">
+                <div class="blog-card-img">
+                    <img src="assets/images/summer heat.png" alt="Summer Heat">
+                    <div class="blog-date">
+                        <span class="date-day">19</span>
+                        <span class="date-month">JUN</span>
+                    </div>
+                </div>
+                <div class="blog-card-body">
+                    <h3>Summer Heat and Neurological Health: Protect Your Brain This Summer</h3>
+                    <a href="summer-heat.php" class="blog-read-more">
+                        <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
+                        Read More
+                    </a>
+                </div>
             </div>
+
+            <div class="blog-card">
+                <div class="blog-card-img">
+                    <img src="assets/images/maigraine.png" alt="Migraine Treatment">
+                    <div class="blog-date">
+                        <span class="date-day">10</span>
+                        <span class="date-month">JUL</span>
+                    </div>
+                </div>
+                <div class="blog-card-body">
+                    <h3>Migraine Treatment: Recurring Headaches Should Not Be Ignored</h3>
+                    <a href="blog-migraine.php" class="blog-read-more">
+                        <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
+                        Read More
+                    </a>
+                </div>
+            </div>
+
         </div>
 
     </div>
 </section>
 
-<?php
-include 'includes/footer.php';
-?>
+<section class="map-section">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.536!2d77.7371805!3d28.9651322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65f6c7b0f123%3A0x78a5f6619a39ab3a!2sBrain%20And%20Spine%20Clinic!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+
+<?php include 'includes/footer.php'; ?>
 
 

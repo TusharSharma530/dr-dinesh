@@ -63,12 +63,12 @@
                     <div class="nav-dropdown">
                         <a href="services.php">Services <i class="bi bi-chevron-down"></i></a>
                         <div class="dropdown-menu">
-                            <a href="services.php">Stroke Management</a>
-                            <a href="services.php">Migraine Treatment</a>
-                            <a href="services.php">Neuromuscular Treatment</a>
-                            <a href="services.php">Paralysis Treatment</a>
-                            <a href="services.php">Epilepsy Treatment</a>
-                            <a href="services.php">Sleep Disorder</a>
+                            <a href="stroke-management.php">Stroke Management</a>
+                            <a href="migraine-treatment.php">Migraine Treatment</a>
+                            <a href="neuromuscular-treatment.php">Neuromuscular Treatment</a>
+                            <a href="paralysis-treatment.php">Paralysis Treatment</a>
+                            <a href="epilepsy-treatment.php">Epilepsy Treatment</a>
+                            <a href="sleep-disorder.php">Sleep Disorder</a>
                         </div>
                     </div>
                     <a href="gallery.php">Gallery</a>
