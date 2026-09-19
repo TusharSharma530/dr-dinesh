@@ -2,71 +2,46 @@
 $pageTitle = 'Services';
 $pageBreadcrumb = 'Services';
 include 'includes/header.php';
-?>
 
-<?php include 'includes/page-banner.php'; ?>
+$service = isset($_GET['service']) ? $_GET['service'] : '';
 
-<section class="services-section">
-    <div class="container">
+$services = [
+    'stroke'       => ['title' => 'Stroke Management: Causes, Symptoms & Treatment', 'image' => 'stroke management.png', 'alt' => 'Stroke Management'],
+    'migraine'     => ['title' => 'Migraine Treatment: Recurring Headaches Should Not Be Ignored', 'image' => 'maigraine.png', 'alt' => 'Migraine Treatment'],
+    'neuromuscular'=> ['title' => 'Neuromuscular Treatment: Causes, Symptoms & Care', 'image' => 'neuromascular.png', 'alt' => 'Neuromuscular Treatment'],
+    'paralysis'    => ['title' => 'Paralysis Treatment: Causes, Symptoms & Recovery', 'image' => 'paalysis1.png', 'alt' => 'Paralysis Treatment'],
+    'epilepsy'     => ['title' => 'Epilepsy Treatment: Causes, Symptoms & Care', 'image' => 'epilepsy treatment.png', 'alt' => 'Epilepsy Treatment'],
+    'sleep'        => ['title' => 'Sleep Disorder Treatment: Causes, Symptoms & Care', 'image' => 'sleep disopder.png', 'alt' => 'Sleep Disorder'],
+];
 
-        <div class="services-cards">
+if ($service && isset($services[$service])) {
+    $pageTitle = $services[$service]['title'];
+}
 
-            <a href="stroke-management.php" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/stroke management.png" alt="Stroke Management">
-                </div>
-                <div class="service-card-body">
-                    <h3>Stroke Management</h3>
-                </div>
-            </a>
+include 'includes/page-banner.php';
 
-            <a href="migraine-treatment.php" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/maigraine.png" alt="Migraine Treatment">
-                </div>
-                <div class="service-card-body">
-                    <h3>Migraine Treatment</h3>
-                </div>
-            </a>
-            <a href="neuromuscular-treatment.php" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/neuromascular.png" alt="Neuromuscular Treatment">
-                </div>
-                <div class="service-card-body">
-                    <h3>Neuromuscular Treatment</h3>
-                </div>
-            </a>
-            <a href="paralysis-treatment.php" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/paalysis1.png" alt="Paralysis Treatment">
-                </div>
-                <div class="service-card-body">
-                    <h3>Paralysis Treatment</h3>
-                </div>
-            </a>
-            <a href="epilepsy-treatment.php" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/epilepsy treatment.png" alt="Epilepsy Treatment">
-                </div>
-                <div class="service-card-body">
-                    <h3>Epilepsy Treatment</h3>
-                </div>
-            </a>
-            <a href="sleep-disorder.php" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/sleep disopder.png" alt="Sleep Disorder">
-                </div>
-                <div class="service-card-body">
-                    <h3>Sleep Disorder</h3>
-                </div>
-            </a>
+if ($service && isset($services[$service])) {
+    $s = $services[$service];
+    echo '<section class="blog-detail-section">';
+    echo '<div class="container blog-detail-container">';
+    echo '<div class="blog-detail-img"><img src="assets/images/' . $s['image'] . '" alt="' . $s['alt'] . '"></div>';
+    echo '<div class="blog-detail-content">';
+    echo '<h1>' . $s['title'] . '</h1>';
+    echo '<p class="blog-author">By Dr. Dinesh Singh – Neurosurgeon in Meerut</p>';
+    include 'includes/services/' . $service . '.php';
+    echo '</div></div></section>';
+} else {
+    echo '<section class="services-section"><div class="container">';
+    echo '<div class="services-header"><span class="services-tag">OUR SERVICES</span><h2>Comprehensive Neurology Care</h2></div>';
+    echo '<div class="services-cards">';
+    foreach ($services as $key => $s) {
+        echo '<a href="services.php?service=' . $key . '" class="service-card">';
+        echo '<div class="service-card-img"><img src="assets/images/' . $s['image'] . '" alt="' . $s['alt'] . '"></div>';
+        echo '<div class="service-card-body"><h3>' . $s['alt'] . '</h3></div>';
+        echo '</a>';
+    }
+    echo '</div></div></section>';
+}
 
-        </div>
-
-    </div>
-</section>
-
-
-<?php
 include 'includes/footer.php';
 ?>

@@ -44,7 +44,7 @@ include 'includes/header.php';
 
         <div class="services-cards">
 
-            <a href="stroke-management.php" class="service-card">
+            <a href="services.php?service=stroke" class="service-card">
                 <div class="service-card-img">
                     <img src="assets/images/stroke management.png" alt="Stroke Management">
                 </div>
@@ -53,7 +53,7 @@ include 'includes/header.php';
                 </div>
             </a>
 
-            <a href="migraine-treatment.php" class="service-card">
+            <a href="services.php?service=migraine" class="service-card">
                 <div class="service-card-img">
                     <img src="assets/images/maigraine.png" alt="Migraine Treatment">
                 </div>
@@ -61,7 +61,7 @@ include 'includes/header.php';
                     <h3>Migraine Treatment</h3>
                 </div>
             </a>
-            <a href="neuromuscular-treatment.php" class="service-card">
+            <a href="services.php?service=neuromuscular" class="service-card">
                 <div class="service-card-img">
                     <img src="assets/images/neuromascular.png" alt="Neuromuscular Treatment">
                 </div>
@@ -69,7 +69,7 @@ include 'includes/header.php';
                     <h3>Neuromuscular Treatment</h3>
                 </div>
             </a>
-            <a href="paralysis-treatment.php" class="service-card">
+            <a href="services.php?service=paralysis" class="service-card">
                 <div class="service-card-img">
                     <img src="assets/images/paalysis1.png" alt="Paralysis Treatment">
                 </div>
@@ -77,7 +77,7 @@ include 'includes/header.php';
                     <h3>Paralysis Treatment</h3>
                 </div>
             </a>
-            <a href="epilepsy-treatment.php" class="service-card">
+            <a href="services.php?service=epilepsy" class="service-card">
                 <div class="service-card-img">
                     <img src="assets/images/epilepsy treatment.png" alt="Epilepsy Treatment">
                 </div>
@@ -85,7 +85,7 @@ include 'includes/header.php';
                     <h3>Epilepsy Treatment</h3>
                 </div>
             </a>
-            <a href="sleep-disorder.php" class="service-card">
+            <a href="services.php?service=sleep" class="service-card">
                 <div class="service-card-img">
                     <img src="assets/images/sleep disopder.png" alt="Sleep Disorder">
                 </div>
