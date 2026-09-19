@@ -253,6 +253,16 @@ setInterval(() => {
                     <img src="assets/images/stroke management.png" alt="Stroke Management" class="lightbox-trigger">
                 </div>
             </div>
+            <div class="gallery-card">
+                <div class="gallery-card-img">
+                    <img src="assets/images/maigraine.png" alt="Stroke Management" class="lightbox-trigger">
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-card-img">
+                    <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
+                </div>
+            </div>
         </div>
 
     </div>

@@ -127,6 +127,16 @@
 
 
 <script>
+    // Sticky Header
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('.main-header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
     // Close modal when clicking outside
     document.getElementById('appointmentModal').addEventListener('click', function(e) {
         if (e.target === this) {
