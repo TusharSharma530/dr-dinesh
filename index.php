@@ -34,123 +34,127 @@ include 'includes/header.php';
     </div>
 </section>
 
-   <section class="services-section">
+  <section class="services-section">
     <div class="container">
 
         <div class="services-header">
             <span class="services-tag">OUR SERVICES</span>
-            <h2>Comprehensive Neurology Care</h2>
+            <h2>Comprehensive Neurosurgical Care</h2>
         </div>
 
         <div class="services-cards">
 
-            <a href="services.php?service=stroke" class="service-card">
+            <a href="services.php?service=brain-tumor" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/stroke management.png" alt="Stroke Management">
+                    <img src="assets/images/stroke management.png" alt="Brain Tumor Surgery">
                 </div>
                 <div class="service-card-body">
-                    <h3>Stroke Management</h3>
+                    <h3>Brain Tumor Surgery</h3>
                 </div>
             </a>
 
-            <a href="services.php?service=migraine" class="service-card">
+            <a href="services.php?service=spine-surgery" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/maigraine.png" alt="Migraine Treatment">
+                    <img src="assets/images/maigraine.png" alt="Spine Surgery">
                 </div>
                 <div class="service-card-body">
-                    <h3>Migraine Treatment</h3>
+                    <h3>Spine Surgery</h3>
                 </div>
             </a>
-            <a href="services.php?service=neuromuscular" class="service-card">
+
+            <a href="services.php?service=aneurysm" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/neuromascular.png" alt="Neuromuscular Treatment">
+                    <img src="assets/images/neuromascular.png" alt="Aneurysm Clipping">
                 </div>
                 <div class="service-card-body">
-                    <h3>Neuromuscular Treatment</h3>
+                    <h3>Aneurysm Clipping</h3>
                 </div>
             </a>
-            <a href="services.php?service=paralysis" class="service-card">
+
+            <a href="services.php?service=dbs" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/paalysis1.png" alt="Paralysis Treatment">
+                    <img src="assets/images/paalysis1.png" alt="Deep Brain Stimulation">
                 </div>
                 <div class="service-card-body">
-                    <h3>Paralysis Treatment</h3>
+                    <h3>Deep Brain Stimulation</h3>
                 </div>
             </a>
-            <a href="services.php?service=epilepsy" class="service-card">
+
+            <a href="services.php?service=trauma" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/epilepsy treatment.png" alt="Epilepsy Treatment">
+                    <img src="assets/images/epilepsy treatment.png" alt="Neurotrauma Surgery">
                 </div>
                 <div class="service-card-body">
-                    <h3>Epilepsy Treatment</h3>
+                    <h3>Neurotrauma Surgery</h3>
                 </div>
             </a>
-            <a href="services.php?service=sleep" class="service-card">
+
+            <a href="services.php?service=pediatric" class="service-card">
                 <div class="service-card-img">
-                    <img src="assets/images/sleep disopder.png" alt="Sleep Disorder">
+                    <img src="assets/images/sleep disopder.png" alt="Pediatric Neurosurgery">
                 </div>
                 <div class="service-card-body">
-                    <h3>Sleep Disorder</h3>
+                    <h3>Pediatric Neurosurgery</h3>
                 </div>
             </a>
 
         </div>
 
     </div>
-    </section>
+</section>
 
-    <section class="consultation-section">
+<section class="consultation-section">
     <div class="container consultation-content">
 
         <div class="consultation-image">
             <img src="assets/images/dr dinesh image.png" alt="Book Consultation">
         </div>
 
-       <div class="consultation-form">
-    <h2>Book Consultation</h2>
-    <h3>Schedule Your Neurology Appointment</h3>
+        <div class="consultation-form">
+            <h2>Book Consultation</h2>
+            <h3>Schedule Your Neurosurgical Appointment</h3>
 
-    <form class="consultation-form-box">
-        <!-- First Row: Full Name and Email Address -->
-        <div class="form-row">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Address" required>
+            <form class="consultation-form-box">
+                <!-- First Row: Full Name and Email Address -->
+                <div class="form-row">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+
+                <!-- Second Row: Phone Number and Date -->
+                <div class="form-row">
+                    <input type="tel" placeholder="Phone Number" required>
+                    <input type="date" required>
+                </div>
+
+                <!-- Third Row: Time and Services -->
+                <div class="form-row">
+                    <input type="time" required>
+                    <select required>
+                        <option value="" disabled selected>Select Services</option>
+                        <option value="brain-tumor">Brain Tumor Surgery</option>
+                        <option value="spine-surgery">Spine Surgery</option>
+                        <option value="aneurysm">Aneurysm Clipping</option>
+                        <option value="dbs">Deep Brain Stimulation</option>
+                        <option value="trauma">Neurotrauma Surgery</option>
+                        <option value="pediatric">Pediatric Neurosurgery</option>
+                    </select>
+                </div>
+
+                <!-- Message -->
+                <div class="form-row">
+                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                </div>
+
+                <!-- Book Button -->
+                <div class="form-row">
+                    <button type="submit" class="book-btn">Book Appointment</button>
+                </div>
+            </form>
         </div>
 
-        <!-- Second Row: Phone Number and Date -->
-        <div class="form-row">
-            <input type="tel" placeholder="Phone Number" required>
-            <input type="date" required>
-        </div>
-
-        <!-- Third Row: Time and Services -->
-        <div class="form-row">
-            <input type="time" required>
-            <select required>
-                <option value="" disabled selected>Select Services</option>
-                <option value="stroke">Stroke Management</option>
-                <option value="migraine">Migraine Treatment</option>
-                <option value="neuromuscular">Neuromuscular Treatment</option>
-                <option value="paralysis">Paralysis Treatment</option>
-                <option value="epilepsy">Epilepsy Treatment</option>
-                <option value="sleep">Sleep Disorder</option>
-            </select>
-        </div>
-
-        <!-- Message -->
-        <div class="form-row">
-            <textarea placeholder="Your Message" rows="4" required></textarea>
-        </div>
-
-        <!-- Book Button -->
-        <div class="form-row">
-            <button type="submit" class="book-btn">Book Appointment</button>
-        </div>
-    </form>
-       </div>
-
-      </div>
-   </section>
+    </div>
+</section>
 
 <section class="testimonial-section">
     <img src="assets/images/testinomial.png" alt="Testimonial" class="testimonial-bg">

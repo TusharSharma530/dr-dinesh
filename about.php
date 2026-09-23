@@ -24,7 +24,7 @@ include 'includes/header.php';
 
             <div class="about-stats">
                 <div class="stat-box">
-                    <span class="stat-number">1500+</span>
+                    <span class="stat-number">10000+</span>
                     <span class="stat-label">Satisfied Patients</span>
                 </div>
             </div>

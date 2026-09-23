@@ -1,76 +1,72 @@
-﻿<p>Sleep disorders are conditions that affect the quality, duration, and timing of sleep. They can significantly impact daily functioning and overall health.</p>
-<p>Dr. Dinesh Singh, a leading neurologist in Meerut, provides advanced sleep disorder diagnosis and personalized treatment.</p>
+﻿<p>Pediatric neurosurgery is a highly specialized medical field dedicated to the surgical management of brain, spine, and nervous system disorders in infants, children, and adolescents. Because a child's nervous system is still developing, conditions affecting the brain and spine require specialized pediatric expertise, delicate surgical techniques, and compassionate, child-centered care.</p>
+<p>Dr. Dinesh Singh, a leading neurosurgeon in Meerut, provides expert evaluation and advanced pediatric neurosurgical care for complex congenital and acquired conditions, ensuring the highest standards of safety and recovery for young patients.</p>
 
-<h2>What are Sleep Disorders?</h2>
-<p>Common sleep disorders include:</p>
+<h2>What is Pediatric Neurosurgery?</h2>
+<p>Pediatric neurosurgery addresses a wide spectrum of congenital malformations, developmental anomalies, tumors, and traumatic injuries unique to children. Conditions treated include:</p>
 <ul>
-    <li>Insomnia</li>
-    <li>Sleep Apnea</li>
-    <li>Restless Leg Syndrome</li>
-    <li>Narcolepsy</li>
-    <li>Parasomnias</li>
-    <li>Circadian Rhythm Disorders</li>
+    <li>Congenital brain and spinal malformations (e.g., spina bifida, tethered cord syndrome)</li>
+    <li>Hydrocephalus (fluid accumulation in the brain)</li>
+    <li>Pediatric brain tumors and spinal tumors</li>
+    <li>Craniosynostosis (premature fusion of skull bones)</li>
+    <li>Pediatric neurotrauma and head injuries</li>
+    <li>Congenital vascular malformations</li>
 </ul>
 
-<h2>Types of Sleep Disorders</h2>
-<h3>1. Insomnia</h3>
-<p>Difficulty falling asleep, staying asleep, or waking up too early.</p>
-<h3>2. Sleep Apnea</h3>
-<p>A serious condition where breathing repeatedly stops and starts during sleep.</p>
-<h3>3. Restless Leg Syndrome</h3>
-<p>An uncontrollable urge to move the legs, usually due to uncomfortable sensations.</p>
-<h3>4. Narcolepsy</h3>
-<p>A neurological disorder that causes excessive daytime sleepiness and sudden sleep attacks.</p>
-
-<h2>Common Causes</h2>
-<h3>1. Stress and Anxiety</h3>
-<p>Emotional stress is one of the most common causes of sleep problems.</p>
-<h3>2. Medical Conditions</h3>
-<p>Chronic pain, asthma, heart disease, and neurological conditions can disrupt sleep.</p>
-<h3>3. Poor Sleep Habits</h3>
-<p>Irregular sleep schedule, screen time before bed, and caffeine intake.</p>
-<h3>4. Obesity</h3>
-<p>Excess weight increases the risk of sleep apnea.</p>
-
-<h2>Symptoms</h2>
+<h2>Indications for Pediatric Neurosurgery</h2>
+<p>Surgery is often necessary to correct anatomical defects, relieve dangerous pressure within the skull, remove tumors, or prevent progressive neurological damage during a child's growth. Indications include:</p>
 <ul>
-    <li>Difficulty falling or staying asleep</li>
-    <li>Excessive daytime sleepiness</li>
-    <li>Loud snoring</li>
-    <li>Breathing interruptions during sleep</li>
-    <li>Restless legs</li>
-    <li>Fatigue and low energy</li>
-    <li>Difficulty concentrating</li>
+    <li>Progressive hydrocephalus requiring shunt placement or endoscopic procedures</li>
+    <li>Spinal cord tethering affecting movement and development</li>
+    <li>Symptomatic brain or spinal tumors</li>
+    <li>Skull deformities restricting normal brain expansion</li>
 </ul>
 
-<h2>Diagnosis</h2>
-<p>Dr. Dinesh Singh uses:</p>
+<h2>Common Causes & Congenital Factors</h2>
+<h3>1. Genetic and Developmental Factors</h3>
+<p>Many pediatric conditions arise from genetic mutations or abnormal embryonic development of the central nervous system.</p>
+<h3>2. Intrauterine Complications</h3>
+<p>Issues during pregnancy can impact fetal brain and spinal cord formation.</p>
+<h3>3. Pediatric Trauma</h3>
+<p>Accidents, falls, or birth-related injuries can lead to acute neurosurgical needs in children.</p>
+<h3>4. Acquired Infections</h3>
+<p>Central nervous system infections can result in secondary complications requiring surgical intervention.</p>
+
+<h2>Symptoms of Pediatric Neurological Conditions</h2>
+<p>Symptoms in infants and children can vary widely by age and may include:</p>
 <ul>
-    <li>Sleep History and Questionnaires</li>
-    <li>Sleep Study (Polysomnography)</li>
-    <li>Actigraphy</li>
-    <li>MRI Brain (if needed)</li>
-    <li>Blood Tests</li>
+    <li>Abnormally rapid head growth or bulging soft spots (fontanelles) in infants</li>
+    <li>Persistent, unexplained vomiting and irritability</li>
+    <li>Delays in developmental milestones or regression in skills</li>
+    <li>Seizures or abnormal muscle tone</li>
+    <li>Difficulty with balance, walking, or coordination</li>
+    <li>Vision changes or abnormal head tilting</li>
+    <li>Back pain or weakness in the lower extremities (for spinal conditions)</li>
 </ul>
 
-<h2>Treatment Options</h2>
-<h3>Medications</h3>
-<p>Sleep aids, melatonin supplements, and medications for underlying conditions.</p>
-<h3>CPAP Therapy</h3>
-<p>Machines used for sleep apnea to keep airways open during sleep.</p>
-<h3>Cognitive Behavioral Therapy</h3>
-<p>CBT for insomnia helps change thoughts and behaviors that interfere with sleep.</p>
-<h3>Lifestyle Changes</h3>
-<p>Maintaining a regular sleep schedule, avoiding screens before bed, and creating a comfortable sleep environment.</p>
-
-<h2>Tips for Better Sleep</h2>
+<h2>Diagnosis in Pediatric Neurosurgery</h2>
+<p>Dr. Dinesh Singh utilizes child-friendly, advanced diagnostic modalities to ensure safety and precision:</p>
 <ul>
-    <li>Go to bed and wake up at the same time daily</li>
-    <li>Avoid caffeine and heavy meals before bed</li>
-    <li>Create a dark, quiet, and cool sleep environment</li>
-    <li>Exercise regularly but not close to bedtime</li>
-    <li>Manage stress with relaxation techniques</li>
+    <li><strong>MRI Brain & Spine:</strong> High-resolution imaging without radiation to evaluate delicate brain and spinal structures.</li>
+    <li><strong>CT Scan:</strong> Utilized selectively for rapid assessment of skull bones or acute trauma.</li>
+    <li><strong>Prenatal Ultrasound & Imaging:</strong> Evaluating congenital anomalies prior to or immediately following birth.</li>
+    <li><strong>Comprehensive Developmental Assessments:</strong> Working closely with pediatric specialists to evaluate neurological function.</li>
+</ul>
+
+<h2>Pediatric Neurosurgical Treatment Options</h2>
+<h3>Microscopic & Endoscopic Surgery</h3>
+<p>Advanced, minimally invasive techniques designed to operate within a child's small and delicate anatomical structures with minimal disruption to healthy tissue.</p>
+<h3>Shunt Systems & ETV</h3>
+<p>Treatment of hydrocephalus using specialized ventricular shunts or endoscopic third ventriculostomy to drain excess cerebrospinal fluid.</p>
+<h3>Reconstructive Cranial Surgery</h3>
+<p>Corrective procedures for conditions like craniosynostosis to allow normal brain growth and skull contouring.</p>
+
+<h2>Recovery and Rehabilitation</h2>
+<p>Recovery for pediatric patients involves specialized post-operative care in a dedicated pediatric or neuro-intensive environment:</p>
+<ul>
+    <li>Gentle, specialized nursing care tailored to infants and children</li>
+    <li>Close monitoring of neurological development and surgical healing</li>
+    <li>Multidisciplinary pediatric rehabilitation (physical, occupational, and speech therapy) to support long-term growth and development</li>
 </ul>
 
 <h2>Conclusion</h2>
-<p>Sleep disorders can significantly affect your health and quality of life. With proper diagnosis, treatment, and lifestyle modifications, healthy sleep can be restored. Dr. Dinesh Singh provides comprehensive sleep disorder treatment and neurological care to help patients achieve better sleep and overall well-being.</p>
+<p>Neurological conditions in children demand exceptional surgical skill, patience, and specialized expertise. Early diagnosis and precise intervention can profoundly shape a child's future health and development. Dr. Dinesh Singh provides compassionate, comprehensive pediatric neurosurgical care to help young patients overcome complex conditions and achieve a healthy, active life.</p>

@@ -63,12 +63,12 @@
                     <div class="nav-dropdown">
                         <a href="services.php">Services <i class="bi bi-chevron-down"></i></a>
                         <div class="dropdown-menu">
-                            <a href="services.php?service=stroke">Stroke Management</a>
-                            <a href="services.php?service=migraine">Migraine Treatment</a>
-                            <a href="services.php?service=neuromuscular">Neuromuscular Treatment</a>
-                            <a href="services.php?service=paralysis">Paralysis Treatment</a>
-                            <a href="services.php?service=epilepsy">Epilepsy Treatment</a>
-                            <a href="services.php?service=sleep">Sleep Disorder</a>
+                            <a href="services.php?service=brain-tumor">Brain Tumor Surgery</a>
+                            <a href="services.php?service=spine-surgery">Spine Surgery</a>
+                            <a href="services.php?service=aneurysm">Aneurysm Clipping</a>
+                            <a href="services.php?service=dbs">Deep Brain Stimulation</a>
+                            <a href="services.php?service=trauma">Neurotrauma Surgery</a>
+                            <a href="services.php?service=pediatric">Pediatric Neurosurgery</a>
                         </div>
                     </div>
                     <a href="gallery.php">Gallery</a>
