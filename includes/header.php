@@ -42,7 +42,7 @@
                         <span class="separator">|</span>
                         <span>
                             <i class="bi bi-telephone-fill"></i>
-                            Phone : (+91) 7982156581
+                            Phone : (+91) 7982156581 
                         </span>
                         <span class="separator">|</span>
                         <div class="social-icons">

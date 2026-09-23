@@ -24,6 +24,7 @@
                     <div class="info-text">
                         <strong>Phone Number</strong>
                         <p>+91 7982156581 </p>
+                        <p>+91 7906246467 </p>
                     </div>
                 </div>
             </div>
@@ -91,10 +92,10 @@
 
 <!-- Floating Icons -->
 <div class="floating-icons">
-    <a href="tel:+918679998864" class="floating-icon phone-icon">
+    <a href="tel:+917982156581" class="floating-icon phone-icon">
         <i class="bi bi-telephone-fill"></i>
     </a>
-    <a href="https://wa.me/918679998864" target="_blank" class="floating-icon whatsapp-icon">
+    <a href="https://wa.me/917906246467" target="_blank" class="floating-icon whatsapp-icon">
         <i class="bi bi-whatsapp"></i>
     </a>
 </div>

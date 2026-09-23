@@ -1160,9 +1160,35 @@ img {
     transform: translateX(-100px);
 }
 
+.testimonial-slide.exit-right {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
 .testimonial-slide.enter-right {
     opacity: 1;
     transform: translateX(0);
+    pointer-events: all;
+}
+
+.testimonial-slide.enter-left {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+}
+
+.testimonial-slide.prepare-right {
+    transition: none;
+    opacity: 0;
+    transform: translateX(100px);
+    pointer-events: all;
+}
+
+.testimonial-slide.prepare-left {
+    transition: none;
+    opacity: 0;
+    transform: translateX(-100px);
+    pointer-events: all;
 }
 
 .testimonial-box {

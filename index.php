@@ -17,7 +17,7 @@ include 'includes/header.php';
 
             <p class="about-degree">MCh - Neuro Surgery, MBBS, MS - General Surgery</p>
 
-            <h3>Advanced Neurosurgery Care with Accurate Diagnosis & Personalized Treatment</h3>
+            <h3>Advanced Neurosurgical Care with Accurate Diagnosis & Personalized Treatment</h3>
 
             <p>
                 Dr. Dinesh Singh is a highly qualified Neurosurgeon with 9 years of experience, practising at Brain And Spine Clinic. He specializes in diagnosing and treating a wide range of neurosurgical disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurosurgical health and quality of life.
@@ -230,12 +230,23 @@ function changeSlide(direction) {
     const nextIndex = (currentSlide + direction + slides.length) % slides.length;
     const next = slides[nextIndex];
 
-    current.classList.add('exit-left');
-    next.classList.add('enter-right');
+    if (direction > 0) {
+        next.classList.add('prepare-left');
+        void next.offsetWidth;
+        current.classList.add('exit-right');
+        next.classList.remove('prepare-left');
+        next.classList.add('enter-left');
+    } else {
+        next.classList.add('prepare-right');
+        void next.offsetWidth;
+        current.classList.add('exit-left');
+        next.classList.remove('prepare-right');
+        next.classList.add('enter-right');
+    }
 
     setTimeout(() => {
-        current.classList.remove('active', 'exit-left');
-        next.classList.remove('enter-right');
+        current.classList.remove('active', 'exit-left', 'exit-right');
+        next.classList.remove('enter-right', 'enter-left', 'prepare-right', 'prepare-left');
         next.classList.add('active');
         currentSlide = nextIndex;
         isAnimating = false;

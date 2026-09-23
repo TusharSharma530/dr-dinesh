@@ -16,7 +16,8 @@ include 'includes/header.php';
                 <i class="bi bi-telephone-fill"></i>
                 <div>
                     <h4>Phone Number</h4>
-                    <p>+91 7982156581</p>
+                    <p>+91 7982156581 <br>+91 7906246467</p>
+                  
                 </div>
             </div>
             

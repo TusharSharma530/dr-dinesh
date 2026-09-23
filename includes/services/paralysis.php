@@ -42,7 +42,7 @@
 <h2>Evaluation & Diagnosis for DBS</h2>
 <p>Dr. Dinesh Singh conducts a rigorous multidisciplinary evaluation to determine if a patient is an ideal candidate for DBS:</p>
 <ul>
-    <li><strong>Detailed Neurosurgical & Neurosurgical Assessment:</strong> Evaluating disease progression and response to medications.</li>
+    <li><strong>Detailed  Neurosurgical Assessment:</strong> Evaluating disease progression and response to medications.</li>
     <li><strong>MRI Brain:</strong> High-resolution neuroimaging to map deep brain targets precisely and rule out structural abnormalities.</li>
     <li><strong>Neuropsychological Testing:</strong> Assessing cognitive function and mental health to ensure surgical suitability.</li>
     <li><strong>Movement Trials:</strong> Observing motor performance during "on" and "off" medication states.</li>
