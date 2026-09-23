@@ -13,7 +13,7 @@
 </ul>
 
 <h2>Indications for Pediatric Neurosurgery</h2>
-<p>Surgery is often necessary to correct anatomical defects, relieve dangerous pressure within the skull, remove tumors, or prevent progressive neurological damage during a child's growth. Indications include:</p>
+<p>Surgery is often necessary to correct anatomical defects, relieve dangerous pressure within the skull, remove tumors, or prevent progressive neurosurgical damage during a child's growth. Indications include:</p>
 <ul>
     <li>Progressive hydrocephalus requiring shunt placement or endoscopic procedures</li>
     <li>Spinal cord tethering affecting movement and development</li>
@@ -31,7 +31,7 @@
 <h3>4. Acquired Infections</h3>
 <p>Central nervous system infections can result in secondary complications requiring surgical intervention.</p>
 
-<h2>Symptoms of Pediatric Neurological Conditions</h2>
+<h2>Symptoms of Pediatric neurosurgical Conditions</h2>
 <p>Symptoms in infants and children can vary widely by age and may include:</p>
 <ul>
     <li>Abnormally rapid head growth or bulging soft spots (fontanelles) in infants</li>
@@ -49,7 +49,7 @@
     <li><strong>MRI Brain & Spine:</strong> High-resolution imaging without radiation to evaluate delicate brain and spinal structures.</li>
     <li><strong>CT Scan:</strong> Utilized selectively for rapid assessment of skull bones or acute trauma.</li>
     <li><strong>Prenatal Ultrasound & Imaging:</strong> Evaluating congenital anomalies prior to or immediately following birth.</li>
-    <li><strong>Comprehensive Developmental Assessments:</strong> Working closely with pediatric specialists to evaluate neurological function.</li>
+    <li><strong>Comprehensive Developmental Assessments:</strong> Working closely with pediatric specialists to evaluate neurosurgical function.</li>
 </ul>
 
 <h2>Pediatric Neurosurgical Treatment Options</h2>
@@ -64,9 +64,9 @@
 <p>Recovery for pediatric patients involves specialized post-operative care in a dedicated pediatric or neuro-intensive environment:</p>
 <ul>
     <li>Gentle, specialized nursing care tailored to infants and children</li>
-    <li>Close monitoring of neurological development and surgical healing</li>
+    <li>Close monitoring of neurosurgical development and surgical healing</li>
     <li>Multidisciplinary pediatric rehabilitation (physical, occupational, and speech therapy) to support long-term growth and development</li>
 </ul>
 
 <h2>Conclusion</h2>
-<p>Neurological conditions in children demand exceptional surgical skill, patience, and specialized expertise. Early diagnosis and precise intervention can profoundly shape a child's future health and development. Dr. Dinesh Singh provides compassionate, comprehensive pediatric neurosurgical care to help young patients overcome complex conditions and achieve a healthy, active life.</p>
+<p>neurosurgical conditions in children demand exceptional surgical skill, patience, and specialized expertise. Early diagnosis and precise intervention can profoundly shape a child's future health and development. Dr. Dinesh Singh provides compassionate, comprehensive pediatric neurosurgical care to help young patients overcome complex conditions and achieve a healthy, active life.</p>

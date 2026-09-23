@@ -7,7 +7,7 @@ $blog = isset($_GET['blog']) ? $_GET['blog'] : '';
 
 $blogs = [
     'paralysis' => ['title' => 'Paralysis: Causes, Symptoms, Treatment & Recovery', 'image' => 'paralysis.png', 'alt' => 'Paralysis', 'day' => '19', 'month' => 'MAY'],
-    'summer'    => ['title' => 'Summer Heat and Neurological Health: Protect Your Brain This Summer', 'image' => 'summer heat.png', 'alt' => 'Summer Heat', 'day' => '19', 'month' => 'JUN'],
+    'summer'    => ['title' => 'Summer Heat and Neurosurgical Care: Protect Your Brain This Summer', 'image' => 'summer heat.png', 'alt' => 'Summer Heat', 'day' => '19', 'month' => 'JUN'],
     'migraine'  => ['title' => 'Migraine Treatment: Recurring Headaches Should Not Be Ignored', 'image' => 'maigraine.png', 'alt' => 'Migraine Treatment', 'day' => '10', 'month' => 'JUL'],
 ];
 

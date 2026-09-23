@@ -14,7 +14,7 @@
 <ul>
     <li><strong>Tumor Removal:</strong> To remove as much of the tumor as possible (resection) without damaging critical brain areas.</li>
     <li><strong>Tissue Biopsy:</strong> To obtain a sample for a pathologist to determine the tumor's specific type and grade, guiding further treatment.</li>
-    <li><strong>Symptom Relief:</strong> To reduce intracranial pressure caused by the tumor and alleviate associated symptoms like headaches, seizures, or neurological deficits.</li>
+    <li><strong>Symptom Relief:</strong> To reduce intracranial pressure caused by the tumor and alleviate associated symptoms like headaches, seizures, or neurosurgical deficits.</li>
 </ul>
 
 <h2>Common Brain Tumor Symptoms</h2>
@@ -58,4 +58,4 @@
 </ul>
 
 <h2>Conclusion</h2>
-<p>A brain tumor diagnosis is a serious health challenge that requires a highly skilled neurosurgical team. Early diagnosis and expert surgical intervention are key to achieving the best possible outcomes. Dr. Dinesh Singh provides comprehensive brain tumor management and personalized neurosurgical care to help patients recover and restore their neurological health.</p>
+<p>A brain tumor diagnosis is a serious health challenge that requires a highly skilled neurosurgical team. Early diagnosis and expert surgical intervention are key to achieving the best possible outcomes. Dr. Dinesh Singh provides comprehensive brain tumor management and personalized neurosurgical care to help patients recover and restore their neurosurgical health.</p>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr Dinesh | Neurology & Brain Care</title>
-    <meta name="description" content="Professional neurological care and consultation.">
+    <title>Dr Dinesh | Neurosurgical & Brain Care</title>
+    <meta name="description" content="Professional neurosurgical care and consultation.">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -109,12 +109,12 @@
                 <input type="time" required>
                 <select required>
                 <option value="" disabled selected>Select Services</option>
-                <option value="stroke">Stroke Management</option>
-                <option value="migraine">Migraine Treatment</option>
-                <option value="neuromuscular">Neuromuscular Treatment</option>
-                <option value="paralysis">Paralysis Treatment</option>
-                <option value="epilepsy">Epilepsy Treatment</option>
-                <option value="sleep">Sleep Disorder</option>
+                <option value="stroke">Brain Tumor Surgery</option>
+                <option value="migraine">Spine Surgery</option>
+                <option value="neuromuscular">Aneurysm Clipping</option>
+                <option value="paralysis">Deep Brain Stimulation</option>
+                <option value="epilepsy">Neurotrauma Surgery</option>
+                <option value="sleep">Pediatric Neurosurgery</option>
                 </select>
             </div>
 

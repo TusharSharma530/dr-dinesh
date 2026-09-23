@@ -1,4 +1,4 @@
-<p>Neurotrauma encompasses severe injuries to the brain, skull, or spinal cord resulting from physical trauma such as accidents, falls, or sports injuries. Because trauma to the central nervous system can lead to rapid swelling, bleeding, and permanent neurological deficits, neurotrauma surgery is a critical, time-sensitive intervention designed to relieve pressure, stop bleeding, and repair damaged tissue.</p>
+<p>Neurotrauma encompasses severe injuries to the brain, skull, or spinal cord resulting from physical trauma such as accidents, falls, or sports injuries. Because trauma to the central nervous system can lead to rapid swelling, bleeding, and permanent neurosurgical deficits, neurotrauma surgery is a critical, time-sensitive intervention designed to relieve pressure, stop bleeding, and repair damaged tissue.</p>
 <p>Dr. Dinesh Singh, a leading neurosurgeon in Meerut, provides expert evaluation and advanced surgical care for complex neurotrauma cases, ensuring meticulous patient-centered intervention.</p>
 
 <h2>What is Neurotrauma?</h2>
@@ -48,7 +48,7 @@
     <li><strong>CT Scan (Computed Tomography):</strong> The primary emergency imaging tool used to quickly identify skull fractures, bleeding, swelling, and blood clots in the brain.</li>
     <li><strong>MRI Scan:</strong> Used for detailed evaluation of soft tissues, brain damage, and spinal cord injuries once the patient is stabilized.</li>
     <li><strong>X-rays:</strong> To check for fractures in the cervical spine and skeletal system.</li>
-    <li><strong>Neurological Assessments:</strong> Continuous monitoring using the Glasgow Coma Scale (GCS) and other clinical evaluations.</li>
+    <li><strong>Neurosurgical Assessments:</strong> Continuous monitoring using the Glasgow Coma Scale (GCS) and other clinical evaluations.</li>
 </ul>
 
 <h2>Neurotrauma Treatment & Surgical Options</h2>

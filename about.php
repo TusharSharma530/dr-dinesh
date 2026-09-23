@@ -19,7 +19,7 @@ include 'includes/header.php';
             <h3>Advanced Neurosurgery Care with Accurate Diagnosis & Personalized Treatment</h3>
 
             <p>
-                Dr. Dinesh Singh is a highly qualified Neurosurgeon with 9 years of experience, practising at Brain And Spine Clinic. He specializes in diagnosing and treating a wide range of neurological disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurological health and quality of life.
+                Dr. Dinesh Singh is a highly qualified Neurosurgeon with 9 years of experience, practising at Brain And Spine Clinic. He specializes in diagnosing and treating a wide range of neurosurgical disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurosurgical health and quality of life.
             </p>
 
             <div class="about-stats">
@@ -31,7 +31,7 @@ include 'includes/header.php';
 
             <ul class="about-list">
                 <li><i class="bi bi-check-circle-fill"></i> Expert in Stroke, Epilepsy & Migraine Treatment</li>
-                <li><i class="bi bi-check-circle-fill"></i> Advanced Neurological Evaluation & Diagnosis</li>
+                <li><i class="bi bi-check-circle-fill"></i> Advanced Neurosurgical Evaluation & Diagnosis</li>
                 <li><i class="bi bi-check-circle-fill"></i> Personalized & Evidence-Based Care</li>
                 <li><i class="bi bi-check-circle-fill"></i> Compassionate & Patient-Centered Approach</li>
             </ul>

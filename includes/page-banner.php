@@ -10,7 +10,7 @@ $pageBreadcrumb = $pageBreadcrumb ?? 'Home';
         <div class="container">
             <h1><?php echo $pageTitle; ?></h1>
             <div class="page-breadcrumb">
-                <span>NEUROLOGY</span>
+                <span>NEUROSURGICAL</span>
                 <i class="bi bi-chevron-right"></i>
                 <span><?php echo strtoupper($pageBreadcrumb); ?></span>
             </div>

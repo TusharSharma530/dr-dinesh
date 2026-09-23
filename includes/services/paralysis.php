@@ -1,8 +1,8 @@
-<p>Deep Brain Stimulation (DBS) is an advanced neurosurgical procedure used to treat a variety of disabling neurological conditions, most commonly movement disorders like Parkinson's disease, essential tremor, and dystonia. The procedure involves implanting electrodes deep within specific areas of the brain, which are connected to a neurostimulator device placed under the skin to regulate abnormal electrical signals.</p>
-<p>Dr. Dinesh Singh, a leading neurosurgeon in Meerut, provides expert evaluation and advanced surgical interventions for complex neurological disorders, ensuring meticulous patient-centered care.</p>
+<p>Deep Brain Stimulation (DBS) is an advanced neurosurgical procedure used to treat a variety of disabling neurosurgical conditions, most commonly movement disorders like Parkinson's disease, essential tremor, and dystonia. The procedure involves implanting electrodes deep within specific areas of the brain, which are connected to a neurostimulator device placed under the skin to regulate abnormal electrical signals.</p>
+<p>Dr. Dinesh Singh, a leading neurosurgeon in Meerut, provides expert evaluation and advanced surgical interventions for complex neurosurgical disorders, ensuring meticulous patient-centered care.</p>
 
 <h2>What is Deep Brain Stimulation?</h2>
-<p>DBS is a targeted neuromodulation therapy that helps normalize abnormal brain activity caused by neurological disorders. While it does not cure the underlying disease, it can significantly reduce symptoms, improve motor function, and enhance quality of life when medications become less effective.</p>
+<p>DBS is a targeted neuromodulation therapy that helps normalize abnormal brain activity caused by neurosurgical disorders. While it does not cure the underlying disease, it can significantly reduce symptoms, improve motor function, and enhance quality of life when medications become less effective.</p>
 <p>Conditions treated with DBS include:</p>
 <ul>
     <li>Parkinson's disease</li>
@@ -26,7 +26,7 @@
 <p>Loss of dopamine-producing cells in structures like the basal ganglia leads to Parkinson's disease symptoms.</p>
 <h3>2. Genetic & Idiopathic Factors</h3>
 <p>Many essential tremors and dystonias arise from hereditary patterns or unknown causes affecting brain circuitry.</p>
-<h3>3. Chronic Neurological Disruption</h3>
+<h3>3. Chronic Neurosurgical Disruption</h3>
 <p>Abnormal electrical signaling pathways that disrupt normal motor control and coordination.</p>
 
 <h2>Symptoms Addressed by DBS</h2>
@@ -42,7 +42,7 @@
 <h2>Evaluation & Diagnosis for DBS</h2>
 <p>Dr. Dinesh Singh conducts a rigorous multidisciplinary evaluation to determine if a patient is an ideal candidate for DBS:</p>
 <ul>
-    <li><strong>Detailed Neurological & Neurosurgical Assessment:</strong> Evaluating disease progression and response to medications.</li>
+    <li><strong>Detailed Neurosurgical & Neurosurgical Assessment:</strong> Evaluating disease progression and response to medications.</li>
     <li><strong>MRI Brain:</strong> High-resolution neuroimaging to map deep brain targets precisely and rule out structural abnormalities.</li>
     <li><strong>Neuropsychological Testing:</strong> Assessing cognitive function and mental health to ensure surgical suitability.</li>
     <li><strong>Movement Trials:</strong> Observing motor performance during "on" and "off" medication states.</li>

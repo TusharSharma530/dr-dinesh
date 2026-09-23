@@ -17,7 +17,7 @@
     <li>Severe or persistent headaches due to blocked cerebrospinal fluid flow</li>
     <li>Vision problems, particularly difficulty looking upward (Parinaud syndrome)</li>
     <li>Balance and coordination issues</li>
-    <li>Progressive neurological deficits</li>
+    <li>Progressive neurosurgical deficits</li>
 </ul>
 
 <h2>Common Symptoms of Pineal Region Tumors</h2>
@@ -52,7 +52,7 @@
 <h2>Recovery and Rehabilitation</h2>
 <p>Recovery from pineal surgery requires close monitoring in a specialized neuro-intensive care unit (ICU). Post-treatment care involves:</p>
 <ul>
-    <li>Regular neurological evaluations</li>
+    <li>Regular neurosurgical evaluations</li>
     <li>Follow-up MRI scans to monitor healing and ensure no recurrence</li>
     <li>Supportive rehabilitation if temporary balance or vision adjustments are needed</li>
 </ul>

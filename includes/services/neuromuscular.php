@@ -56,7 +56,7 @@
 <h3>Endovascular Coiling</h3>
 <p>A minimally invasive catheter-based approach where tiny platinum coils are threaded into the aneurysm to block blood flow (evaluated based on case suitability).</p>
 <h3>Medical & Intensive Care Management</h3>
-<p>Rigorous blood pressure control, pain management, and specialized neurological care, especially following a rupture.</p>
+<p>Rigorous blood pressure control, pain management, and specialized neurosurgical care, especially following a rupture.</p>
 
 <h2>Recovery and Rehabilitation</h2>
 <p>Recovery depends heavily on whether the aneurysm had ruptured prior to surgery and the patient's overall clinical condition:</p>

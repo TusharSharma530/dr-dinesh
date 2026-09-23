@@ -20,7 +20,7 @@ include 'includes/header.php';
             <h3>Advanced Neurosurgery Care with Accurate Diagnosis & Personalized Treatment</h3>
 
             <p>
-                Dr. Dinesh Singh is a highly qualified Neurosurgeon with 9 years of experience, practising at Brain And Spine Clinic. He specializes in diagnosing and treating a wide range of neurological disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurological health and quality of life.
+                Dr. Dinesh Singh is a highly qualified Neurosurgeon with 9 years of experience, practising at Brain And Spine Clinic. He specializes in diagnosing and treating a wide range of neurosurgical disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurosurgical health and quality of life.
             </p>
 
             <a href="about.php" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
@@ -173,7 +173,7 @@ include 'includes/header.php';
                     <div class="testimonial-slide active">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p>"Excellent care and professional treatment. Dr. Dinesh truly listens to his patients and provides the best neurological care. Highly recommended!"</p>
+                            <p>"Excellent care and professional treatment. Dr. Dinesh truly listens to his patients and provides the best neurosurgical care. Highly recommended!"</p>
                             <div class="testimonial-author">
                                 <span class="author-name">- Rajesh Kumar</span>
                             </div>
@@ -352,7 +352,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 </div>
                 <div class="blog-card-body">
-                    <h3>Summer Heat and Neurological Health: Protect Your Brain This Summer</h3>
+                    <h3>Summer Heat and Neurosurgical Care: Protect Your Brain This Summer</h3>
                     <span class="blog-read-more">
                         <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
                         Read More
