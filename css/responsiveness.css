@@ -426,19 +426,118 @@ body {
         font-size: 27px;
     }
 
+    /* =====================================================
+       SERVICES - MOBILE SWIPE
+    ===================================================== */
+
+    .services-cards {
+        display: flex;
+        flex-wrap: nowrap;
+
+        width: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        gap: 15px;
+
+        padding: 5px 2px 15px;
+
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .services-cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .services-cards .service-card {
+        flex: 0 0 82%;
+        max-width: 82%;
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    /* =====================================================
+       GALLERY - MOBILE SWIPE
+    ===================================================== */
+
+    .gallery-cards {
+        display: flex;
+        flex-wrap: nowrap;
+
+        width: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        gap: 15px;
+
+        padding: 5px 2px 15px;
+
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .gallery-cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery-cards .gallery-card {
+        flex: 0 0 82%;
+        max-width: 82%;
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    /* =====================================================
+       BLOGS - MOBILE SWIPE
+    ===================================================== */
+
     .blog-cards {
-        grid-template-columns: 1fr;
-        gap: 25px;
+        display: flex;
+        flex-wrap: nowrap;
+
+        width: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        gap: 15px;
+
+        padding: 5px 2px 15px;
+
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
     }
 
-    .blog-card-img img {
-        height: 220px;
+    .blog-cards::-webkit-scrollbar {
+        display: none;
     }
 
-    .consultation-form-box,
-    .form-row {
-        gap: 12px;
+    .blog-cards .blog-card {
+        flex: 0 0 82%;
+        max-width: 82%;
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
+
+    /* ---------- TESTIMONIAL ---------- */
 
     .testimonial-left h2 {
         font-size: 27px;
@@ -446,6 +545,11 @@ body {
 
     .testimonial-box {
         padding: 24px 20px;
+    }
+
+    .consultation-form-box,
+    .form-row {
+        gap: 12px;
     }
 
     .map-section iframe {
@@ -571,15 +675,25 @@ body {
         font-size: 14px;
     }
 
-    /* One card per row */
-    .services-cards {
-        grid-template-columns: 1fr;
-    }
+    /* =====================================================
+       SERVICES / GALLERY / BLOGS
+       MOBILE SWIPE SIZE
+    ===================================================== */
 
     .services-cards,
-    .gallery-cards {
-        gap: 15px;
+    .gallery-cards,
+    .blog-cards {
+        gap: 14px;
     }
+
+    .services-cards .service-card,
+    .gallery-cards .gallery-card,
+    .blog-cards .blog-card {
+        flex: 0 0 86%;
+        max-width: 86%;
+    }
+
+    /* ---------- SERVICE CARD ---------- */
 
     .service-card-body {
         padding: 15px 16px;
@@ -588,6 +702,8 @@ body {
     .service-card-body h3 {
         font-size: 15px;
     }
+
+    /* ---------- BLOG ---------- */
 
     .blog-card-img img {
         height: 200px;
@@ -783,6 +899,13 @@ body {
         gap: 14px;
     }
 
+    .services-cards .service-card,
+    .gallery-cards .gallery-card,
+    .blog-cards .blog-card {
+        flex-basis: 88%;
+        max-width: 88%;
+    }
+
     .testimonial-box {
         padding: 20px 15px;
     }
@@ -804,7 +927,13 @@ body {
         font-size: 17px;
     }
 }
+
+/* =========================================================
+   APPOINTMENT MODAL - EXTRA MOBILE ADJUSTMENTS
+========================================================= */
+
 @media (max-width: 575px) {
+
     .appointment-modal-content {
         padding: 22px 15px;
     }
