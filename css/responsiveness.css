@@ -1,0 +1,827 @@
+/* =========================================================
+   BASE / GLOBAL
+========================================================= */
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    padding-inline: 20px;
+}
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--primary-color);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    outline: none;
+}
+
+/* =========================================================
+   LAPTOPS / SMALL DESKTOPS
+   <= 1199px
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .nav-links {
+        gap: 22px;
+        padding-left: 15px;
+    }
+
+    .main-header .appointment-btn,
+    .main-header.scrolled .appointment-btn {
+        padding: 12px 22px;
+        font-size: 13px;
+    }
+
+    .about-text h2,
+    .services-header h2,
+    .gallery-header h2,
+    .consultation-form h2 {
+        font-size: 32px;
+    }
+
+    .services-header,
+    .gallery-header {
+        margin-bottom: 40px;
+    }
+
+    .services-cards,
+    .gallery-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+/* =========================================================
+   TABLETS / SMALL LAPTOPS
+   <= 991px
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* ---------- HEADER ---------- */
+
+    body {
+        padding-top: 90px;
+    }
+
+    .top-bar {
+        display: none;
+    }
+
+    .logo {
+        border-right: none;
+        padding: 0;
+    }
+
+    .header-right {
+        justify-content: center;
+    }
+
+    .main-header .navbar,
+    .main-header.scrolled .navbar {
+        position: static;
+        justify-content: flex-end;
+        gap: 10px;
+        padding: 6px 0;
+    }
+
+    .main-header .appointment-btn,
+    .main-header.scrolled .appointment-btn {
+        height: 44px;
+        padding: 0 20px;
+        font-size: 13px;
+    }
+
+    /* ---------- HAMBURGER ---------- */
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    /* ---------- MOBILE NAV ---------- */
+
+    .main-header .nav-links,
+    .main-header.scrolled .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1001;
+
+        width: 100%;
+        max-height: calc(100vh - 80px);
+
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+
+        padding: 8px 20px 18px;
+
+        background: #fff;
+        border-top: 1px solid #e8eef3;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+
+        overflow-y: auto;
+    }
+
+    .main-header .nav-links.open,
+    .main-header.scrolled .nav-links.open {
+        display: flex;
+    }
+
+    .main-header .nav-links > a,
+    .main-header .nav-links .nav-dropdown > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 13px 0;
+
+        border-bottom: 1px solid #eef2f6;
+
+        font-size: 15px;
+    }
+
+    .main-header .nav-links a.active::after {
+        display: none;
+    }
+
+    /* ---------- SERVICES DROPDOWN ---------- */
+
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .nav-dropdown > .services-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+
+        cursor: pointer;
+    }
+
+    .nav-dropdown > .services-toggle i {
+        transition: transform 0.25s ease;
+    }
+
+    .nav-dropdown .dropdown-menu {
+        display: none !important;
+
+        position: static !important;
+
+        width: 100%;
+        min-width: 0;
+
+        margin: 4px 0 8px;
+        padding: 4px 0 6px 12px;
+
+        background: #f9fbfd;
+        border-radius: 8px;
+
+        box-shadow: none;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav-dropdown.open .dropdown-menu {
+        display: block !important;
+    }
+
+    .nav-dropdown.open > .services-toggle i {
+        transform: rotate(180deg);
+    }
+
+    .nav-dropdown .dropdown-menu a {
+        display: block;
+
+        width: 100%;
+        padding: 10px 12px;
+
+        font-size: 14px;
+        white-space: normal;
+
+        border: 0;
+    }
+
+    .nav-dropdown .dropdown-menu a:hover {
+        padding-left: 16px;
+    }
+
+    /* ---------- HOMEPAGE ---------- */
+
+    .about-section,
+    .services-section,
+    .consultation-section,
+    .gallery-section {
+        padding-block: 45px;
+    }
+
+    .about-content,
+    .consultation-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+    }
+
+    .about-text,
+    .about-image,
+    .consultation-form,
+    .consultation-image {
+        width: 100%;
+    }
+
+    .about-image img,
+    .consultation-image img {
+        display: block;
+        max-width: 480px;
+        margin-inline: auto;
+    }
+
+    .consultation-form-box {
+        text-align: left;
+    }
+
+    .services-header,
+    .gallery-header {
+        margin-bottom: 35px;
+    }
+
+    .services-cards,
+    .gallery-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .blog-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    /* ---------- TESTIMONIAL ---------- */
+
+    .testimonial-bg {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .testimonial-overlay {
+        position: relative;
+
+        height: auto;
+        padding-block: 45px;
+
+        background: rgba(0, 0, 0, 0.55);
+    }
+
+    .testimonial-content {
+        flex-direction: column;
+        gap: 25px;
+
+        text-align: center;
+    }
+
+    .testimonial-left,
+    .testimonial-right {
+        width: 100%;
+    }
+
+    .testimonial-left h2 {
+        font-size: 30px;
+    }
+
+    .testimonial-nav {
+        justify-content: center;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .bottom-bar-content {
+        gap: 20px;
+    }
+
+    .bottom-info {
+        gap: 25px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+}
+
+/* =========================================================
+   TABLETS / LARGE PHONES
+   <= 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .bottom-bar-content {
+        align-items: flex-start;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .bottom-bar-left {
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .bottom-logo,
+    .bottom-divider {
+        align-self: flex-start;
+    }
+
+    .bottom-info {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .bottom-info-item {
+        width: 100%;
+
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        text-align: left;
+    }
+
+    .bottom-bar-right {
+        align-self: flex-start;
+    }
+}
+
+/* =========================================================
+   SMALL TABLETS / LARGE PHONES
+   <= 767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+    body {
+        padding-top: 96px;
+    }
+
+    .main-header .navbar,
+    .main-header.scrolled .navbar {
+        padding-block: 6px;
+    }
+
+    /* ---------- HOMEPAGE ---------- */
+
+    .about-section,
+    .services-section,
+    .consultation-section,
+    .gallery-section {
+        padding-block: 35px;
+    }
+
+    .services-header,
+    .gallery-header {
+        margin-bottom: 28px;
+    }
+
+    .about-text h2,
+    .services-header h2,
+    .gallery-header h2,
+    .consultation-form h2 {
+        font-size: 27px;
+    }
+
+    .blog-cards {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .blog-card-img img {
+        height: 220px;
+    }
+
+    .consultation-form-box,
+    .form-row {
+        gap: 12px;
+    }
+
+    .testimonial-left h2 {
+        font-size: 27px;
+    }
+
+    .testimonial-box {
+        padding: 24px 20px;
+    }
+
+    .map-section iframe {
+        height: 300px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .bottom-info {
+        gap: 18px;
+    }
+
+    .info-text strong {
+        font-size: 16px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-column h3 {
+        font-size: 20px;
+    }
+
+    .copyright-content {
+        flex-direction: column;
+        gap: 6px;
+
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   MOBILE PHONES
+   <= 575px
+========================================================= */
+
+@media (max-width: 575px) {
+
+    body {
+        padding-top: 78px;
+    }
+
+    .container {
+        padding-inline: 15px;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    .main-header .appointment-btn,
+    .main-header.scrolled .appointment-btn {
+        height: 40px;
+        padding-inline: 13px;
+
+        font-size: 12px;
+        letter-spacing: 0.3px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+
+    .main-header .nav-links,
+    .main-header.scrolled .nav-links {
+        padding: 6px 15px 15px;
+        max-height: calc(100vh - 80px);
+    }
+
+    .main-header .nav-links > a,
+    .main-header .nav-links .nav-dropdown > a {
+        padding-block: 12px;
+        font-size: 14px;
+    }
+
+    /* ---------- HOMEPAGE ---------- */
+
+    .about-section,
+    .services-section,
+    .consultation-section,
+    .gallery-section {
+        padding-block: 20px;
+    }
+
+    .about-content,
+    .consultation-content {
+        gap: 22px;
+    }
+
+    .about-text h2,
+    .services-header h2,
+    .gallery-header h2,
+    .consultation-form h2 {
+        font-size: 21px;
+    }
+
+    .about-degree {
+        font-size: 13px;
+    }
+
+    .about-text h3 {
+        font-size: 15px;
+    }
+
+    .about-text > p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .read-more-btn {
+        padding: 11px 22px;
+        font-size: 14px;
+    }
+
+    .services-header,
+    .gallery-header {
+        margin-bottom: 25px;
+    }
+
+    .consultation-form h3 {
+        font-size: 14px;
+    }
+
+    /* One card per row */
+    .services-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .services-cards,
+    .gallery-cards {
+        gap: 15px;
+    }
+
+    .service-card-body {
+        padding: 15px 16px;
+    }
+
+    .service-card-body h3 {
+        font-size: 15px;
+    }
+
+    .blog-card-img img {
+        height: 200px;
+    }
+
+    .blog-card-body {
+        padding: 30px 18px 20px;
+    }
+
+    .blog-card-body h3 {
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .blog-date {
+        right: 12px;
+        padding: 8px 12px;
+    }
+
+    .blog-date .date-day {
+        font-size: 20px;
+    }
+
+    /* ---------- TESTIMONIAL ---------- */
+
+    .testimonial-overlay {
+        padding-block: 35px;
+    }
+
+    .testimonial-left h2 {
+        font-size: 23px;
+    }
+
+    .testimonial-box {
+        padding: 22px 18px;
+    }
+
+    .testimonial-box p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .quote-icon {
+        margin-bottom: 10px;
+        font-size: 32px;
+    }
+
+    .testimonial-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .map-section iframe {
+        height: 250px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .info-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .info-text strong {
+        font-size: 15px;
+    }
+
+    .info-text p {
+        font-size: 13px;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .footer {
+        padding-top: 35px;
+        padding-bottom: 30px;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+    }
+
+    .footer-links-grid a {
+        font-size: 14px;
+    }
+
+    .subscribe-btn {
+        width: 100%;
+    }
+
+    .hours-row .day,
+    .hours-row .time {
+        font-size: 13px;
+    }
+
+    .hours-row .day::after {
+        width: 20px;
+        margin-inline: 6px;
+    }
+
+    .copyright-bar {
+        padding-block: 12px;
+    }
+
+    .copyright-bar p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* ---------- FLOATING BUTTONS ---------- */
+
+    .floating-icons {
+        left: 12px;
+        bottom: 18px;
+        gap: 10px;
+    }
+
+    .floating-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+    }
+
+    .scroll-top-btn {
+        right: 14px;
+        bottom: 18px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 19px;
+    }
+
+    /* ---------- MODALS / LIGHTBOX ---------- */
+
+    .appointment-modal {
+        padding: 15px;
+    }
+
+    .appointment-modal-content {
+        padding: 28px 18px;
+    }
+
+    .appointment-modal-content h2 {
+        font-size: 22px;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 16px;
+        font-size: 36px;
+    }
+
+    .lightbox-content {
+        max-width: 92%;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES
+   <= 479px
+========================================================= */
+
+@media (max-width: 479px) {
+
+    body {
+        padding-top: 90px;
+    }
+
+    .main-header .appointment-btn,
+    .main-header.scrolled .appointment-btn {
+        height: 38px;
+        padding-inline: 11px;
+        font-size: 11px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 21px;
+    }
+
+    .services-cards,
+    .gallery-cards,
+    .blog-cards {
+        gap: 14px;
+    }
+
+    .testimonial-box {
+        padding: 20px 15px;
+    }
+
+    .hours-row .day::after {
+        width: 12px;
+        margin-inline: 5px;
+    }
+
+    .floating-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .scroll-top-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+}
+@media (max-width: 575px) {
+    .appointment-modal-content {
+        padding: 22px 15px;
+    }
+
+    .appointment-modal-content h2 {
+        margin-bottom: 8px;
+    }
+
+    .appointment-subtitle {
+        margin-bottom: 18px;
+    }
+
+    .appointment-form {
+        gap: 12px;
+    }
+
+    .appointment-form-row {
+        gap: 10px;
+    }
+}

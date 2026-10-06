@@ -59,7 +59,7 @@ img {
 }
 
 .main-header.scrolled .logo-img {
-    height: 126px;
+    height: 91px;
     width: auto;
 }
 
@@ -108,7 +108,7 @@ img {
 }
 
 .logo-img {
-    height: 126px;
+    height: 91px;
     width: auto;
 }
 
@@ -313,7 +313,7 @@ img {
     width: 100%;
     height: auto;
     display: block;
-    min-height: 550px;
+    /* min-height: 550px; */
 }
 .page-banner-section {
     position: relative;
@@ -886,7 +886,7 @@ img {
 }
 
 .blog-detail-content h1 {
-    font-size: 34px;
+    font-size: 19px;
     color: var(--primary-color);
     font-weight: 700;
     margin-bottom: 10px;
@@ -898,7 +898,7 @@ img {
     color: #666;
     font-weight: 500;
     margin-bottom: 25px;
-    padding-bottom: 20px;
+  
     border-bottom: 1px solid #eee;
 }
 
@@ -910,7 +910,7 @@ img {
 }
 
 .blog-detail-content h2 {
-    font-size: 34px;
+    font-size: 20px;
     color: var(--primary-color);
     font-weight: 700;
     margin-top: 30px;
@@ -1558,6 +1558,7 @@ img {
 .bottom-bar {
     background: #f8f9fa;
     border-top: 1px solid #ddd;
+    padding: 15px 0;
 }
 
 .bottom-bar-content {
@@ -1573,7 +1574,7 @@ img {
 }
 
 .bottom-logo {
-    height: 150px;
+    height: 91px;
     width: auto;
 }
 
@@ -1590,13 +1591,15 @@ img {
 
 .bottom-info-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
 }
 
 .info-icon {
     width: 50px;
     height: 50px;
+    flex-shrink: 0;
+    margin-top: -7px;
     background: linear-gradient(135deg, #1a3c5e, #1a3c5e);
     border-radius: 50%;
     display: flex;
@@ -2288,4 +2291,23 @@ img {
     .appointment-modal-content {
         padding: 25px;
     }
+}
+/* Appointment modal close button - no border */
+.appointment-close {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.appointment-close:hover,
+.appointment-close:focus,
+.appointment-close:active {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent;
 }
