@@ -18,10 +18,10 @@ body {
     flex: 0 0 auto;
     width: 44px;
     height: 44px;
-    border: 1px solid #e0e6ed;
+    border: 1px solid var(--primary-color);
     border-radius: 8px;
-    background: #fff;
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: #fff;
     font-size: 24px;
     line-height: 1;
     cursor: pointer;
@@ -29,9 +29,10 @@ body {
 }
 
 .menu-toggle:hover,
-.menu-toggle:focus {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
+.menu-toggle:focus,
+.menu-toggle:active {
+    background: #102c49;
+    border-color: #102c49;
     color: #fff;
     outline: none;
 }
@@ -148,7 +149,7 @@ body {
 
         background: #fff;
         border-top: 1px solid #e8eef3;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+    
 
         overflow-y: auto;
     }
@@ -254,6 +255,13 @@ body {
         flex-direction: column;
         gap: 30px;
         text-align: left;
+    }
+
+    /* about list must follow the left aligned text - style.css centres
+       these rows at <=900px, so the check icons were no longer in a line */
+    .about-list li {
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 
     .about-text,
@@ -427,6 +435,13 @@ body {
     .gallery-header h2,
     .consultation-form h2 {
         font-size: 27px;
+    }
+
+    /* list sits flush with the heading / paragraph text above it on mobile
+       (Bootstrap gives every <ul> a 2rem left padding, so the list was
+       pushed 32px to the right of the rest of the text) */
+    .about-list {
+        padding-left: 0;
     }
 
 
@@ -655,7 +670,7 @@ body {
     .services-header h2,
     .gallery-header h2,
     .consultation-form h2 {
-        font-size: 21px;
+        font-size: 19px;
     }
 
     .about-degree {
@@ -977,23 +992,59 @@ body {
 
 @media (max-width: 767px) {
 
-    .contact-section .contact-content {
-        width: auto;
-        margin-inline: 12px;   /* matches the container gutter (576-767px) */
-        padding-inline: 0;     /* padding is now handled by the margin */
+    /* smaller gap under the banner on mobile (was 50px 0) */
+    .contact-section {
+        padding: 20px 0;
     }
 
-    /* "Get In Touch" / "Contact Us" now start on the breadcrumb text line */
+    .contact-section .contact-content {
+        width: auto;
+        margin-inline: 0;
+        padding-inline: 20px; 
+    }
+
     .contact-left,
     .contact-right {
-        padding-inline: 0;
+        padding-inline: 9px;
+        border-radius: 19px;
+    }
+    .contact-left {
+        padding-top: 25px;
+        padding-bottom: 20px;
+    }
+    .contact-right {
+        padding-block: 40px;
+    }
+
+    /* no margin under the phone / location / email rows
+       (base rule: margin-bottom: 25px) - mobile only */
+    .contact-info-item {
+        margin-bottom: 0;
     }
 }
 
 @media (max-width: 575px) {
 
     .contact-section .contact-content {
-        margin-inline: 15px;   /* matches .container { padding-inline: 15px } */
+        margin-inline: 0;
+        padding-inline: 15px;  
+    }
+}
+
+
+
+
+@media (max-width: 767px) {
+
+    .page-banner-section {
+        height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .page-banner-section {
+        height: 160px;
     }
 }
 
@@ -1050,6 +1101,38 @@ body {
     }
 
     .blog-page .blog-cards .blog-card {
+        width: 100%;
+        flex: none;
+        max-width: none;
+
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
+}
+
+
+/* services.php listing - plain stacked cards on mobile, no swipe / slide */
+@media (max-width: 767px) {
+
+    .services-page .services-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        width: 100%;
+        overflow-x: visible;
+        overflow-y: visible;
+
+        padding: 0;
+
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+
+        -webkit-overflow-scrolling: auto;
+        scrollbar-width: auto;
+    }
+
+    .services-page .services-cards .service-card {
         width: 100%;
         flex: none;
         max-width: none;

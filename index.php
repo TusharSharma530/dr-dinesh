@@ -117,43 +117,6 @@ include 'includes/header.php';
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const servicesTrack = document.querySelector('.services-section .services-cards');
-    const servicesNav = document.querySelector('.services-nav');
-
-    if (!servicesTrack || !servicesNav) return;
-
-    const servicesPrev = servicesNav.querySelector('[data-services-dir="-1"]');
-    const servicesNext = servicesNav.querySelector('[data-services-dir="1"]');
-
-    function updateServicesNav() {
-        const maxScroll = servicesTrack.scrollWidth - servicesTrack.clientWidth - 2;
-        servicesPrev.disabled = servicesTrack.scrollLeft <= 2;
-        servicesNext.disabled = maxScroll <= 2 || servicesTrack.scrollLeft >= maxScroll;
-    }
-
-    servicesNav.addEventListener('click', function (event) {
-        const btn = event.target.closest('.services-nav-btn');
-        if (!btn || btn.disabled) return;
-
-        // move one card at a time (matches the scroll-snap points)
-        const card = servicesTrack.querySelector('.service-card');
-        const gap = parseFloat(getComputedStyle(servicesTrack).columnGap) || 0;
-        const step = card ? card.getBoundingClientRect().width + gap : servicesTrack.clientWidth;
-
-        servicesTrack.scrollBy({
-            left: step * Number(btn.dataset.servicesDir),
-            behavior: 'smooth'
-        });
-    });
-
-    servicesTrack.addEventListener('scroll', updateServicesNav, { passive: true });
-    window.addEventListener('resize', updateServicesNav);
-    updateServicesNav();
-});
-</script>
-
 <section class="consultation-section">
     <div class="container consultation-content">
 
@@ -268,47 +231,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-<script>
-let currentSlide = 0;
-let isAnimating = false;
-const slides = document.querySelectorAll('.testimonial-slide');
-
-function changeSlide(direction) {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    const current = slides[currentSlide];
-    const nextIndex = (currentSlide + direction + slides.length) % slides.length;
-    const next = slides[nextIndex];
-
-    if (direction > 0) {
-        next.classList.add('prepare-left');
-        void next.offsetWidth;
-        current.classList.add('exit-right');
-        next.classList.remove('prepare-left');
-        next.classList.add('enter-left');
-    } else {
-        next.classList.add('prepare-right');
-        void next.offsetWidth;
-        current.classList.add('exit-left');
-        next.classList.remove('prepare-right');
-        next.classList.add('enter-right');
-    }
-
-    setTimeout(() => {
-        current.classList.remove('active', 'exit-left', 'exit-right');
-        next.classList.remove('enter-right', 'enter-left', 'prepare-right', 'prepare-left');
-        next.classList.add('active');
-        currentSlide = nextIndex;
-        isAnimating = false;
-    }, 500);
-}
-
-setInterval(() => {
-    changeSlide(1);
-}, 4000);
-</script>
-
 <section class="gallery-section">
     <div class="container">
 
@@ -357,77 +279,10 @@ setInterval(() => {
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const galleryTrack = document.querySelector('.gallery-section .gallery-cards');
-    const galleryNav = document.querySelector('.gallery-section .gallery-nav');
-
-    if (!galleryTrack || !galleryNav) return;
-
-    const galleryPrev = galleryNav.querySelector('[data-gallery-dir="-1"]');
-    const galleryNext = galleryNav.querySelector('[data-gallery-dir="1"]');
-
-    function updateGalleryNav() {
-        const maxScroll = galleryTrack.scrollWidth - galleryTrack.clientWidth - 2;
-        galleryPrev.disabled = galleryTrack.scrollLeft <= 2;
-        galleryNext.disabled = maxScroll <= 2 || galleryTrack.scrollLeft >= maxScroll;
-    }
-
-    galleryNav.addEventListener('click', function (event) {
-        const btn = event.target.closest('.gallery-nav-btn');
-        if (!btn || btn.disabled) return;
-
-        // move one card at a time (matches the scroll-snap points)
-        const card = galleryTrack.querySelector('.gallery-card');
-        const gap = parseFloat(getComputedStyle(galleryTrack).columnGap) || 0;
-        const step = card ? card.getBoundingClientRect().width + gap : galleryTrack.clientWidth;
-
-        galleryTrack.scrollBy({
-            left: step * Number(btn.dataset.galleryDir),
-            behavior: 'smooth'
-        });
-    });
-
-    galleryTrack.addEventListener('scroll', updateGalleryNav, { passive: true });
-    window.addEventListener('resize', updateGalleryNav);
-    updateGalleryNav();
-});
-</script>
-
 <div id="imageLightbox" class="lightbox-modal" style="display:none;">
     <span class="lightbox-close">&times;</span>
     <img class="lightbox-content" id="lightboxImg" alt="Enlarged Image">
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const modal = document.getElementById("imageLightbox");
-    const modalImg = document.getElementById("lightboxImg");
-    const closeBtn = document.querySelector(".lightbox-close");
-
-    document.querySelectorAll(".lightbox-trigger").forEach(img => {
-        img.addEventListener("click", function() {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-        });
-    });
-
-    closeBtn.addEventListener("click", function() {
-        modal.style.display = "none";
-    });
-
-    modal.addEventListener("click", function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape") {
-            modal.style.display = "none";
-        }
-    });
-});
-</script>
 
 <section class="services-section">
     <div class="container">

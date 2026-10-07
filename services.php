@@ -44,7 +44,7 @@ if ($service && isset($services[$service])) {
     include 'includes/services/' . $s['file'];
     echo '</div></div></section>';
 } else {
-    echo '<section class="services-section"><div class="container">';
+    echo '<section class="services-section services-page"><div class="container">';
     echo '<div class="services-header"><span class="services-tag">OUR SERVICES</span><h2>Comprehensive Neurosurgical Care</h2></div>';
     echo '<div class="services-cards">';
     foreach ($services as $key => $s) {
