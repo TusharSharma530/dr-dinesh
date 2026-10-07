@@ -42,66 +42,117 @@ include 'includes/header.php';
             <h2>Comprehensive Neurosurgical Care</h2>
         </div>
 
-        <div class="services-cards">
+        <div class="services-slider">
 
-            <a href="services.php?service=brain-tumor" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/stroke management.png" alt="Brain Tumor Surgery">
-                </div>
-                <div class="service-card-body">
-                    <h3>Brain Tumor Surgery</h3>
-                </div>
-            </a>
+            <div class="services-cards">
 
-            <a href="services.php?service=spine-surgery" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/maigraine.png" alt="Spine Surgery">
-                </div>
-                <div class="service-card-body">
-                    <h3>Spine Surgery</h3>
-                </div>
-            </a>
+                <a href="services.php?service=brain-tumor" class="service-card">
+                    <div class="service-card-img">
+                        <img src="assets/images/stroke management.png" alt="Brain Tumor Surgery">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Brain Tumor Surgery</h3>
+                    </div>
+                </a>
 
-            <a href="services.php?service=aneurysm" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/neuromascular.png" alt="Aneurysm Clipping">
-                </div>
-                <div class="service-card-body">
-                    <h3>Aneurysm Clipping</h3>
-                </div>
-            </a>
+                <a href="services.php?service=spine-surgery" class="service-card">
+                    <div class="service-card-img">
+                        <img src="assets/images/maigraine.png" alt="Spine Surgery">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Spine Surgery</h3>
+                    </div>
+                </a>
 
-            <a href="services.php?service=dbs" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/paalysis1.png" alt="Deep Brain Stimulation">
-                </div>
-                <div class="service-card-body">
-                    <h3>Deep Brain Stimulation</h3>
-                </div>
-            </a>
+                <a href="services.php?service=aneurysm" class="service-card">
+                    <div class="service-card-img">
+                        <img src="assets/images/neuromascular.png" alt="Aneurysm Clipping">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Aneurysm Clipping</h3>
+                    </div>
+                </a>
 
-            <a href="services.php?service=trauma" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/epilepsy treatment.png" alt="Neurotrauma Surgery">
-                </div>
-                <div class="service-card-body">
-                    <h3>Neurotrauma Surgery</h3>
-                </div>
-            </a>
+                <a href="services.php?service=dbs" class="service-card">
+                    <div class="service-card-img">
+                        <img src="assets/images/paalysis1.png" alt="Deep Brain Stimulation">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Deep Brain Stimulation</h3>
+                    </div>
+                </a>
 
-            <a href="services.php?service=pediatric" class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/sleep disopder.png" alt="Pediatric Neurosurgery">
-                </div>
-                <div class="service-card-body">
-                    <h3>Pediatric Neurosurgery</h3>
-                </div>
-            </a>
+                <a href="services.php?service=trauma" class="service-card">
+                    <div class="service-card-img">
+                        <img src="assets/images/epilepsy treatment.png" alt="Neurotrauma Surgery">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Neurotrauma Surgery</h3>
+                    </div>
+                </a>
+
+                <a href="services.php?service=pediatric" class="service-card">
+                    <div class="service-card-img">
+                        <img src="assets/images/sleep disopder.png" alt="Pediatric Neurosurgery">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Pediatric Neurosurgery</h3>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- SERVICES SLIDER ARROWS - overlaid on the images (mobile) -->
+            <div class="services-nav">
+                <button type="button" class="services-nav-btn" data-services-dir="-1" aria-label="Previous services">
+                    <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="services-nav-btn" data-services-dir="1" aria-label="Next services">
+                    <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
 
         </div>
 
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const servicesTrack = document.querySelector('.services-section .services-cards');
+    const servicesNav = document.querySelector('.services-nav');
+
+    if (!servicesTrack || !servicesNav) return;
+
+    const servicesPrev = servicesNav.querySelector('[data-services-dir="-1"]');
+    const servicesNext = servicesNav.querySelector('[data-services-dir="1"]');
+
+    function updateServicesNav() {
+        const maxScroll = servicesTrack.scrollWidth - servicesTrack.clientWidth - 2;
+        servicesPrev.disabled = servicesTrack.scrollLeft <= 2;
+        servicesNext.disabled = maxScroll <= 2 || servicesTrack.scrollLeft >= maxScroll;
+    }
+
+    servicesNav.addEventListener('click', function (event) {
+        const btn = event.target.closest('.services-nav-btn');
+        if (!btn || btn.disabled) return;
+
+        // move one card at a time (matches the scroll-snap points)
+        const card = servicesTrack.querySelector('.service-card');
+        const gap = parseFloat(getComputedStyle(servicesTrack).columnGap) || 0;
+        const step = card ? card.getBoundingClientRect().width + gap : servicesTrack.clientWidth;
+
+        servicesTrack.scrollBy({
+            left: step * Number(btn.dataset.servicesDir),
+            behavior: 'smooth'
+        });
+    });
+
+    servicesTrack.addEventListener('scroll', updateServicesNav, { passive: true });
+    window.addEventListener('resize', updateServicesNav);
+    updateServicesNav();
+});
+</script>
 
 <section class="consultation-section">
     <div class="container consultation-content">

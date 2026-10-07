@@ -76,6 +76,11 @@ body {
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
+
+    /* 3 service cards per view */
+    .services-cards .service-card {
+        flex: 0 0 calc(33.333% - 14px);
+    }
 }
 
 /* =========================================================
@@ -284,6 +289,11 @@ body {
         gap: 20px;
     }
 
+    /* 2 service cards per view */
+    .services-cards .service-card {
+        flex: 0 0 calc(50% - 10px);
+    }
+
     .blog-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 22px;
@@ -456,11 +466,16 @@ body {
     }
 
     .services-cards .service-card {
-        flex: 0 0 82%;
-        max-width: 82%;
+        /* 2 service cards visible at a time on mobile */
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
 
         scroll-snap-align: start;
         scroll-snap-stop: always;
+    }
+
+    .services-nav {
+        display: flex;
     }
 
     /* =====================================================
@@ -686,7 +701,12 @@ body {
         gap: 14px;
     }
 
-    .services-cards .service-card,
+    .services-cards .service-card {
+        /* keep 2 service cards per view */
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
+    }
+
     .gallery-cards .gallery-card,
     .blog-cards .blog-card {
         flex: 0 0 86%;
@@ -899,7 +919,12 @@ body {
         gap: 14px;
     }
 
-    .services-cards .service-card,
+    .services-cards .service-card {
+        /* keep 2 service cards per view */
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
+    }
+
     .gallery-cards .gallery-card,
     .blog-cards .blog-card {
         flex-basis: 88%;
