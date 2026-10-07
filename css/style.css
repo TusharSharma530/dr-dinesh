@@ -708,34 +708,6 @@ img {
     gap: 25px;
 }
 
-/* HOMEPAGE "OUR SERVICES" - SLIDER (desktop + mobile) */
-.services-slider .services-cards {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: none;
-}
-
-.services-slider .services-cards::-webkit-scrollbar {
-    display: none;
-}
-
-/* 4 service cards per view (smaller screens override this) */
-.services-cards .service-card {
-    flex: 0 0 calc(25% - 19px);
-
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-
 .service-card {
     background: #fff;
     border-radius: 12px;
@@ -760,6 +732,7 @@ img {
     height: auto;
     display: block;
     transition: 0.3s;
+    /* transform :matrix() */
 }
 
 .service-card:hover .service-card-img img {
@@ -775,57 +748,6 @@ img {
     font-size: 18px;
     color:var(--primary-color);
     font-weight: 700;
-}
-
-/* SERVICES SLIDER - LEFT/RIGHT ARROWS OVERLAID ON THE IMAGES (desktop + mobile) */
-.services-slider {
-    position: relative;
-}
-
-.services-nav {
-    display: flex;
-    position: absolute;
-    inset: 0;
-
-    align-items: center;
-    justify-content: space-between;
-    padding-inline: 6px;
-
-    pointer-events: none;
-}
-
-.services-nav-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.92);
-    color: var(--primary-color);
-
-    font-size: 20px;
-    line-height: 1;
-    cursor: pointer;
-
-    transition: 0.3s;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.20);
-
-    pointer-events: auto;
-}
-
-.services-nav-btn:hover:not(:disabled),
-.services-nav-btn:focus:not(:disabled) {
-    background: var(--primary-color);
-    color: #fff;
-    outline: none;
-}
-
-.services-nav-btn:disabled {
-    opacity: 0.4;
-    cursor: default;
 }
 
 .blog-cards {
@@ -901,7 +823,7 @@ img {
 }
 
 .blog-card-body h3 {
-    font-size: 18px;
+    font-size: 15px;
     color: var(--primary-color);
     font-weight: 620;
     line-height: 25px;
@@ -1211,62 +1133,6 @@ img {
 
 .testimonial-slider {
     position: relative;
-    min-height: 250px;
-    overflow: hidden;
-}
-
-.testimonial-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transform: translateX(100px);
-    transition: all 0.5s ease;
-    pointer-events: none;
-}
-
-.testimonial-slide.active {
-    position: relative;
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: all;
-}
-
-.testimonial-slide.exit-left {
-    opacity: 0;
-    transform: translateX(-100px);
-}
-
-.testimonial-slide.exit-right {
-    opacity: 0;
-    transform: translateX(100px);
-}
-
-.testimonial-slide.enter-right {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: all;
-}
-
-.testimonial-slide.enter-left {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: all;
-}
-
-.testimonial-slide.prepare-right {
-    transition: none;
-    opacity: 0;
-    transform: translateX(100px);
-    pointer-events: all;
-}
-
-.testimonial-slide.prepare-left {
-    transition: none;
-    opacity: 0;
-    transform: translateX(-100px);
-    pointer-events: all;
 }
 
 .testimonial-box {
@@ -1303,32 +1169,6 @@ img {
     font-weight: 600;
 }
 
-.testimonial-nav {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-    justify-content: flex-end;
-}
-
-.testimonial-btn {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    background: transparent;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.testimonial-btn:hover {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-}
 .gallery-section {
     padding: 50px 0;
     background: #f9fbfd;
@@ -1388,85 +1228,6 @@ img {
 
 .gallery-card:hover .gallery-card-img img {
     transform: scale(1.05);
-}
-
-.gallery-slider {
-    position: relative;
-}
-
-.gallery-slider .gallery-cards {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: none;
-}
-
-.gallery-slider .gallery-cards::-webkit-scrollbar {
-    display: none;
-}
-
-/* 4 gallery cards per view (smaller screens override this) */
-.gallery-cards .gallery-card {
-    flex: 0 0 calc(25% - 19px);
-
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-
-/* GALLERY SLIDER - LEFT/RIGHT ARROWS OVERLAID ON THE IMAGES
-   (hidden while every card fits, i.e. wide desktop) */
-.gallery-nav {
-    display: none;
-    position: absolute;
-    inset: 0;
-
-    align-items: center;
-    justify-content: space-between;
-    padding-inline: 6px;
-
-    pointer-events: none;
-}
-
-.gallery-nav-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.92);
-    color: var(--primary-color);
-
-    font-size: 20px;
-    line-height: 1;
-    cursor: pointer;
-
-    transition: 0.3s;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.20);
-
-    pointer-events: auto;
-}
-
-.gallery-nav-btn:hover:not(:disabled),
-.gallery-nav-btn:focus:not(:disabled) {
-    background: var(--primary-color);
-    color: #fff;
-    outline: none;
-}
-
-.gallery-nav-btn:disabled {
-    opacity: 0.4;
-    cursor: default;
 }
 
 .expertise-section {
@@ -2158,10 +1919,6 @@ img {
     .testimonial-left,
     .testimonial-right {
         width: 100%;
-    }
-
-    .testimonial-nav {
-        justify-content: center;
     }
 
     .expertise-content {

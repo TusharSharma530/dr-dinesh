@@ -42,9 +42,7 @@ include 'includes/header.php';
             <h2>Comprehensive Neurosurgical Care</h2>
         </div>
 
-        <div class="services-slider">
-
-            <div class="services-cards">
+        <div class="services-cards">
 
                 <a href="services.php?service=brain-tumor" class="service-card">
                     <div class="service-card-img">
@@ -101,18 +99,6 @@ include 'includes/header.php';
                 </a>
 
             </div>
-
-            <!-- SERVICES SLIDER ARROWS - overlaid on the images (mobile) -->
-            <div class="services-nav">
-                <button type="button" class="services-nav-btn" data-services-dir="-1" aria-label="Previous services">
-                    <i class="bi bi-chevron-left" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="services-nav-btn" data-services-dir="1" aria-label="Next services">
-                    <i class="bi bi-chevron-right" aria-hidden="true"></i>
-                </button>
-            </div>
-
-        </div>
 
     </div>
 </section>
@@ -184,7 +170,7 @@ include 'includes/header.php';
             <div class="testimonial-right">
                 <div class="testimonial-slider">
 
-                    <div class="testimonial-slide active">
+                    <div class="testimonial-slide">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
                             <p>"Excellent care and professional treatment. Dr. Dinesh truly listens to his patients and provides the best neurosurgical care. Highly recommended!"</p>
@@ -216,15 +202,6 @@ include 'includes/header.php';
 
                 </div>
 
-                <div class="testimonial-nav">
-                    <button class="testimonial-btn prev-btn" onclick="changeSlide(-1)">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-                    <button class="testimonial-btn next-btn" onclick="changeSlide(1)">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
-
             </div>
 
         </div>
@@ -239,9 +216,7 @@ include 'includes/header.php';
             <h2>Our Clinic Gallery</h2>
         </div>
 
-        <div class="gallery-slider">
-
-            <div class="gallery-cards">
+        <div class="gallery-cards">
                 <div class="gallery-card">
                     <div class="gallery-card-img">
                         <img src="assets/images/stroke management.png" alt="Stroke Management" class="lightbox-trigger">
@@ -263,18 +238,6 @@ include 'includes/header.php';
                     </div>
                 </div>
             </div>
-
-            <!-- GALLERY SLIDER ARROWS - overlaid on the images (mobile) -->
-            <div class="gallery-nav">
-                <button type="button" class="gallery-nav-btn" data-gallery-dir="-1" aria-label="Previous images">
-                    <i class="bi bi-chevron-left" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="gallery-nav-btn" data-gallery-dir="1" aria-label="Next images">
-                    <i class="bi bi-chevron-right" aria-hidden="true"></i>
-                </button>
-            </div>
-
-        </div>
 
     </div>
 </section>
@@ -354,6 +317,47 @@ include 'includes/header.php';
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.536!2d77.7371805!3d28.9651322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65f6c7b0f123%3A0x78a5f6619a39ab3a!2sBrain%20And%20Spine%20Clinic!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="slick/slick.js"></script>
+<script>
+    (function () {
+        var jq = window.jQuery;
+        if (!jq || typeof jq.fn.slick !== 'function') return;
+
+        var common = { infinite: false, autoplay: false, arrows: true, dots: false, swipe: true };
+
+        var perView = [
+            { breakpoint: 1199, settings: { slidesToShow: 3 } },
+            { breakpoint: 991, settings: { slidesToShow: 2 } }
+        ];
+
+        var sliders = [
+            ['.services-cards', { slidesToShow: 4, responsive: perView }],
+            ['.gallery-cards', { slidesToShow: 4, responsive: perView }],
+            ['.blog-cards', {
+                slidesToShow: 3,
+                responsive: [
+                    { breakpoint: 991, settings: { slidesToShow: 2 } },
+                    { breakpoint: 767, settings: { slidesToShow: 1 } }
+                ]
+            }],
+            ['.testimonial-slider', {
+                slidesToShow: 1,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                speed: 500
+            }]
+        ];
+
+        sliders.forEach(function (item) {
+            var $el = jq(item[0]);
+            if (!$el.length || $el.hasClass('slick-initialized')) return;
+
+            $el.slick(jq.extend({}, common, item[1]));
+        });
+    })();
+</script>
 
 <?php include 'includes/footer.php'; ?>
 
