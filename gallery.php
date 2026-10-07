@@ -6,7 +6,7 @@ include 'includes/header.php';
 
 <?php include 'includes/page-banner.php'; ?>
 
-<section class="services-section">
+<section class="services-section gallery-page">
     <div class="container">
 
         <div class="services-cards">

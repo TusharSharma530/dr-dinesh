@@ -163,19 +163,16 @@ document.addEventListener('DOMContentLoaded', function () {
             'click',
             function (event) {
 
-                const clickedChevron =
-                    event.target.closest(
-                        '.services-toggle i.bi-chevron-down'
-                    );
-
-
-                if (clickedChevron) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    toggleServicesDropdown();
+                if (
+                    window.innerWidth >
+                    MOBILE_BREAKPOINT
+                ) {
                     return;
-
                 }
+
+                event.preventDefault();
+
+                toggleServicesDropdown();
 
             }
         );

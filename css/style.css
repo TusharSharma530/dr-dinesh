@@ -1332,7 +1332,7 @@ img {
     border-color: var(--primary-color);
 }
 .gallery-section {
-    padding: 50px ;
+    padding: 50px 0;
     background: #f9fbfd;
 }
 
@@ -1390,6 +1390,85 @@ img {
 
 .gallery-card:hover .gallery-card-img img {
     transform: scale(1.05);
+}
+
+.gallery-slider {
+    position: relative;
+}
+
+.gallery-slider .gallery-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+}
+
+.gallery-slider .gallery-cards::-webkit-scrollbar {
+    display: none;
+}
+
+/* 4 gallery cards per view (smaller screens override this) */
+.gallery-cards .gallery-card {
+    flex: 0 0 calc(25% - 19px);
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* GALLERY SLIDER - LEFT/RIGHT ARROWS OVERLAID ON THE IMAGES
+   (hidden while every card fits, i.e. wide desktop) */
+.gallery-nav {
+    display: none;
+    position: absolute;
+    inset: 0;
+
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 6px;
+
+    pointer-events: none;
+}
+
+.gallery-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--primary-color);
+
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+
+    transition: 0.3s;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.20);
+
+    pointer-events: auto;
+}
+
+.gallery-nav-btn:hover:not(:disabled),
+.gallery-nav-btn:focus:not(:disabled) {
+    background: var(--primary-color);
+    color: #fff;
+    outline: none;
+}
+
+.gallery-nav-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
 }
 
 .expertise-section {

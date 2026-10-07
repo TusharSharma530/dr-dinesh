@@ -1,6 +1,3 @@
-/* =========================================================
-   BASE / GLOBAL
-========================================================= */
 
 html,
 body {
@@ -12,9 +9,7 @@ body {
     padding-inline: 20px;
 }
 
-/* =========================================================
-   HAMBURGER
-========================================================= */
+/* hammerburg */
 
 .menu-toggle {
     display: none;
@@ -41,10 +36,6 @@ body {
     outline: none;
 }
 
-/* =========================================================
-   LAPTOPS / SMALL DESKTOPS
-   <= 1199px
-========================================================= */
 
 @media (max-width: 1199px) {
 
@@ -81,12 +72,17 @@ body {
     .services-cards .service-card {
         flex: 0 0 calc(33.333% - 14px);
     }
+
+    /* 3 gallery cards per view */
+    .gallery-cards .gallery-card {
+        flex: 0 0 calc(33.333% - 14px);
+    }
+
+    .gallery-nav {
+        display: flex;
+    }
 }
 
-/* =========================================================
-   TABLETS / SMALL LAPTOPS
-   <= 991px
-========================================================= */
 
 @media (max-width: 991px) {
 
@@ -294,6 +290,11 @@ body {
         flex: 0 0 calc(50% - 10px);
     }
 
+    /* 2 gallery cards per view */
+    .gallery-cards .gallery-card {
+        flex: 0 0 calc(50% - 10px);
+    }
+
     .blog-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 22px;
@@ -356,10 +357,6 @@ body {
     }
 }
 
-/* =========================================================
-   TABLETS / LARGE PHONES
-   <= 900px
-========================================================= */
 
 @media (max-width: 900px) {
 
@@ -399,10 +396,6 @@ body {
     }
 }
 
-/* =========================================================
-   SMALL TABLETS / LARGE PHONES
-   <= 767px
-========================================================= */
 
 @media (max-width: 767px) {
 
@@ -436,9 +429,6 @@ body {
         font-size: 27px;
     }
 
-    /* =====================================================
-       SERVICES - MOBILE SWIPE
-    ===================================================== */
 
     .services-cards {
         display: flex;
@@ -478,9 +468,9 @@ body {
         display: flex;
     }
 
-    /* =====================================================
-       GALLERY - MOBILE SWIPE
-    ===================================================== */
+    .gallery-nav {
+        display: flex;
+    }
 
     .gallery-cards {
         display: flex;
@@ -508,16 +498,26 @@ body {
     }
 
     .gallery-cards .gallery-card {
-        flex: 0 0 82%;
-        max-width: 82%;
+        /* 2 gallery cards visible at a time on mobile */
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
 
         scroll-snap-align: start;
         scroll-snap-stop: always;
     }
 
-    /* =====================================================
-       BLOGS - MOBILE SWIPE
-    ===================================================== */
+    .gallery-card-img {
+        aspect-ratio: 4 / 5;
+    }
+
+    .gallery-card-img img {
+        width: 100%;
+        /* height: auto; */
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center;
+    }
+
 
     .blog-cards {
         display: flex;
@@ -597,11 +597,6 @@ body {
         text-align: center;
     }
 }
-
-/* =========================================================
-   MOBILE PHONES
-   <= 575px
-========================================================= */
 
 @media (max-width: 575px) {
 
@@ -690,11 +685,6 @@ body {
         font-size: 14px;
     }
 
-    /* =====================================================
-       SERVICES / GALLERY / BLOGS
-       MOBILE SWIPE SIZE
-    ===================================================== */
-
     .services-cards,
     .gallery-cards,
     .blog-cards {
@@ -707,7 +697,12 @@ body {
         max-width: calc(50% - 8px);
     }
 
-    .gallery-cards .gallery-card,
+    .gallery-cards .gallery-card {
+        /* keep 2 gallery cards per view */
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
+    }
+
     .blog-cards .blog-card {
         flex: 0 0 86%;
         max-width: 86%;
@@ -889,10 +884,6 @@ body {
     }
 }
 
-/* =========================================================
-   SMALL PHONES
-   <= 479px
-========================================================= */
 
 @media (max-width: 479px) {
 
@@ -925,7 +916,12 @@ body {
         max-width: calc(50% - 8px);
     }
 
-    .gallery-cards .gallery-card,
+    .gallery-cards .gallery-card {
+        /* keep 2 gallery cards per view */
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
+    }
+
     .blog-cards .blog-card {
         flex-basis: 88%;
         max-width: 88%;
@@ -953,9 +949,7 @@ body {
     }
 }
 
-/* =========================================================
-   APPOINTMENT MODAL - EXTRA MOBILE ADJUSTMENTS
-========================================================= */
+
 
 @media (max-width: 575px) {
 
@@ -977,5 +971,90 @@ body {
 
     .appointment-form-row {
         gap: 10px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .contact-section .contact-content {
+        width: auto;
+        margin-inline: 12px;   /* matches the container gutter (576-767px) */
+        padding-inline: 0;     /* padding is now handled by the margin */
+    }
+
+    /* "Get In Touch" / "Contact Us" now start on the breadcrumb text line */
+    .contact-left,
+    .contact-right {
+        padding-inline: 0;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .contact-section .contact-content {
+        margin-inline: 15px;   /* matches .container { padding-inline: 15px } */
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .gallery-page .services-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        width: 100%;
+        overflow-x: visible;
+        overflow-y: visible;
+
+        padding: 0;
+
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+
+        -webkit-overflow-scrolling: auto;
+        scrollbar-width: auto;
+    }
+
+    .gallery-page .services-cards .service-card {
+        width: 100%;
+        flex: none;
+        max-width: none;
+
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .blog-page .blog-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        width: 100%;
+        overflow-x: visible;
+        overflow-y: visible;
+
+        padding: 0;
+
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+
+        -webkit-overflow-scrolling: auto;
+        scrollbar-width: auto;
+    }
+
+    .blog-page .blog-cards .blog-card {
+        width: 100%;
+        flex: none;
+        max-width: none;
+
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
     }
 }

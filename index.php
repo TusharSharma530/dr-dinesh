@@ -317,31 +317,82 @@ setInterval(() => {
             <h2>Our Clinic Gallery</h2>
         </div>
 
-        <div class="gallery-cards">
-            <div class="gallery-card">
-                <div class="gallery-card-img">
-                    <img src="assets/images/stroke management.png" alt="Stroke Management" class="lightbox-trigger">
+        <div class="gallery-slider">
+
+            <div class="gallery-cards">
+                <div class="gallery-card">
+                    <div class="gallery-card-img">
+                        <img src="assets/images/stroke management.png" alt="Stroke Management" class="lightbox-trigger">
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-card-img">
+                        <img src="assets/images/maigraine.png" alt="Stroke Management" class="lightbox-trigger">
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-card-img">
+                        <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
+                    </div>
+                </div>
+                 <div class="gallery-card">
+                    <div class="gallery-card-img">
+                        <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
+                    </div>
                 </div>
             </div>
-            <div class="gallery-card">
-                <div class="gallery-card-img">
-                    <img src="assets/images/maigraine.png" alt="Stroke Management" class="lightbox-trigger">
-                </div>
+
+            <!-- GALLERY SLIDER ARROWS - overlaid on the images (mobile) -->
+            <div class="gallery-nav">
+                <button type="button" class="gallery-nav-btn" data-gallery-dir="-1" aria-label="Previous images">
+                    <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="gallery-nav-btn" data-gallery-dir="1" aria-label="Next images">
+                    <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                </button>
             </div>
-            <div class="gallery-card">
-                <div class="gallery-card-img">
-                    <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
-                </div>
-            </div>
-             <div class="gallery-card">
-                <div class="gallery-card-img">
-                    <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
-                </div>
-            </div>
+
         </div>
 
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const galleryTrack = document.querySelector('.gallery-section .gallery-cards');
+    const galleryNav = document.querySelector('.gallery-section .gallery-nav');
+
+    if (!galleryTrack || !galleryNav) return;
+
+    const galleryPrev = galleryNav.querySelector('[data-gallery-dir="-1"]');
+    const galleryNext = galleryNav.querySelector('[data-gallery-dir="1"]');
+
+    function updateGalleryNav() {
+        const maxScroll = galleryTrack.scrollWidth - galleryTrack.clientWidth - 2;
+        galleryPrev.disabled = galleryTrack.scrollLeft <= 2;
+        galleryNext.disabled = maxScroll <= 2 || galleryTrack.scrollLeft >= maxScroll;
+    }
+
+    galleryNav.addEventListener('click', function (event) {
+        const btn = event.target.closest('.gallery-nav-btn');
+        if (!btn || btn.disabled) return;
+
+        // move one card at a time (matches the scroll-snap points)
+        const card = galleryTrack.querySelector('.gallery-card');
+        const gap = parseFloat(getComputedStyle(galleryTrack).columnGap) || 0;
+        const step = card ? card.getBoundingClientRect().width + gap : galleryTrack.clientWidth;
+
+        galleryTrack.scrollBy({
+            left: step * Number(btn.dataset.galleryDir),
+            behavior: 'smooth'
+        });
+    });
+
+    galleryTrack.addEventListener('scroll', updateGalleryNav, { passive: true });
+    window.addEventListener('resize', updateGalleryNav);
+    updateGalleryNav();
+});
+</script>
 
 <div id="imageLightbox" class="lightbox-modal" style="display:none;">
     <span class="lightbox-close">&times;</span>

@@ -28,7 +28,7 @@ if ($blog && isset($blogs[$blog])) {
     include 'includes/blogs/' . $blog . '.php';
     echo '</div></div></section>';
 } else {
-    echo '<section class="services-section"><div class="container">';
+    echo '<section class="services-section blog-page"><div class="container">';
     echo '<div class="services-header"><span class="services-tag">BLOGS</span><h2>Latest Blogs</h2></div>';
     echo '<div class="blog-cards">';
     foreach ($blogs as $key => $b) {
