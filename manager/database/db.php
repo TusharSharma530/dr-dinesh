@@ -1,8 +1,8 @@
 <?php session_start();
 error_reporting(0);
-define('BASE_PATH',"//localhost/doabvilas/");
+define('BASE_PATH',"//localhost/dr dinesh/");
 define('DB_HOST', 'localhost');
-define('DB_NAME','doabvillas');
+define('DB_NAME','drdinesh');
 define('DB_USER','root');
 define('DB_PASSWORD','');
 // session_destroy();
@@ -172,53 +172,6 @@ function __cfg($value, $fallback = ''){
 	return ($value === '') ? $fallback : $value;
 }
 
-if(!defined('SITE_CONFIG_LOADED')){
-	define('SITE_CONFIG_LOADED', true);
-
-	// Site Info
-	define('SITE_NAME', __cfg($websitename));
-	define('SITE_TAGline', __cfg($headercenterline));
-	define('SITE_EMAIL', __cfg($emailid));
-	define('SITE_ALTERNATE_EMAIL', __cfg($alternateemailid));
-    define('RECEPTION_TIME', __cfg($time));
-	define('SITE_PHONE', __cfg($contactno));
-    define('SITE_ALTERNATE_PHONE', __cfg($alternateno));
-	define('SITE_WHATSAPP', preg_replace('/[^0-9]/', '', __cfg($whatsapp)));
-	define('SITE_ADDRESS', __cfg($address));
-	define('SITE_LOGO', $logo);
-	define('SITE_FOOTER_DESC', $footerdesc);
-	define('SITE_MAP_IFRAME', $mapiframe);
-	define('SITE_GOOGLETAG', $googletag);
-	define('SITE_META_TITLE', __cfg($metatitle, SITE_NAME));
-	define('SITE_META_KEYWORDS', $metakeywords);
-	define('SITE_META_DESC', $metadesc);
-
-	// Social Media Links
-	define('SOCIAL_FACEBOOK', __cfg($facebook));
-	define('SOCIAL_INSTAGRAM', __cfg($instagram));
-	define('SOCIAL_YOUTUBE', __cfg($youtube));
-	define('SOCIAL_TWITTER', __cfg($twitter));
-	define('SOCIAL_LINKEDIN', __cfg($linkedin));
-
-	// // Additional Details (no column in `settings` table - static)
-	// define('SITE_URL', 'https://www.doabvilas.com');
-	// define('SITE_ADDRESS_LINE1', 'Doab Vilas');
-	// define('SITE_ADDRESS_LINE2', 'Meerut Bypass Rd, Sector - 3');
-	// define('SITE_CITY', 'Meerut');
-	// define('SITE_STATE', 'Uttar Pradesh');
-	// define('SITE_PINCODE', '250103');
-	// define('SITE_COUNTRY', 'India');
-	define('SITE_GOOGLE_MAP', $mapiframe);
-
-	// Asset Paths
-	define('ASSETS_URL', 'assets/');
-	define('CSS_URL', ASSETS_URL . 'css/');
-	define('JS_URL', ASSETS_URL . 'js/');
-	define('IMAGES_URL', ASSETS_URL . 'images/');
-	define('FONTS_URL', ASSETS_URL . 'fonts/');
-	define('RECAPTCHA_SITE_KEY', '6LfBGs4tAAAAABAa8yv-Y4QEm7PR9QJFJUl8zlyn');
-	define('RECAPTCHA_SECRET_KEY', '6LfBGs4tAAAAAKQuFneYW7UDK1y6XSD2wNrVb2BD');
-}
 
 //if page meta title not exist
 if(!function_exists('pageMeta')){

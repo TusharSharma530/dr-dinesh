@@ -70,13 +70,16 @@
 <div class="submenu" id="child-menu">
 <ul class="submenu-list">
 <li class="submenu-item">
-<a href="events.php" class="submenu-link">Events</a>
+<a href="services.php" class="submenu-link">Services</a>
 </li>
 <li class="submenu-item">
 <a href="halls.php" class="submenu-link">Halls</a>
 </li>
 <li class="submenu-item">
 <a href="gallery.php" class="submenu-link">Gallery</a>
+</li>
+<li class="submenu-item">
+<a href="blogs.php" class="submenu-link">Blogs</a>
 </li>
 <!--
 <li class="submenu-item">

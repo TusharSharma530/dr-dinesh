@@ -2,9 +2,29 @@
 include 'includes/header.php';
 ?>
 
+    <?php
+$bannerQuery = mysqli_query($con, "SELECT c_name, featured_img FROM category WHERE id = 68 LIMIT 1");
+$bannerData = mysqli_fetch_assoc($bannerQuery);
+?>
+
 <section class="banner-section">
-    <img src="assets/images/dr dinesh banner.png" alt="Banner" class="banner-img">
+    <?php if (!empty($bannerData['featured_img'])) { ?>
+        <img src="<?= htmlspecialchars($bannerData['featured_img']) ?>"
+            alt="<?= htmlspecialchars($bannerData['c_name']) ?>"
+            class="banner-img">
+    <?php } ?>
 </section>
+
+<?php
+$aboutQuery = mysqli_query($con, "
+    SELECT c_name, sdesc, featured_img
+    FROM category
+    WHERE id = 76
+    LIMIT 1
+");
+
+$aboutData = mysqli_fetch_assoc($aboutQuery);
+?>
 
 <section class="about-section">
     <div class="container about-content">
@@ -13,28 +33,25 @@ include 'includes/header.php';
         <div class="about-text">
             <span class="about-tag">ABOUT US</span>
 
-            <h2>Dr. Dinesh Singh</h2>
+            <h2><?= htmlspecialchars($aboutData['c_name']) ?></h2>
 
-            <p class="about-degree">MCh - Neuro Surgery, MBBS, MS - General Surgery</p>
-
-            <h3>Advanced Neurosurgical Care with Accurate Diagnosis & Personalized Treatment</h3>
-
-            <p>
-                Dr. Dinesh Singh is a highly qualified Neurosurgeon with 9 years of experience, practising at Brain And Spine Clinic. He specializes in diagnosing and treating a wide range of neurosurgical disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurosurgical health and quality of life.
-            </p>
+            <div class="about-degree">
+                <?= $aboutData['sdesc'] ?>
+            </div>
 
             <a href="about.php" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
 
         </div>
 
         <div class="about-image">
-            <img src="assets/images/dr dinesh image.png" alt="Dr. Dinesh">
+            <img src="<?= htmlspecialchars($aboutData['featured_img']) ?>" 
+                 alt="<?= htmlspecialchars($aboutData['c_name']) ?>">
         </div>
 
     </div>
 </section>
 
-  <section class="services-section">
+ <section class="services-section">
     <div class="container">
 
         <div class="services-header">
@@ -44,75 +61,63 @@ include 'includes/header.php';
 
         <div class="services-cards">
 
-                <a href="services.php?service=brain-tumor" class="service-card">
-                    <div class="service-card-img">
-                        <img src="assets/images/stroke management.png" alt="Brain Tumor Surgery">
-                    </div>
-                    <div class="service-card-body">
-                        <h3>Brain Tumor Surgery</h3>
-                    </div>
-                </a>
+            <?php
+            $services = mysqli_query( $con, "SELECT id, title, url, file  FROM services   ORDER BY `order` ASC, id ASC" );
 
-                <a href="services.php?service=spine-surgery" class="service-card">
-                    <div class="service-card-img">
-                        <img src="assets/images/maigraine.png" alt="Spine Surgery">
-                    </div>
-                    <div class="service-card-body">
-                        <h3>Spine Surgery</h3>
-                    </div>
-                </a>
+            if ($services && mysqli_num_rows($services) > 0) {
+                while ($service = mysqli_fetch_assoc($services)) {
 
-                <a href="services.php?service=aneurysm" class="service-card">
-                    <div class="service-card-img">
-                        <img src="assets/images/neuromascular.png" alt="Aneurysm Clipping">
-                    </div>
-                    <div class="service-card-body">
-                        <h3>Aneurysm Clipping</h3>
-                    </div>
-                </a>
+                    $serviceTitle = htmlspecialchars($service['title']);
+                    $serviceUrl   = htmlspecialchars($service['url']);
+                    $serviceFile  = htmlspecialchars($service['file']);
+            ?>
 
-                <a href="services.php?service=dbs" class="service-card">
-                    <div class="service-card-img">
-                        <img src="assets/images/paalysis1.png" alt="Deep Brain Stimulation">
-                    </div>
-                    <div class="service-card-body">
-                        <h3>Deep Brain Stimulation</h3>
-                    </div>
-                </a>
+                    <a href="services.php?service=<?php echo $serviceUrl; ?>"
+                       class="service-card">
 
-                <a href="services.php?service=trauma" class="service-card">
-                    <div class="service-card-img">
-                        <img src="assets/images/epilepsy treatment.png" alt="Neurotrauma Surgery">
-                    </div>
-                    <div class="service-card-body">
-                        <h3>Neurotrauma Surgery</h3>
-                    </div>
-                </a>
+                        <div class="service-card-img">
+                            <img src="<?php echo $serviceFile; ?>"
+                                 alt="<?php echo $serviceTitle; ?>">
+                        </div>
 
-                <a href="services.php?service=pediatric" class="service-card">
-                    <div class="service-card-img">
-                        <img src="assets/images/sleep disopder.png" alt="Pediatric Neurosurgery">
-                    </div>
-                    <div class="service-card-body">
-                        <h3>Pediatric Neurosurgery</h3>
-                    </div>
-                </a>
+                        <div class="service-card-body">
+                            <h3><?php echo $serviceTitle; ?></h3>
+                        </div>
 
-            </div>
+                    </a>
+
+            <?php
+                }
+            }
+            ?>
+
+        </div>
 
     </div>
 </section>
+
+<?php
+$consultationQuery = mysqli_query($con, "
+    SELECT c_name, sdesc, featured_img
+    FROM category
+    WHERE id = 93
+    LIMIT 1
+");
+
+$consultationData = mysqli_fetch_assoc($consultationQuery);
+?>
 
 <section class="consultation-section">
     <div class="container consultation-content">
 
         <div class="consultation-image">
-            <img src="assets/images/dr dinesh image.png" alt="Book Consultation">
+            <img src="<?= htmlspecialchars($consultationData['featured_img']) ?>" 
+                 alt="<?= htmlspecialchars($consultationData['c_name']) ?>">
         </div>
 
         <div class="consultation-form">
-            <h2>Book Consultation</h2>
-            <h3>Schedule Your Neurosurgical Appointment</h3>
+            <h2><?= htmlspecialchars($consultationData['c_name']) ?></h2>
+            <h3><?= $consultationData['sdesc'] ?></h3>
 
             <form class="consultation-form-box">
                 <!-- First Row: Full Name and Email Address -->
@@ -156,15 +161,43 @@ include 'includes/header.php';
     </div>
 </section>
 
+<?php
+$testimonialCategoryQuery = mysqli_query($con, "
+    SELECT c_name, featured_img
+    FROM category
+    WHERE id = 94
+    LIMIT 1
+");
+
+$testimonialCategory = mysqli_fetch_assoc($testimonialCategoryQuery);
+
+$testimonialQuery = mysqli_query($con, "
+    SELECT title, `desc`
+    FROM testimonials
+    ORDER BY `order` ASC, id ASC
+    LIMIT 3
+");
+
+$testimonials = [];
+
+if ($testimonialQuery) {
+    while ($row = mysqli_fetch_assoc($testimonialQuery)) {
+        $testimonials[] = $row;
+    }
+}
+?>
+
 <section class="testimonial-section">
-    <img src="assets/images/testinomial.png" alt="Testimonial" class="testimonial-bg">
+    <img src="<?= htmlspecialchars($testimonialCategory['featured_img']) ?>"
+         alt="<?= htmlspecialchars($testimonialCategory['c_name']) ?>"
+         class="testimonial-bg">
 
     <div class="testimonial-overlay">
         <div class="container testimonial-content">
 
             <div class="testimonial-left">
                 <!-- <span class="testimonial-tag">TESTIMONIALS</span> -->
-                <h2>What Our Patients Say</h2>
+                <h2><?= htmlspecialchars($testimonialCategory['c_name']) ?></h2>
             </div>
 
             <div class="testimonial-right">
@@ -173,9 +206,11 @@ include 'includes/header.php';
                     <div class="testimonial-slide">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p>"Excellent care and professional treatment. Dr. Dinesh truly listens to his patients and provides the best neurosurgical care. Highly recommended!"</p>
+                            <p><?= isset($testimonials[0]) ? $testimonials[0]['desc'] : '' ?></p>
                             <div class="testimonial-author">
-                                <span class="author-name">- Rajesh Kumar</span>
+                                <span class="author-name">
+                                    <?= isset($testimonials[0]) ? '- ' . htmlspecialchars($testimonials[0]['title']) : '' ?>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -183,9 +218,11 @@ include 'includes/header.php';
                     <div class="testimonial-slide">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p>"Very thorough and caring doctor. After struggling with migraines for years, I finally found relief under Dr. Dinesh treatment. Thank you!"</p>
+                            <p><?= isset($testimonials[1]) ? $testimonials[1]['desc'] : '' ?></p>
                             <div class="testimonial-author">
-                                <span class="author-name">- Priya Sharma</span>
+                                <span class="author-name">
+                                    <?= isset($testimonials[1]) ? '- ' . htmlspecialchars($testimonials[1]['title']) : '' ?>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -193,9 +230,11 @@ include 'includes/header.php';
                     <div class="testimonial-slide">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p>"Dr. Dinesh expertise in stroke management is remarkable. His quick diagnosis and treatment helped my father recover significantly. Grateful for his care."</p>
+                            <p><?= isset($testimonials[2]) ? $testimonials[2]['desc'] : '' ?></p>
                             <div class="testimonial-author">
-                                <span class="author-name">- Amit Verma</span>
+                                <span class="author-name">
+                                    <?= isset($testimonials[2]) ? '- ' . htmlspecialchars($testimonials[2]['title']) : '' ?>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -208,6 +247,15 @@ include 'includes/header.php';
     </div>
 </section>
 
+<?php
+$sqlgallery = mysqli_query($con, "
+    SELECT file
+    FROM gallery_imgs
+    WHERE status = 1
+    ORDER BY ordering ASC, id ASC
+");
+?>
+
 <section class="gallery-section">
     <div class="container">
 
@@ -217,27 +265,26 @@ include 'includes/header.php';
         </div>
 
         <div class="gallery-cards">
+
+            <?php
+            if ($sqlgallery && mysqli_num_rows($sqlgallery) > 0) {
+                while ($rwgallery = mysqli_fetch_assoc($sqlgallery)) {
+            ?>
+
                 <div class="gallery-card">
                     <div class="gallery-card-img">
-                        <img src="assets/images/stroke management.png" alt="Stroke Management" class="lightbox-trigger">
+                        <img src="<?= $path . $rwgallery['file']; ?>"
+                             alt="Gallery Image"
+                             class="lightbox-trigger">
                     </div>
                 </div>
-                <div class="gallery-card">
-                    <div class="gallery-card-img">
-                        <img src="assets/images/maigraine.png" alt="Stroke Management" class="lightbox-trigger">
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <div class="gallery-card-img">
-                        <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
-                    </div>
-                </div>
-                 <div class="gallery-card">
-                    <div class="gallery-card-img">
-                        <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
-                    </div>
-                </div>
-            </div>
+
+            <?php
+                }
+            }
+            ?>
+
+        </div>
 
     </div>
 </section>
