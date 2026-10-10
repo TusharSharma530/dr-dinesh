@@ -3,19 +3,29 @@
     <div class="container bottom-bar-content">
 
         <div class="bottom-bar-left">
-            <img src="assets/icons/logo.png" alt="Logo" class="bottom-logo">
+            <img src="<?php echo htmlspecialchars(!empty($logo) ? $logo : '', ENT_QUOTES, 'UTF-8'); ?>" alt="Logo" class="bottom-logo">
             <div class="bottom-divider"></div>
             <div class="bottom-info">
                 <div class="bottom-info-item">
                     <div class="info-icon">
                         <i class="bi bi-geo-alt-fill"></i>
                     </div>
-                    
+
                     <div class="info-text">
                         <strong>Our Clinic Address</strong>
-                        <p>Shri Ram plaza,  opposite of Ambedkar college,<br> Tejgarhi road Meerut ,250004</p>
+                        <p>
+                            <?php
+                            $clinicAddress = htmlspecialchars($address ?? '', ENT_QUOTES, 'UTF-8');
+                            $clinicAddress = str_ireplace(
+                                'Tejgarhi road',
+                                '<br>Tejgarhi road',
+                                $clinicAddress
+                            );
+                            echo $clinicAddress;
+                            ?>
+                        </p>
                     </div>
-                    
+
                 </div>
                 <div class="bottom-info-item">
                     <div class="info-icon">
@@ -23,8 +33,8 @@
                     </div>
                     <div class="info-text">
                         <strong>Phone Number</strong>
-                        <p>+91 7982156581 </p>
-                        <p>+91 7906246467 </p>
+                        <p><?php echo htmlspecialchars($contactno ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
+                        <p><?php echo htmlspecialchars($alternateno ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
                     </div>
                 </div>
             </div>
@@ -32,12 +42,12 @@
 
         <div class="bottom-bar-right">
             <div class="social-links">
-                <a href="https://www.facebook.com/p/NeuroDoctorMeerut"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/p/DcyMcyYhFZo/"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+                <a href="<?php echo htmlspecialchars($facebook ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-facebook"></i></a>
+                <a href="<?php echo htmlspecialchars($instagram ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-instagram"></i></a>
+                <a href="<?php echo htmlspecialchars($youtube ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-youtube"></i></a>
             </div>
         </div>
-  
+
     </div>
 </section>
 
@@ -70,7 +80,7 @@
             <div class="clinic-hours">
                 <div class="hours-row">
                     <span class="day">Monday – Saturday</span>
-                    <span class="time">10:00 AM – 6:00 PM</span>
+                    <span class="time"><?php echo htmlspecialchars($time ?? '', ENT_QUOTES, 'UTF-8'); ?></span>
                 </div>
                 <div class="hours-row">
                     <span class="day">Sunday</span>
@@ -78,7 +88,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 </footer>

@@ -5,20 +5,20 @@ include 'includes/header.php';
 
 $service = isset($_GET['service']) ? $_GET['service'] : '';
 
-$query = "SELECT * FROM services";
+$query = "SELECT * FROM sub_cat";
 $result = mysqli_query($con, $query);
 
 $services = [];
 
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $key = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $row['title']), '-'));
+        $key = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $row['sc_name']), '-'));
 
         $services[$key] = [
-            'title' => $row['title'],
-            'image' => $row['file'],
-            'alt'   => $row['title'],
-            'desc'  => $row['desc'],
+            'title' => $row['sc_name'],
+            'image' => $row['featured_img'],
+            'alt'   => $row['sc_name'],
+            'desc'  => $row['sc_desc'],
             'file'  => $key . '.php'
         ];
     }

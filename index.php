@@ -62,14 +62,15 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
         <div class="services-cards">
 
             <?php
-            $services = mysqli_query( $con, "SELECT id, title, url, file  FROM services   ORDER BY `order` ASC, id ASC" );
+            $services = mysqli_query($con, "SELECT id, sc_name, featured_img FROM sub_cat ORDER BY id ASC");
 
             if ($services && mysqli_num_rows($services) > 0) {
                 while ($service = mysqli_fetch_assoc($services)) {
 
-                    $serviceTitle = htmlspecialchars($service['title']);
-                    $serviceUrl   = htmlspecialchars($service['url']);
-                    $serviceFile  = htmlspecialchars($service['file']);
+                    $serviceTitle = htmlspecialchars($service['sc_name'], ENT_QUOTES, 'UTF-8');
+                    $serviceKey   = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $service['sc_name']), '-'));
+                    $serviceUrl   = htmlspecialchars($serviceKey, ENT_QUOTES, 'UTF-8');
+                    $serviceFile  = htmlspecialchars($service['featured_img'], ENT_QUOTES, 'UTF-8');
             ?>
 
                     <a href="services.php?service=<?php echo $serviceUrl; ?>"
@@ -95,7 +96,6 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
 
     </div>
 </section>
-
 <?php
 $consultationQuery = mysqli_query($con, "
     SELECT c_name, sdesc, featured_img

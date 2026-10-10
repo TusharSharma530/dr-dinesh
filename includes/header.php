@@ -1,349 +1,240 @@
-<?php require_once __DIR__ . '/../manager/database/db.php'; ?>
+
+<?php
+require_once __DIR__ . '/../manager/database/db.php';
+
+$navbarTitles = [];
+
+$navbarQuery = "SELECT c_name, c_url FROM category WHERE c_type = 1 AND status = 1";
+$navbarResult = mysqli_query($con, $navbarQuery);
+
+if ($navbarResult) {
+    while ($navbarRow = mysqli_fetch_assoc($navbarResult)) {
+        $navbarTitles[$navbarRow['c_url']] = $navbarRow['c_name'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>
-        <?php  echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Dr Dinesh | Neurosurgical & Brain Care'; ?>
-    </title>
-    <meta name="description" content="Professional neurosurgical care and consultation." >
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" >
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" >
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" >
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" >
-    <link  rel="stylesheet"  href="css/style.css" >
-    <link rel="stylesheet" href="css/responsiveness.css" >
-    <script src="js/script.js" defer ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo isset($pageTitle) ? htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') : ''; ?></title>
+    <meta name="description" content="Professional neurosurgical care and consultation.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsiveness.css">
+    <script src="js/script.js" defer></script>
 </head>
-
 
 <body>
 
 <header class="main-header">
 
     <div class="container header-content">
-        <a href="index.php"  class="logo"  aria-label="Neuro Care Home" >
-            <img  src="assets/icons/logo.png" alt="Neuro Care Logo" class="logo-img" >
+        <a href="index.php" class="logo" aria-label="Neuro Care Home">
+            <img src="assets/icons/logo.png" alt="Neuro Care Logo" class="logo-img">
         </a>
 
         <div class="header-right">
-<!-- top bar -->
 
             <div class="top-bar">
                 <div class="top-bar-content">
 
-                    <!-- APPOINTMENT MESSAGE -->
-
                     <div class="top-info">
-
                         <span>
                             You can request appointment in 24 hours
                         </span>
-
                     </div>
 
                     <div class="contact-info">
                         <span>
-
                             <i class="bi bi-envelope-fill" aria-hidden="true"></i>
-                             Email : brainspine24@gmail.com
+                            Email : <?php echo htmlspecialchars($emailid ?? '', ENT_QUOTES, 'UTF-8'); ?>
                         </span>
 
-                        <span class="separator" aria-hidden="true" >
-                        </span>
+                        <span class="separator" aria-hidden="true"></span>
 
                         <span>
-
-                            <i class="bi bi-telephone-fill"  aria-hidden="true" ></i>
-                            Phone : 7982156581, 7906246467
+                            <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                            Phone : <?php echo htmlspecialchars($contactno ?? '', ENT_QUOTES, 'UTF-8'); ?><?php if (!empty($alternateno)) { echo ', ' . htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8'); } ?>
                         </span>
 
-                        <span class="separator" aria-hidden="true">
-                            |
-                        </span>
+                        <span class="separator" aria-hidden="true">|</span>
 
                         <div class="social-icons">
 
-                            <a
-                                href="https://www.facebook.com/p/NeuroDoctorMeerut"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Facebook"
-                            >
-
-                                <i class="bi bi-facebook" aria-hidden="true" ></i>
+                            <a href="<?php echo htmlspecialchars($facebook ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                               target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <i class="bi bi-facebook" aria-hidden="true"></i>
                             </a>
 
-                            <a
-                                href="https://www.instagram.com/p/DcyMcyYhFZo/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Instagram"
-                            >
-
-                                <i  class="bi bi-instagram" aria-hidden="true" ></i>
+                            <a href="<?php echo htmlspecialchars($instagram ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                               target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="bi bi-instagram" aria-hidden="true"></i>
                             </a>
 
-                            <a
-                                href="https://www.youtube.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="YouTube"
-                            >
-
-                                <i  class="bi bi-youtube"  aria-hidden="true"></i>
+                            <a href="<?php echo htmlspecialchars($youtube ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                               target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                                <i class="bi bi-youtube" aria-hidden="true"></i>
                             </a>
 
                         </div>
-
                     </div>
 
                 </div>
-
             </div>
-<!-- navbar -->
 
             <div class="navbar">
 
-                <nav class="nav-links" id="main-navigation" aria-label="Main Navigation"
-                >
+                <nav class="nav-links" id="main-navigation" aria-label="Main Navigation">
 
                     <a href="index.php">
-                        Home
+                        <?php echo htmlspecialchars($navbarTitles['home'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
                     <a href="about.php">
-                        About
+                        <?php echo htmlspecialchars($navbarTitles['about-us'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
                     <div class="nav-dropdown">
-                        <a  href="services.php" class="services-toggle" aria-expanded="false"
-                            aria-haspopup="true"
-                        >
-
+                        <a href="services.php" class="services-toggle"
+                           aria-expanded="false" aria-haspopup="true">
                             <span>
-                                Services
+                                <?php echo htmlspecialchars($navbarTitles['services'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                             </span>
-
-                            <i class="bi bi-chevron-down"  aria-hidden="true"></i>
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
                         </a>
 
-                        <!-- SERVICES SUBMENU -->
+                        <!-- SERVICES SUBMENU: STATIC -->
 
-                        <div class="dropdown-menu">
-                            <a href="services.php?service=brain-tumor" >
-                                Brain Tumor Surgery
-                            </a>
+                       <div class="dropdown-menu">
+                            <?php
+                            $subCategoryQuery = "
+                                SELECT sc_name
+                                FROM sub_cat
+                                WHERE cat_id = 95
+                                AND status = 1
+                                ORDER BY `order` ASC
+                            ";
 
-                            <a  href="services.php?service=spine-surgery" >
-                                Spine Surgery
-                            </a>
+                            $subCategoryResult = mysqli_query($con,$subCategoryQuery);
 
-                            <a  href="services.php?service=aneurysm" >
-                                Aneurysm Clipping
-                            </a>
-
-
-                            <a
-                                href="services.php?service=dbs"
-                            >
-                                Deep Brain Stimulation
-                            </a>
-
-
-                            <a
-                                href="services.php?service=trauma"
-                            >
-                                Neurotrauma Surgery
-                            </a>
-
-
-                            <a
-                                href="services.php?service=pediatric"
-                            >
-                                Pediatric Neurosurgery
-                            </a>
-
+                            if ($subCategoryResult) {
+                                while ($subcategory = mysqli_fetch_assoc($subCategoryResult)) {
+                                    // Generate the exact same slug format used in services.php
+                                    $key = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-',$subcategory['sc_name']), '-'));
+                                    ?>
+                                    <a href="services.php?service=<?php echo urlencode($key); ?>">
+                                        <?php
+                                        echo htmlspecialchars(
+                                            $subcategory['sc_name'],
+                                            ENT_QUOTES,
+                                            'UTF-8'
+                                        );
+                                        ?>
+                                    </a>
+                                    <?php
+                                }
+                            } else {
+                                error_log('Subcategory query failed: ' . mysqli_error($con));
+                            }
+                            ?>
                         </div>
-
                     </div>
 
-
-                    <!-- GALLERY -->
-
                     <a href="gallery.php">
-                        Gallery
+                        <?php echo htmlspecialchars($navbarTitles['gallery'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
-
-
-                    <!-- BLOGS -->
 
                     <a href="blogs.php">
-                        Blogs
+                        <?php echo htmlspecialchars($navbarTitles['blogs'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
-
-                    <!-- CONTACT -->
-
                     <a href="contact.php">
-                        Contact Us
+                        <?php echo htmlspecialchars($navbarTitles['contact-us'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
                 </nav>
- <!-- appointment button -->
 
-                <button
-                    class="appointment-btn"
-                    type="button"
-                    id="appointmentOpenBtn"
-                >
+                <button class="appointment-btn" type="button" id="appointmentOpenBtn">
                     APPOINTMENT
                 </button>
-<!-- Mobile menu btn -->
 
-                <button
-                    class="menu-toggle"
-                    type="button"
-                    aria-label="Toggle Navigation Menu"
-                    aria-expanded="false"
-                    aria-controls="main-navigation"
-                >
-
-                    <i
-                        class="bi bi-list"
-                        aria-hidden="true"
-                    ></i>
-
+                <button class="menu-toggle" type="button"
+                        aria-label="Toggle Navigation Menu"
+                        aria-expanded="false"
+                        aria-controls="main-navigation">
+                    <i class="bi bi-list" aria-hidden="true"></i>
                 </button>
 
             </div>
-
         </div>
-
     </div>
-
 </header>
-<!-- appointment modal -->
 
-<div
-    id="appointmentModal"
-    class="appointment-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="appointmentTitle"
->
+<!-- APPOINTMENT MODAL -->
 
+<div id="appointmentModal" class="appointment-modal"
+     role="dialog" aria-modal="true" aria-labelledby="appointmentTitle">
 
     <div class="appointment-modal-content">
 
-        <button
-            type="button"
-            class="appointment-close"
-            id="appointmentCloseBtn"
-            aria-label="Close appointment modal"
-        >
-
+        <button type="button" class="appointment-close"
+                id="appointmentCloseBtn" aria-label="Close appointment modal">
             &times;
-
         </button>
 
-
-        <h2 id="appointmentTitle">
-            Book Appointment
-        </h2>
-
+        <h2 id="appointmentTitle">Book Appointment</h2>
 
         <p class="appointment-subtitle">
             Fill in the details below to book your appointment
         </p>
 
-
-        <form  class="appointment-form" id="appointmentForm" >
+        <form class="appointment-form" id="appointmentForm">
 
             <div class="appointment-form-row">
+                <input type="text" name="name" placeholder="Full Name"
+                       autocomplete="name" required>
 
-                <input  type="text" name="name" placeholder="Full Name" autocomplete="name"  required >
-
-                <input type="email" name="email"  placeholder="Email Address" autocomplete="email" required  >
-
+                <input type="email" name="email" placeholder="Email Address"
+                       autocomplete="email" required>
             </div>
 
-            <!-- PHONE + DATE -->
-
             <div class="appointment-form-row">
+                <input type="tel" name="phone" placeholder="Phone Number"
+                       autocomplete="tel" required>
 
-                <input type="tel"  name="phone" placeholder="Phone Number"  autocomplete="tel"  required  >
-
-                <input  type="date" name="date"  required >
+                <input type="date" name="date" required>
             </div>
 
-            <!-- TIME + SERVICE -->
-
             <div class="appointment-form-row">
+                <input type="time" name="time" required>
 
-                <input type="time" name="time" required >
-
-                <select name="service" required >
-
-                    <option  value="" disabled selected >
-                        Select Services
-                    </option>
-
-
-                    <option value="brain-tumor">
-                        Brain Tumor Surgery
-                    </option>
-
-
-                    <option value="spine-surgery">
-                        Spine Surgery
-                    </option>
-
-
-                    <option value="aneurysm">
-                        Aneurysm Clipping
-                    </option>
-
-
-                    <option value="dbs">
-                        Deep Brain Stimulation
-                    </option>
-
-
-                    <option value="trauma">
-                        Neurotrauma Surgery
-                    </option>
-
-
-                    <option value="pediatric">
-                        Pediatric Neurosurgery
-                    </option>
-
+                <select name="service" required>
+                    <option value="" disabled selected>Select Services</option>
+                    <option value="brain-tumor">Brain Tumor Surgery</option>
+                    <option value="spine-surgery">Spine Surgery</option>
+                    <option value="aneurysm">Aneurysm Clipping</option>
+                    <option value="dbs">Deep Brain Stimulation</option>
+                    <option value="trauma">Neurotrauma Surgery</option>
+                    <option value="pediatric">Pediatric Neurosurgery</option>
                 </select>
-
             </div>
 
-            <textarea
-                name="message"
-                placeholder="Your Message"
-                rows="4"
-                required
-            ></textarea>
+            <textarea name="message" placeholder="Your Message"
+                      rows="4" required></textarea>
 
-            <!-- SUBMIT BUTTON -->
-
-            <button type="submit" class="appointment-submit-btn" >
+            <button type="submit" class="appointment-submit-btn">
                 BOOK APPOINTMENT
             </button>
 
         </form>
-
     </div>
-
 </div>
-
 
 </body>
 </html>
