@@ -5,14 +5,24 @@ include 'includes/header.php';
 
 $service = isset($_GET['service']) ? $_GET['service'] : '';
 
-$services = [
-    'brain-tumor' => ['title' => 'Brain Tumor Surgery: Causes, Symptoms & Treatment', 'image' => 'stroke management.png', 'alt' => 'Brain Tumor Surgery', 'file' => 'stroke.php'],
-    'spine-surgery' => ['title' => 'Spine Surgery: Recurring Headaches Should Not Be Ignored', 'image' => 'maigraine.png', 'alt' => 'Spine Surgery', 'file' => 'migraine.php'],
-    'aneurysm' => ['title' => 'Aneurysm Clipping: Causes, Symptoms & Care', 'image' => 'neuromascular.png', 'alt' => 'Aneurysm Clipping', 'file' => 'neuromuscular.php'],
-    'dbs' => ['title' => 'Deep Brain Stimulation: Causes, Symptoms & Recovery', 'image' => 'paalysis1.png', 'alt' => 'Deep Brain Stimulation', 'file' => 'paralysis.php'],
-    'trauma' => ['title' => 'Neurotrauma Surgery: Causes, Symptoms & Care', 'image' => 'epilepsy treatment.png', 'alt' => 'Neurotrauma Surgery', 'file' => 'epilepsy.php'],
-    'pediatric' => ['title' => 'Pediatric Neurosurgery: Causes, Symptoms & Care', 'image' => 'sleep disopder.png', 'alt' => 'Pediatric Neurosurgery', 'file' => 'sleep.php'],
-];
+$query = "SELECT * FROM services";
+$result = mysqli_query($con, $query);
+
+$services = [];
+
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $key = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $row['title']), '-'));
+
+        $services[$key] = [
+            'title' => $row['title'],
+            'image' => $row['file'],
+            'alt'   => $row['title'],
+            'desc'  => $row['desc'],
+            'file'  => $key . '.php'
+        ];
+    }
+}
 
 $serviceAliases = [
     'stroke' => 'brain-tumor',
@@ -35,24 +45,28 @@ include 'includes/page-banner.php';
 
 if ($service && isset($services[$service])) {
     $s = $services[$service];
+
     echo '<section class="blog-detail-section">';
     echo '<div class="container blog-detail-container">';
-    echo '<div class="blog-detail-img"><img src="assets/images/' . $s['image'] . '" alt="' . $s['alt'] . '"></div>';
+    echo '<div class="blog-detail-img"><img src="' . htmlspecialchars($s['image'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($s['alt'], ENT_QUOTES, 'UTF-8') . '"></div>';
     echo '<div class="blog-detail-content">';
-    echo '<h1>' . $s['title'] . '</h1>';
+    echo '<h1>' . htmlspecialchars($s['title'], ENT_QUOTES, 'UTF-8') . '</h1>';
     echo '<p class="blog-author">By Dr. Dinesh Singh – Neurosurgeon in Meerut</p>';
-    include 'includes/services/' . $s['file'];
+    echo '<div class="service-description">' . $s['desc'] . '</div>';
     echo '</div></div></section>';
+
 } else {
     echo '<section class="services-section services-page"><div class="container">';
     echo '<div class="services-header"><span class="services-tag">OUR SERVICES</span><h2>Comprehensive Neurosurgical Care</h2></div>';
     echo '<div class="services-cards">';
+
     foreach ($services as $key => $s) {
-        echo '<a href="services.php?service=' . $key . '" class="service-card">';
-        echo '<div class="service-card-img"><img src="assets/images/' . $s['image'] . '" alt="' . $s['alt'] . '"></div>';
-        echo '<div class="service-card-body"><h3>' . $s['alt'] . '</h3></div>';
+        echo '<a href="services.php?service=' . urlencode($key) . '" class="service-card">';
+        echo '<div class="service-card-img"><img src="' . htmlspecialchars($s['image'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($s['alt'], ENT_QUOTES, 'UTF-8') . '"></div>';
+        echo '<div class="service-card-body"><h3>' . htmlspecialchars($s['alt'], ENT_QUOTES, 'UTF-8') . '</h3></div>';
         echo '</a>';
     }
+
     echo '</div></div></section>';
 }
 

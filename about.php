@@ -6,44 +6,73 @@ include 'includes/header.php';
 
 <?php include 'includes/page-banner.php'; ?>
 
+<?php
+$aboutQuery = mysqli_query($con, "
+    SELECT c_name, c_desc, featured_img
+    FROM category
+    WHERE id = 76
+    LIMIT 1
+");
+
+$aboutData = $aboutQuery ? mysqli_fetch_assoc($aboutQuery) : null;
+
+$desc = $aboutData['c_desc'] ?? '';
+
+// Extract the existing admin content without changing the page structure
+preg_match('/<p\b[^>]*>(.*?)<\/p>/is', $desc, $degreeMatch);
+preg_match('/<h3\b[^>]*>(.*?)<\/h3>/is', $desc, $headingMatch);
+preg_match_all('/<p\b[^>]*>(.*?)<\/p>/is', $desc, $paragraphMatches);
+preg_match('/<ul\b[^>]*>(.*?)<\/ul>/is', $desc, $listMatch);
+
+// The patient count is the paragraph immediately before the UL
+$statsText = '';
+if (isset($paragraphMatches[1]) && count($paragraphMatches[1]) >= 3) {
+    $statsText = trim(strip_tags($paragraphMatches[1][2]));
+}
+?>
+
 <section class="about-section">
     <div class="container about-content">
 
         <div class="about-text">
             <span class="about-tag">ABOUT US</span>
 
-            <h2>Dr. Dinesh Singh</h2>
+            <h2><?= htmlspecialchars($aboutData['c_name'] ?? '', ENT_QUOTES, 'UTF-8') ?></h2>
 
-            <p class="about-degree">MCh - Neuro Surgery, MBBS, MS - General Surgery</p>
+            <p class="about-degree"><?= $degreeMatch[1] ?? '' ?></p>
 
-            <h3>Advanced Neurosurgical Care with Accurate Diagnosis & Personalized Treatment</h3>
+            <h3><?= $headingMatch[1] ?? '' ?></h3>
 
-            <p>
-                Dr. Dinesh Singh is a highly qualified Neurosurgeon with 9 years of experience, practising at Brain And Spine Clinic. He specializes in diagnosing and treating a wide range of neurosurgical disorders. With training from reputed institutions and a patient-focused approach, he ensures precise evaluation and evidence-based treatment for every patient. His goal is to provide compassionate care and improve long-term neurosurgical health and quality of life.
-            </p>
+            <p><?= $paragraphMatches[1][1] ?? '' ?></p>
 
             <div class="about-stats">
                 <div class="stat-box">
-                    <span class="stat-number">10000+</span>
+                    <span class="stat-number"><?= htmlspecialchars($statsText, ENT_QUOTES, 'UTF-8') ?></span>
                     <span class="stat-label">Satisfied Patients</span>
                 </div>
             </div>
 
             <ul class="about-list">
-                <li><i class="bi bi-check-circle-fill"></i> Expert in Stroke, Epilepsy & Migraine Treatment</li>
-                <li><i class="bi bi-check-circle-fill"></i> Advanced Neurosurgical Evaluation & Diagnosis</li>
-                <li><i class="bi bi-check-circle-fill"></i> Personalized & Evidence-Based Care</li>
-                <li><i class="bi bi-check-circle-fill"></i> Compassionate & Patient-Centered Approach</li>
+                <?php
+                if (!empty($listMatch[1])) {
+                    preg_match_all('/<li\b[^>]*>(.*?)<\/li>/is', $listMatch[1], $items);
+
+                    foreach ($items[1] as $item) {
+                ?>
+                    <li><i class="bi bi-check-circle-fill"></i> <?= trim(strip_tags($item)) ?></li>
+                <?php
+                    }
+                }
+                ?>
             </ul>
 
         </div>
 
         <div class="about-image">
-            <img src="assets/images/dr dinesh image.png" alt="Dr. Dinesh">
+            <img src="<?= htmlspecialchars($aboutData['featured_img'] ?? '', ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($aboutData['c_name'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
         </div>
 
     </div>
 </section>
-<?php
-include 'includes/footer.php';
-?>
+
+<?php include 'includes/footer.php'; ?>

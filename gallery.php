@@ -2,6 +2,9 @@
 $pageTitle = 'Gallery';
 $pageBreadcrumb = 'Gallery';
 include 'includes/header.php';
+
+$query = "SELECT file FROM gallery_imgs";
+$result = mysqli_query($con, $query);
 ?>
 
 <?php include 'includes/page-banner.php'; ?>
@@ -10,27 +13,15 @@ include 'includes/header.php';
     <div class="container">
 
         <div class="services-cards">
-          <div class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/stroke management.png" alt="Stroke Management" class="lightbox-trigger">
+
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="<?php echo htmlspecialchars($row['file']); ?>" alt="Gallery Image" class="lightbox-trigger">
+                    </div>
                 </div>
-            </div>
-            <div class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/maigraine.png" alt="Stroke Management" class="lightbox-trigger">
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-card-img">
-                    <img src="assets/images/neuromascular.png" alt="Stroke Management" class="lightbox-trigger">
-                </div>
-            </div>
-            
+            <?php endwhile; ?>
+
         </div>
 
     </div>

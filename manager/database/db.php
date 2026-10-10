@@ -1,6 +1,6 @@
 <?php session_start();
 error_reporting(0);
-define('BASE_PATH',"//localhost/dr dinesh/");
+define('BASE_PATH',"//localhost/drdinesh/");
 define('DB_HOST', 'localhost');
 define('DB_NAME','drdinesh');
 define('DB_USER','root');
@@ -213,12 +213,6 @@ if(!function_exists('imageUrl')){
 
 // echo getIndianCurrency(25201);
 
-
-function __getJobTitle($con, $id){
-$sql = mysqli_query($con, "SELECT * FROM `jobs` WHERE `status`=1 AND `id`=$id");
-$rw = mysqli_fetch_object($sql);
-return $rw->title;
-}
 
 
 

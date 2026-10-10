@@ -304,16 +304,29 @@ $sqlgallery = mysqli_query($con, "
 
         <div class="blog-cards">
 
-            <a href="blogs.php?blog=paralysis" class="blog-card">
+            <?php
+            $query = "SELECT file, title, `date` FROM blogs ORDER BY `date` DESC LIMIT 3";
+            $result = mysqli_query($con, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($blog = mysqli_fetch_assoc($result)) {
+
+                    $blogSlug = strtolower(trim(
+                        preg_replace('/[^a-zA-Z0-9]+/', '-', $blog['title']),
+                        '-'
+                    ));
+            ?>
+
+            <a href="blogs.php?blog=<?php echo urlencode($blogSlug); ?>" class="blog-card">
                 <div class="blog-card-img">
-                    <img src="assets/images/paralysis.png" alt="Paralysis">
+                    <img src="<?php echo htmlspecialchars($blog['file'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>">
                     <div class="blog-date">
-                        <span class="date-day">19</span>
-                        <span class="date-month">MAY</span>
+                        <span class="date-day"><?php echo date('d', strtotime($blog['date'])); ?></span>
+                        <span class="date-month"><?php echo strtoupper(date('M', strtotime($blog['date']))); ?></span>
                     </div>
                 </div>
                 <div class="blog-card-body">
-                    <h3>Paralysis: Causes, Symptoms, Treatment & Recovery</h3>
+                    <h3><?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
                     <span class="blog-read-more">
                         <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
                         Read More
@@ -321,39 +334,14 @@ $sqlgallery = mysqli_query($con, "
                 </div>
             </a>
 
-            <a href="blogs.php?blog=summer" class="blog-card">
-                <div class="blog-card-img">
-                    <img src="assets/images/summer heat.png" alt="Summer Heat">
-                    <div class="blog-date">
-                        <span class="date-day">19</span>
-                        <span class="date-month">JUN</span>
-                    </div>
-                </div>
-                <div class="blog-card-body">
-                    <h3>Summer Heat and Neurosurgical Care: Protect Your Brain This Summer</h3>
-                    <span class="blog-read-more">
-                        <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
-                        Read More
-                    </span>
-                </div>
-            </a>
-
-            <a href="blogs.php?blog=migraine" class="blog-card">
-                <div class="blog-card-img">
-                    <img src="assets/images/maigraine.png" alt="Migraine Treatment">
-                    <div class="blog-date">
-                        <span class="date-day">10</span>
-                        <span class="date-month">JUL</span>
-                    </div>
-                </div>
-                <div class="blog-card-body">
-                    <h3>Migraine Treatment: Recurring Headaches Should Not Be Ignored</h3>
-                    <span class="blog-read-more">
-                        <span class="blog-read-icon"><i class="bi bi-chevron-right"></i></span>
-                        Read More
-                    </span>
-                </div>
-            </a>
+            <?php
+                }
+            } else {
+                if (!$result) {
+                    echo "<!-- Blog query error: " . htmlspecialchars(mysqli_error($con), ENT_QUOTES, 'UTF-8') . " -->";
+                }
+            }
+            ?>
 
         </div>
 

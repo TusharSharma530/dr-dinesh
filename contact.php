@@ -16,16 +16,20 @@ include 'includes/header.php';
                 <i class="bi bi-telephone-fill"></i>
                 <div>
                     <h4>Phone Number</h4>
-                    <p>+91 7982156581 <br>+91 7906246467</p>
-                  
+                    <p>
+                        <?php echo htmlspecialchars($contactno ?? '', ENT_QUOTES, 'UTF-8'); ?>
+                        <?php if (!empty($alternateno)): ?>
+                            <br><?php echo htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8'); ?>
+                        <?php endif; ?>
+                    </p>
                 </div>
             </div>
-            
+
             <div class="contact-info-item">
                 <i class="bi bi-geo-alt-fill"></i>
                 <div>
                     <h4>Our Location</h4>
-                    <p>Shri Ram plaza,opposite of Ambedkar college, Tejgarhi road Meerut ,250004</p>
+                    <p><?php echo htmlspecialchars($address ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
                 </div>
             </div>
 
@@ -33,14 +37,19 @@ include 'includes/header.php';
                 <i class="bi bi-envelope-fill"></i>
                 <div>
                     <h4>Email Address</h4>
-                    <p>brainspine24@gmail.com</p>
+                    <p>
+                        <?php
+                        $contactEmail = !empty($emailid) ? $emailid : ($alternateemailid ?? '');
+                        echo htmlspecialchars($contactEmail, ENT_QUOTES, 'UTF-8');
+                        ?>
+                    </p>
                 </div>
             </div>
 
             <div class="contact-social">
-                <a href="https://www.instagram.com/p/DcyMcyYhFZo/"><i class="bi bi-instagram"></i></a>
-                 <a href="https://www.facebook.com/p/NeuroDoctorMeerut"><i class="bi bi-facebook"></i></a>
-                  <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+                <a href="<?php echo htmlspecialchars($instagram ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-instagram"></i></a>
+                <a href="<?php echo htmlspecialchars($facebook ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-facebook"></i></a>
+                <a href="<?php echo htmlspecialchars($youtube ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-youtube"></i></a>
             </div>
         </div>
 
@@ -69,7 +78,21 @@ include 'includes/header.php';
 </section>
 
 <section class="map-section">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.536!2d77.7371805!3d28.9651322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65f6c7b0f123%3A0x78a5f6619a39ab3a!2sBrain%20And%20Spine%20Clinic!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <?php if (!empty($mapiframe)): ?>
+        <?php if (stripos($mapiframe, '<iframe') !== false): ?>
+            <?php echo $mapiframe; ?>
+        <?php else: ?>
+            <iframe
+                src="<?php echo htmlspecialchars($mapiframe, ENT_QUOTES, 'UTF-8'); ?>"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        <?php endif; ?>
+    <?php endif; ?>
 </section>
 
 <?php
