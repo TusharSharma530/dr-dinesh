@@ -35,11 +35,11 @@
 </div>
 <!-- sub menu end here -->
 </li>
-<li class="menu-item ">
+<!-- <li class="menu-item ">
 	<a href="rooms.php" class="menu-link">							
 	<span class="link-text"><i class="ri-group-line"></i> Rooms</span>
 	</a>
-</li>
+</li> -->
 <li class="menu-item has-submenu">
 <a href="javascript:" class="menu-link orders" id="parent-menu">
 							
@@ -69,12 +69,12 @@
 
 <div class="submenu" id="child-menu">
 <ul class="submenu-list">
-<li class="submenu-item">
+<!-- <li class="submenu-item">
 <a href="services.php" class="submenu-link">Services</a>
-</li>
-<li class="submenu-item">
+</li> -->
+<!-- <li class="submenu-item">
 <a href="halls.php" class="submenu-link">Halls</a>
-</li>
+</li> -->
 <li class="submenu-item">
 <a href="gallery.php" class="submenu-link">Gallery</a>
 </li>

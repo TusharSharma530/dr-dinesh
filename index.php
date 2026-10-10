@@ -40,6 +40,25 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
 
             <a href="about.php" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
 
+            <div class="about-stats-grid">
+                <div class="stat-card">
+                    <span class="stat-card-num">5,000+</span>
+                    <span class="stat-card-label">Surgeries</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-num">15+</span>
+                    <span class="stat-card-label">Years Exp.</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-num">12+</span>
+                    <span class="stat-card-label">Awards</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-num">50+</span>
+                    <span class="stat-card-label">Countries</span>
+                </div>
+            </div>
+
         </div>
 
         <div class="about-image">
@@ -388,7 +407,7 @@ $sqlgallery = mysqli_query($con, "
 
         sliders.forEach(function (item) {
             var $el = jq(item[0]);
-            if (!$el.length \vert{}\vert{}$el.hasClass('slick-initialized')) return;
+            if (!$el.length || $el.hasClass('slick-initialized')) return;
 
             $el.slick(jq.extend({}, common, item[1]));
         });

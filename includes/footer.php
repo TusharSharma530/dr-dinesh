@@ -12,7 +12,7 @@
                     </div>
 
                     <div class="info-text">
-                        <strong>Our Clinic Address</strong>
+                        <strong>Contact Us</strong>
                         <p>
                             <?php
                             $clinicAddress = htmlspecialchars($address ?? '', ENT_QUOTES, 'UTF-8');

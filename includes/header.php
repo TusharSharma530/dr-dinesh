@@ -97,7 +97,7 @@ if ($navbarResult) {
                     </a>
 
                     <a href="about.php">
-                        <?php echo htmlspecialchars($navbarTitles['about-us'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
+                        <?php echo htmlspecialchars($navbarTitles['about'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
                     <div class="nav-dropdown">
