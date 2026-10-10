@@ -2,7 +2,7 @@
 include 'includes/header.php';
 ?>
 
-    <?php
+<?php
 $bannerQuery = mysqli_query($con, "SELECT c_name, featured_img FROM category WHERE id = 68 LIMIT 1");
 $bannerData = mysqli_fetch_assoc($bannerQuery);
 ?>
@@ -28,7 +28,6 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
 
 <section class="about-section">
     <div class="container about-content">
-       
 
         <div class="about-text">
             <span class="about-tag">ABOUT US</span>
@@ -51,7 +50,7 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
     </div>
 </section>
 
- <section class="services-section">
+<section class="services-section">
     <div class="container">
 
         <div class="services-header">
@@ -68,7 +67,7 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
                 while ($service = mysqli_fetch_assoc($services)) {
 
                     $serviceTitle = htmlspecialchars($service['sc_name'], ENT_QUOTES, 'UTF-8');
-                    $serviceKey   = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $service['sc_name']), '-'));
+                    $serviceKey   = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-',$service['sc_name']), '-'));
                     $serviceUrl   = htmlspecialchars($serviceKey, ENT_QUOTES, 'UTF-8');
                     $serviceFile  = htmlspecialchars($service['featured_img'], ENT_QUOTES, 'UTF-8');
             ?>
@@ -96,6 +95,7 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
 
     </div>
 </section>
+
 <?php
 $consultationQuery = mysqli_query($con, "
     SELECT c_name, sdesc, featured_img
@@ -137,12 +137,18 @@ $consultationData = mysqli_fetch_assoc($consultationQuery);
                     <input type="time" required>
                     <select required>
                         <option value="" disabled selected>Select Services</option>
-                        <option value="brain-tumor">Brain Tumor Surgery</option>
-                        <option value="spine-surgery">Spine Surgery</option>
-                        <option value="aneurysm">Aneurysm Clipping</option>
-                        <option value="dbs">Deep Brain Stimulation</option>
-                        <option value="trauma">Neurotrauma Surgery</option>
-                        <option value="pediatric">Pediatric Neurosurgery</option>
+                        <?php
+                        $dropdownServices = mysqli_query($con, "SELECT sc_name FROM sub_cat ORDER BY id ASC");
+                        if ($dropdownServices && mysqli_num_rows($dropdownServices) > 0) {
+                            while ($dService = mysqli_fetch_assoc($dropdownServices)) {
+                                $dTitle = htmlspecialchars($dService['sc_name'], ENT_QUOTES, 'UTF-8');
+                                $dKey   = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-',$dService['sc_name']), '-'));
+                        ?>
+                                <option value="<?= htmlspecialchars($dKey, ENT_QUOTES, 'UTF-8') ?>"><?= $dTitle ?></option>
+                        <?php
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
 
@@ -182,7 +188,7 @@ $testimonials = [];
 
 if ($testimonialQuery) {
     while ($row = mysqli_fetch_assoc($testimonialQuery)) {
-        $testimonials[] = $row;
+        $testimonials[] =$row;
     }
 }
 ?>
@@ -196,7 +202,6 @@ if ($testimonialQuery) {
         <div class="container testimonial-content">
 
             <div class="testimonial-left">
-                <!-- <span class="testimonial-tag">TESTIMONIALS</span> -->
                 <h2><?= htmlspecialchars($testimonialCategory['c_name']) ?></h2>
             </div>
 
@@ -206,7 +211,7 @@ if ($testimonialQuery) {
                     <div class="testimonial-slide">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p><?= isset($testimonials[0]) ? $testimonials[0]['desc'] : '' ?></p>
+                            <p><?= isset($testimonials[0]) ?$testimonials[0]['desc'] : '' ?></p>
                             <div class="testimonial-author">
                                 <span class="author-name">
                                     <?= isset($testimonials[0]) ? '- ' . htmlspecialchars($testimonials[0]['title']) : '' ?>
@@ -218,7 +223,7 @@ if ($testimonialQuery) {
                     <div class="testimonial-slide">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p><?= isset($testimonials[1]) ? $testimonials[1]['desc'] : '' ?></p>
+                            <p><?= isset($testimonials[1]) ?$testimonials[1]['desc'] : '' ?></p>
                             <div class="testimonial-author">
                                 <span class="author-name">
                                     <?= isset($testimonials[1]) ? '- ' . htmlspecialchars($testimonials[1]['title']) : '' ?>
@@ -230,7 +235,7 @@ if ($testimonialQuery) {
                     <div class="testimonial-slide">
                         <div class="testimonial-box">
                             <i class="bi bi-quote quote-icon"></i>
-                            <p><?= isset($testimonials[2]) ? $testimonials[2]['desc'] : '' ?></p>
+                            <p><?= isset($testimonials[2]) ?$testimonials[2]['desc'] : '' ?></p>
                             <div class="testimonial-author">
                                 <span class="author-name">
                                     <?= isset($testimonials[2]) ? '- ' . htmlspecialchars($testimonials[2]['title']) : '' ?>
@@ -273,7 +278,7 @@ $sqlgallery = mysqli_query($con, "
 
                 <div class="gallery-card">
                     <div class="gallery-card-img">
-                        <img src="<?= $path . $rwgallery['file']; ?>"
+                        <img src="<?= $path .$rwgallery['file']; ?>"
                              alt="Gallery Image"
                              class="lightbox-trigger">
                     </div>
@@ -306,7 +311,7 @@ $sqlgallery = mysqli_query($con, "
 
             <?php
             $query = "SELECT file, title, `date` FROM blogs ORDER BY `date` DESC LIMIT 3";
-            $result = mysqli_query($con, $query);
+            $result = mysqli_query($con,$query);
 
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($blog = mysqli_fetch_assoc($result)) {
@@ -335,10 +340,6 @@ $sqlgallery = mysqli_query($con, "
             </a>
 
             <?php
-                }
-            } else {
-                if (!$result) {
-                    echo "<!-- Blog query error: " . htmlspecialchars(mysqli_error($con), ENT_QUOTES, 'UTF-8') . " -->";
                 }
             }
             ?>
@@ -387,7 +388,7 @@ $sqlgallery = mysqli_query($con, "
 
         sliders.forEach(function (item) {
             var $el = jq(item[0]);
-            if (!$el.length || $el.hasClass('slick-initialized')) return;
+            if (!$el.length \vert{}\vert{}$el.hasClass('slick-initialized')) return;
 
             $el.slick(jq.extend({}, common, item[1]));
         });
@@ -395,5 +396,3 @@ $sqlgallery = mysqli_query($con, "
 </script>
 
 <?php include 'includes/footer.php'; ?>
-
-

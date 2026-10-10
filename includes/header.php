@@ -1,15 +1,13 @@
-
 <?php
 require_once __DIR__ . '/../manager/database/db.php';
 
 $navbarTitles = [];
 
 $navbarQuery = "SELECT c_name, c_url FROM category WHERE c_type = 1 AND status = 1";
-$navbarResult = mysqli_query($con, $navbarQuery);
+$navbarResult = mysqli_query($con,$navbarQuery);
 
 if ($navbarResult) {
-    while ($navbarRow = mysqli_fetch_assoc($navbarResult)) {
-        $navbarTitles[$navbarRow['c_url']] = $navbarRow['c_name'];
+    while ($navbarRow = mysqli_fetch_assoc($navbarResult)) {$navbarTitles[$navbarRow['c_url']] =$navbarRow['c_name'];
     }
 }
 ?>
@@ -35,9 +33,11 @@ if ($navbarResult) {
 <header class="main-header">
 
     <div class="container header-content">
-        <a href="index.php" class="logo" aria-label="Neuro Care Home">
-            <img src="assets/icons/logo.png" alt="Neuro Care Logo" class="logo-img">
-        </a>
+            <a href="index.php" class="logo" aria-label="Neuro Care Home">
+              <img src="<?= htmlspecialchars($logo ?? 'assets/icons/logo.png', ENT_QUOTES, 'UTF-8'); ?>"
+                alt="Neuro Care Logo"
+                class="logo-img">
+            </a>
 
         <div class="header-right">
 
@@ -109,8 +109,6 @@ if ($navbarResult) {
                             <i class="bi bi-chevron-down" aria-hidden="true"></i>
                         </a>
 
-                        <!-- SERVICES SUBMENU: STATIC -->
-
                        <div class="dropdown-menu">
                             <?php
                             $subCategoryQuery = "
@@ -125,7 +123,6 @@ if ($navbarResult) {
 
                             if ($subCategoryResult) {
                                 while ($subcategory = mysqli_fetch_assoc($subCategoryResult)) {
-                                    // Generate the exact same slug format used in services.php
                                     $key = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-',$subcategory['sc_name']), '-'));
                                     ?>
                                     <a href="services.php?service=<?php echo urlencode($key); ?>">
@@ -216,12 +213,25 @@ if ($navbarResult) {
 
                 <select name="service" required>
                     <option value="" disabled selected>Select Services</option>
-                    <option value="brain-tumor">Brain Tumor Surgery</option>
-                    <option value="spine-surgery">Spine Surgery</option>
-                    <option value="aneurysm">Aneurysm Clipping</option>
-                    <option value="dbs">Deep Brain Stimulation</option>
-                    <option value="trauma">Neurotrauma Surgery</option>
-                    <option value="pediatric">Pediatric Neurosurgery</option>
+                    <?php
+                    $modalServicesResult = mysqli_query($con, "
+                        SELECT sc_name 
+                        FROM sub_cat 
+                        WHERE cat_id = 95 
+                        AND status = 1 
+                        ORDER BY `order` ASC
+                    ");
+
+                    if ($modalServicesResult && mysqli_num_rows($modalServicesResult) > 0) {
+                        while ($modalService = mysqli_fetch_assoc($modalServicesResult)) {
+                            $mTitle = htmlspecialchars($modalService['sc_name'], ENT_QUOTES, 'UTF-8');
+                            $mKey   = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-',$modalService['sc_name']), '-'));
+                    ?>
+                            <option value="<?= htmlspecialchars($mKey, ENT_QUOTES, 'UTF-8') ?>"><?= $mTitle ?></option>
+                    <?php
+                        }
+                    }
+                    ?>
                 </select>
             </div>
 
