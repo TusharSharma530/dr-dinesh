@@ -165,6 +165,10 @@ $metadesc = $rwlinks['meta_desc'];
 $logo = $rwlinks['logo'];
 $time = $rwlinks['reception_time'];
 
+if (!defined('SITE_NAME')) {
+	define('SITE_NAME', trim((string)$websitename) !== '' ? $websitename : 'Website');
+}
+
 
 // ===== site config value with fallback ======
 function __cfg($value, $fallback = ''){

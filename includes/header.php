@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../manager/database/db.php';
+require_once __DIR__ . '/recaptcha.php';
 
 $navbarTitles = [];
 
@@ -20,6 +21,9 @@ if ($navbarResult) {
     <meta name="description" content="Professional neurosurgical care and consultation.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <?php if (!empty($loadMaterialIcons)) { ?>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,400..700,0..1,0&display=block" rel="stylesheet">
+    <?php } ?>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="slick/slick.css">
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
@@ -191,6 +195,8 @@ if ($navbarResult) {
             Fill in the details below to book your appointment
         </p>
 
+        <p class="appointment-status" id="appointmentStatus" role="status" aria-live="polite"></p>
+
         <form class="appointment-form" id="appointmentForm">
 
             <div class="appointment-form-row">
@@ -232,11 +238,15 @@ if ($navbarResult) {
                         }
                     }
                     ?>
+                    <option value="other">Other</option>
                 </select>
             </div>
 
             <textarea name="message" placeholder="Your Message"
                       rows="4" required></textarea>
+
+            <div id="appointmentRecaptcha" class="appointment-recaptcha"
+                 data-sitekey="<?= htmlspecialchars(defined('RECAPTCHA_SITE_KEY') ? RECAPTCHA_SITE_KEY : '', ENT_QUOTES, 'UTF-8') ?>"></div>
 
             <button type="submit" class="appointment-submit-btn">
                 BOOK APPOINTMENT
@@ -245,6 +255,8 @@ if ($navbarResult) {
         </form>
     </div>
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 </html>

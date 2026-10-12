@@ -16,10 +16,11 @@
                         <p>
                             <?php
                             $clinicAddress = htmlspecialchars($address ?? '', ENT_QUOTES, 'UTF-8');
-                            $clinicAddress = str_ireplace(
-                                'Tejgarhi road',
-                                '<br>Tejgarhi road',
-                                $clinicAddress
+                            $clinicAddress = preg_replace(
+                                '/\s+Tejgarhi/i',
+                                '<br>Tejgarhi',
+                                $clinicAddress,
+                                1
                             );
                             echo $clinicAddress;
                             ?>
@@ -35,6 +36,16 @@
                         <strong>Phone Number</strong>
                         <p><?php echo htmlspecialchars($contactno ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
                         <p><?php echo htmlspecialchars($alternateno ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
+                    </div>
+                </div>
+                <div class="bottom-info-item timing-item">
+                    <div class="info-icon">
+                        <i class="bi bi-clock-fill"></i>
+                    </div>
+                    <div class="info-text">
+                        <strong>Clinic Timings</strong>
+                        <p>Monday &ndash; Saturday : <?php echo htmlspecialchars($time ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
+                        <p>Sunday : Closed</p>
                     </div>
                 </div>
             </div>
@@ -75,19 +86,6 @@
             </form>
         </div>
 
-        <div class="footer-column">
-            <h3>Clinic Hours</h3>
-            <div class="clinic-hours">
-                <div class="hours-row">
-                    <span class="day">Monday – Saturday</span>
-                    <span class="time"><?php echo htmlspecialchars($time ?? '', ENT_QUOTES, 'UTF-8'); ?></span>
-                </div>
-                <div class="hours-row">
-                    <span class="day">Sunday</span>
-                    <span class="time closed">Closed</span>
-                </div>
-            </div>
-        </div>
     </div>
 
 </footer>

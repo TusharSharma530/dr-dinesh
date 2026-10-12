@@ -1,4 +1,5 @@
 <?php
+
 include 'includes/header.php';
 ?>
 
@@ -168,6 +169,7 @@ $consultationData = mysqli_fetch_assoc($consultationQuery);
                             }
                         }
                         ?>
+                        <option value="other">Other</option>
                     </select>
                 </div>
 
@@ -183,91 +185,6 @@ $consultationData = mysqli_fetch_assoc($consultationQuery);
             </form>
         </div>
 
-    </div>
-</section>
-
-<?php
-$testimonialCategoryQuery = mysqli_query($con, "
-    SELECT c_name, featured_img
-    FROM category
-    WHERE id = 94
-    LIMIT 1
-");
-
-$testimonialCategory = mysqli_fetch_assoc($testimonialCategoryQuery);
-
-$testimonialQuery = mysqli_query($con, "
-    SELECT title, `desc`
-    FROM testimonials
-    ORDER BY `order` ASC, id ASC
-    LIMIT 3
-");
-
-$testimonials = [];
-
-if ($testimonialQuery) {
-    while ($row = mysqli_fetch_assoc($testimonialQuery)) {
-        $testimonials[] =$row;
-    }
-}
-?>
-
-<section class="testimonial-section">
-    <img src="<?= htmlspecialchars($testimonialCategory['featured_img']) ?>"
-         alt="<?= htmlspecialchars($testimonialCategory['c_name']) ?>"
-         class="testimonial-bg">
-
-    <div class="testimonial-overlay">
-        <div class="container testimonial-content">
-
-            <div class="testimonial-left">
-                <h2><?= htmlspecialchars($testimonialCategory['c_name']) ?></h2>
-            </div>
-
-            <div class="testimonial-right">
-                <div class="testimonial-slider">
-
-                    <div class="testimonial-slide">
-                        <div class="testimonial-box">
-                            <i class="bi bi-quote quote-icon"></i>
-                            <p><?= isset($testimonials[0]) ?$testimonials[0]['desc'] : '' ?></p>
-                            <div class="testimonial-author">
-                                <span class="author-name">
-                                    <?= isset($testimonials[0]) ? '- ' . htmlspecialchars($testimonials[0]['title']) : '' ?>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-slide">
-                        <div class="testimonial-box">
-                            <i class="bi bi-quote quote-icon"></i>
-                            <p><?= isset($testimonials[1]) ?$testimonials[1]['desc'] : '' ?></p>
-                            <div class="testimonial-author">
-                                <span class="author-name">
-                                    <?= isset($testimonials[1]) ? '- ' . htmlspecialchars($testimonials[1]['title']) : '' ?>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-slide">
-                        <div class="testimonial-box">
-                            <i class="bi bi-quote quote-icon"></i>
-                            <p><?= isset($testimonials[2]) ?$testimonials[2]['desc'] : '' ?></p>
-                            <div class="testimonial-author">
-                                <span class="author-name">
-                                    <?= isset($testimonials[2]) ? '- ' . htmlspecialchars($testimonials[2]['title']) : '' ?>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
     </div>
 </section>
 
@@ -365,6 +282,91 @@ $sqlgallery = mysqli_query($con, "
 
         </div>
 
+    </div>
+</section>
+
+<?php
+$testimonialCategoryQuery = mysqli_query($con, "
+    SELECT c_name, featured_img
+    FROM category
+    WHERE id = 94
+    LIMIT 1
+");
+
+$testimonialCategory = mysqli_fetch_assoc($testimonialCategoryQuery);
+
+$testimonialQuery = mysqli_query($con, "
+    SELECT title, `desc`
+    FROM testimonials
+    ORDER BY `order` ASC, id ASC
+    LIMIT 3
+");
+
+$testimonials = [];
+
+if ($testimonialQuery) {
+    while ($row = mysqli_fetch_assoc($testimonialQuery)) {
+        $testimonials[] =$row;
+    }
+}
+?>
+
+<section class="testimonial-section">
+    <img src="<?= htmlspecialchars($testimonialCategory['featured_img']) ?>"
+         alt="<?= htmlspecialchars($testimonialCategory['c_name']) ?>"
+         class="testimonial-bg">
+
+    <div class="testimonial-overlay">
+        <div class="container testimonial-content">
+
+            <div class="testimonial-left">
+                <h2><?= htmlspecialchars($testimonialCategory['c_name']) ?></h2>
+            </div>
+
+            <div class="testimonial-right">
+                <div class="testimonial-slider">
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-box">
+                            <i class="bi bi-quote quote-icon"></i>
+                            <p><?= isset($testimonials[0]) ?$testimonials[0]['desc'] : '' ?></p>
+                            <div class="testimonial-author">
+                                <span class="author-name">
+                                    <?= isset($testimonials[0]) ? '- ' . htmlspecialchars($testimonials[0]['title']) : '' ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-box">
+                            <i class="bi bi-quote quote-icon"></i>
+                            <p><?= isset($testimonials[1]) ?$testimonials[1]['desc'] : '' ?></p>
+                            <div class="testimonial-author">
+                                <span class="author-name">
+                                    <?= isset($testimonials[1]) ? '- ' . htmlspecialchars($testimonials[1]['title']) : '' ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-box">
+                            <i class="bi bi-quote quote-icon"></i>
+                            <p><?= isset($testimonials[2]) ?$testimonials[2]['desc'] : '' ?></p>
+                            <div class="testimonial-author">
+                                <span class="author-name">
+                                    <?= isset($testimonials[2]) ? '- ' . htmlspecialchars($testimonials[2]['title']) : '' ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
 </section>
 

@@ -142,10 +142,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ---------------- appointment modal ---------------- */
 
+    let appointmentRecaptchaWidgetId = null;
+    let appointmentRecaptchaAttempts = 0;
+
+    function renderAppointmentRecaptcha() {
+        const recaptchaWrap = document.getElementById('appointmentRecaptcha');
+        if (!recaptchaWrap) return;
+
+        if (typeof grecaptcha === 'undefined' || typeof grecaptcha.render !== 'function') {
+            if (appointmentRecaptchaAttempts < 40) {
+                appointmentRecaptchaAttempts += 1;
+                setTimeout(renderAppointmentRecaptcha, 250);
+            }
+            return;
+        }
+
+        if (appointmentRecaptchaWidgetId !== null) return;
+
+        const siteKey = recaptchaWrap.getAttribute('data-sitekey');
+        if (!siteKey) return;
+
+        try {
+            appointmentRecaptchaWidgetId = grecaptcha.render(recaptchaWrap, { sitekey: siteKey });
+        } catch (error) {
+            appointmentRecaptchaWidgetId = null;
+        }
+    }
+
+    function getAppointmentRecaptchaToken() {
+        if (appointmentRecaptchaWidgetId === null || typeof grecaptcha === 'undefined') return '';
+        try {
+            return grecaptcha.getResponse(appointmentRecaptchaWidgetId) || '';
+        } catch (error) {
+            return '';
+        }
+    }
+
+    function resetAppointmentRecaptcha() {
+        if (appointmentRecaptchaWidgetId === null || typeof grecaptcha === 'undefined') return;
+        try { grecaptcha.reset(appointmentRecaptchaWidgetId); } catch (error) {}
+    }
+
     function openAppointmentModal() {
         if (!appointmentModal) return;
         appointmentModal.style.display = 'flex';
         document.body.classList.add('modal-open');
+        renderAppointmentRecaptcha();
     }
 
     function closeAppointmentModal() {
@@ -166,11 +208,60 @@ document.addEventListener('DOMContentLoaded', function () {
         appointmentModal.addEventListener('click', function (event) {
             if (event.target === appointmentModal) closeAppointmentModal();
         });
-    }
+    }    if (appointmentForm) {
+        const appointmentStatus = document.getElementById('appointmentStatus');
+        const appointmentSubmitBtn = appointmentForm.querySelector('.appointment-submit-btn');
 
-    if (appointmentForm) {
+        function showAppointmentStatus(type, message) {
+            if (!appointmentStatus) return;
+            appointmentStatus.textContent = message || '';
+            appointmentStatus.className = 'appointment-status';
+            if (message) {
+                appointmentStatus.classList.add(type === 'success' ? 'status-success' : 'status-error');
+            }
+        }
+
         appointmentForm.addEventListener('submit', function (event) {
             event.preventDefault();
+
+            if (!appointmentForm.reportValidity()) return;
+
+            const recaptchaToken = getAppointmentRecaptchaToken();
+            if (!recaptchaToken) {
+                renderAppointmentRecaptcha();
+                showAppointmentStatus('error', 'Please complete the reCAPTCHA verification and try again.');
+                return;
+            }
+
+            const formData = new FormData(appointmentForm);
+            formData.set('g-recaptcha-response', recaptchaToken);
+            const serviceSelect = appointmentForm.querySelector('select[name="service"]');
+            if (serviceSelect && serviceSelect.selectedOptions.length) {
+                formData.set('service_name', serviceSelect.selectedOptions[0].textContent.trim());
+            }
+
+            showAppointmentStatus('', '');
+            if (appointmentSubmitBtn) appointmentSubmitBtn.disabled = true;
+
+            fetch('appointment-send.php', {
+                method: 'POST',
+                body: formData,
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+                .then(function (response) { return response.json(); })
+                .then(function (data) {
+                    showAppointmentStatus(data.ok ? 'success' : 'error', data.message);
+                    if (data.ok) {
+                        appointmentForm.reset();
+                        resetAppointmentRecaptcha();
+                    }
+                })
+                .catch(function () {
+                    showAppointmentStatus('error', 'Something went wrong. Please try again.');
+                })
+                .finally(function () {
+                    if (appointmentSubmitBtn) appointmentSubmitBtn.disabled = false;
+                });
         });
     }
 
