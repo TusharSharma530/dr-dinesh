@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showAppointmentStatus('', '');
             if (appointmentSubmitBtn) appointmentSubmitBtn.disabled = true;
 
-            fetch('appointment-send.php', {
+            fetch('includes/appointment-send.php', {
                 method: 'POST',
                 body: formData,
                 headers: { 'X-Requested-With': 'XMLHttpRequest' }
