@@ -110,11 +110,32 @@ include 'includes/header.php';
                 </div>
             </div>
 
+            <?php 
+            $hasSocialContact = !empty(trim($facebook ?? '')) || !empty(trim($instagram ?? '')) || !empty(trim($youtube ?? '')) || !empty(trim($linkedin ?? '')) || !empty(trim($twitter ?? ''));
+            if ($hasSocialContact) {
+            ?>
             <div class="contact-social">
-                <a href="<?php echo htmlspecialchars($instagram ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-instagram"></i></a>
-                <a href="<?php echo htmlspecialchars($facebook ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-facebook"></i></a>
-                <a href="<?php echo htmlspecialchars($youtube ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-youtube"></i></a>
+                <?php if (!empty(trim($instagram ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($instagram), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <?php } ?>
+
+                <?php if (!empty(trim($facebook ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($facebook), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <?php } ?>
+
+                <?php if (!empty(trim($youtube ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($youtube), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                <?php } ?>
+
+                <?php if (!empty(trim($linkedin ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($linkedin), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <?php } ?>
+
+                <?php if (!empty(trim($twitter ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($twitter), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <?php } ?>
             </div>
+            <?php } ?>
         </div>
 
         <div class="contact-right">

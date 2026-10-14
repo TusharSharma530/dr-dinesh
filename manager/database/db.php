@@ -164,6 +164,13 @@ $metakeywords = $rwlinks['meta_keywords'];
 $metadesc = $rwlinks['meta_desc'];
 $logo = $rwlinks['logo'];
 $time = $rwlinks['reception_time'];
+$working_days = $rwlinks['working_days'] ?? '';
+$closed_days = $rwlinks['closed_days'] ?? '';
+$no_of_experience = $rwlinks['no_of_experience'] ?? '';
+$experience = $no_of_experience;
+$surgeries = $rwlinks['surgeries'] ?? '';
+$no_of_patients = $rwlinks['no_of_patients'] ?? '';
+$satisfied_patients = $rwlinks['satisfied_patients'] ?? '';
 
 if (!defined('SITE_NAME')) {
 	define('SITE_NAME', trim((string)$websitename) !== '' ? $websitename : 'Website');

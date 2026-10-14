@@ -44,20 +44,41 @@
                     </div>
                     <div class="info-text">
                         <strong>Clinic Timings</strong>
-                        <p>Monday &ndash; Saturday : <?php echo htmlspecialchars($time ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
-                        <p>Sunday : Closed</p>
+                        <p><?php echo htmlspecialchars($working_days ?: 'Monday – Saturday', ENT_QUOTES, 'UTF-8'); ?> : <?php echo htmlspecialchars($time ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
+                        <p><?php echo htmlspecialchars($closed_days ?: 'Sunday : Closed', ENT_QUOTES, 'UTF-8'); ?></p>
                     </div>
                 </div>
             </div>
         </div>
 
+        <?php 
+        $hasSocialFooter = !empty(trim($facebook ?? '')) || !empty(trim($instagram ?? '')) || !empty(trim($youtube ?? '')) || !empty(trim($linkedin ?? '')) || !empty(trim($twitter ?? ''));
+        if ($hasSocialFooter) {
+        ?>
         <div class="bottom-bar-right">
             <div class="social-links">
-                <a href="<?php echo htmlspecialchars($facebook ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-facebook"></i></a>
-                <a href="<?php echo htmlspecialchars($instagram ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-instagram"></i></a>
-                <a href="<?php echo htmlspecialchars($youtube ?? '#', ENT_QUOTES, 'UTF-8'); ?>"><i class="bi bi-youtube"></i></a>
+                <?php if (!empty(trim($facebook ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($facebook), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <?php } ?>
+
+                <?php if (!empty(trim($instagram ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($instagram), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <?php } ?>
+
+                <?php if (!empty(trim($youtube ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($youtube), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                <?php } ?>
+
+                <?php if (!empty(trim($linkedin ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($linkedin), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <?php } ?>
+
+                <?php if (!empty(trim($twitter ?? ''))) { ?>
+                <a href="<?php echo htmlspecialchars(trim($twitter), ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <?php } ?>
             </div>
         </div>
+        <?php } ?>
 
     </div>
 </section>
@@ -80,9 +101,10 @@
         <div class="footer-column footer-newsletter">
             <h3>Stay Updated</h3>
             <p>Get health tips, neurosurgical care updates, and clinic information from Dr. Dinesh Singh, Neurosurgeon at Brain And Spine Clinic.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="subscribe-btn">SUBSCRIBE <i class="bi bi-send-fill"></i></button>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" name="email" id="newsletterEmail" placeholder="Enter your email" required>
+                <button type="submit" class="subscribe-btn" id="subscribeBtn">SUBSCRIBE <i class="bi bi-send-fill"></i></button>
+                <p class="newsletter-msg" id="newsletterMsg"></p>
             </form>
         </div>
 
@@ -125,6 +147,54 @@ window.addEventListener('scroll', function() {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+(function() {
+    var form = document.getElementById('newsletterForm');
+    if (!form) return;
+
+    var msg = document.getElementById('newsletterMsg');
+    var btn = document.getElementById('subscribeBtn');
+
+    function showMsg(text, ok) {
+        msg.textContent = text;
+        msg.classList.toggle('success', !!ok);
+        msg.classList.toggle('error', !ok);
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var email = document.getElementById('newsletterEmail').value.trim();
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            showMsg('Please enter a valid email address.', false);
+            return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = 'SUBSCRIBING...';
+
+        var data = new FormData();
+        data.append('email', email);
+
+        fetch('includes/subscribe.php', {
+            method: 'POST',
+            body: data
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(json) {
+            showMsg(json.message, json.ok);
+            if (json.ok) form.reset();
+        })
+        .catch(function() {
+            showMsg('Something went wrong. Please try again.', false);
+        })
+        .finally(function() {
+            btn.disabled = false;
+            btn.innerHTML = 'SUBSCRIBE <i class="bi bi-send-fill"></i>';
+        });
+    });
+})();
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

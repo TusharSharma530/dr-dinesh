@@ -46,27 +46,21 @@ if (isset($paragraphMatches[1]) && count($paragraphMatches[1]) >= 3) {
             <p><?= $paragraphMatches[1][1] ?? '' ?></p>
 
             <div class="about-stats-grid">
-                <?php if ($statsText !== '') { ?>
                 <div class="stat-card">
-                    <span class="stat-card-num"><?= htmlspecialchars($statsText, ENT_QUOTES, 'UTF-8') ?></span>
-                    <span class="stat-card-label">Satisfied Patients</span>
-                </div>
-                <?php } ?>
-                <div class="stat-card">
-                    <span class="stat-card-num">5,000+</span>
+                    <span class="stat-card-num"><?= htmlspecialchars($surgeries ?: '5,000+', ENT_QUOTES, 'UTF-8') ?></span>
                     <span class="stat-card-label">Surgeries</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-card-num">15+</span>
+                    <span class="stat-card-num"><?= htmlspecialchars($no_of_experience ?: '15+', ENT_QUOTES, 'UTF-8') ?></span>
                     <span class="stat-card-label">Years Exp.</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-card-num">12+</span>
-                    <span class="stat-card-label">Awards</span>
+                    <span class="stat-card-num"><?= htmlspecialchars($no_of_patients ?: '10,000+', ENT_QUOTES, 'UTF-8') ?></span>
+                    <span class="stat-card-label">Total Patients</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-card-num">50+</span>
-                    <span class="stat-card-label">Countries</span>
+                    <span class="stat-card-num"><?= htmlspecialchars($satisfied_patients ?: '10,000+', ENT_QUOTES, 'UTF-8') ?></span>
+                    <span class="stat-card-label">Satisfied Patients</span>
                 </div>
             </div>
 

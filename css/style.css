@@ -322,6 +322,12 @@ img {
     overflow: hidden;
 }
 
+/* Fallback banner (no image in DB) -> theme colour background, compact height */
+.page-banner-section.page-banner-solid {
+    height: 180px;
+    background: var(--primary-color);
+}
+
 .page-banner-dark {
     position: absolute;
     top: 0;
@@ -375,7 +381,6 @@ img {
 
 .map-section {
     width: 100%;
-    margin-top: 50px;
 }
 
 .map-section iframe {
@@ -705,8 +710,8 @@ img {
     flex-wrap: wrap;
     align-items: stretch;
     gap: 14px;
-    margin-top: 30px;
-    margin-bottom: 5px;
+    margin-top: 24px;
+    margin-bottom: 24px; /* space before about-list */
 }
 
 .stat-card {
@@ -717,7 +722,7 @@ img {
     justify-content: center;
     gap: 6px;
     min-height: 96px;
-    background: #eef4f1;
+    background: #e4f1ff;
     border-radius: 12px;
     padding: 16px 10px;
     text-align: center;
@@ -725,7 +730,7 @@ img {
 }
 
 .stat-card:hover {
-    background: #e2efe9;
+    background: #d4e7ff;
     transform: translateY(-4px);
 }
 
@@ -831,8 +836,8 @@ img {
 }
 
 .gallery-page .service-card-img img {
-    height: auto;
-    object-fit: fill;
+    height: 200px;
+    object-fit: cover;
 }
 
 .service-card-icon {
@@ -1068,7 +1073,7 @@ img {
 
 .consultation-section {
     padding: 50px 0;
-    background: #fff;
+    background: #eaf4ff;
 }
 
 .consultation-content {
@@ -1349,7 +1354,8 @@ img {
 
 .gallery-card-img img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     display: block;
     transition: 0.3s;
     cursor: pointer;
@@ -1825,6 +1831,32 @@ img {
 
 .subscribe-btn:hover {
     background: var(--primary-color);
+}
+
+.subscribe-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.newsletter-msg {
+    display: none;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.newsletter-msg.success,
+.newsletter-msg.error {
+    display: block;
+}
+
+.newsletter-msg.success {
+    color: #1a7f37;
+}
+
+.newsletter-msg.error {
+    color: #c0392b;
 }
 
 .clinic-hours {

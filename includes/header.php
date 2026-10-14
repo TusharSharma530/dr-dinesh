@@ -67,26 +67,51 @@ if ($navbarResult) {
                             Phone : <?php echo htmlspecialchars($contactno ?? '', ENT_QUOTES, 'UTF-8'); ?><?php if (!empty($alternateno)) { echo ', ' . htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8'); } ?>
                         </span>
 
+                        <?php 
+                        $hasSocialHeader = !empty(trim($facebook ?? '')) || !empty(trim($instagram ?? '')) || !empty(trim($youtube ?? '')) || !empty(trim($linkedin ?? '')) || !empty(trim($twitter ?? ''));
+                        if ($hasSocialHeader) {
+                        ?>
                         <span class="separator" aria-hidden="true">|</span>
 
                         <div class="social-icons">
 
-                            <a href="<?php echo htmlspecialchars($facebook ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                            <?php if (!empty(trim($facebook ?? ''))) { ?>
+                            <a href="<?php echo htmlspecialchars(trim($facebook), ENT_QUOTES, 'UTF-8'); ?>"
                                target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                                 <i class="bi bi-facebook" aria-hidden="true"></i>
                             </a>
+                            <?php } ?>
 
-                            <a href="<?php echo htmlspecialchars($instagram ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                            <?php if (!empty(trim($instagram ?? ''))) { ?>
+                            <a href="<?php echo htmlspecialchars(trim($instagram), ENT_QUOTES, 'UTF-8'); ?>"
                                target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                 <i class="bi bi-instagram" aria-hidden="true"></i>
                             </a>
+                            <?php } ?>
 
-                            <a href="<?php echo htmlspecialchars($youtube ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                            <?php if (!empty(trim($youtube ?? ''))) { ?>
+                            <a href="<?php echo htmlspecialchars(trim($youtube), ENT_QUOTES, 'UTF-8'); ?>"
                                target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                                 <i class="bi bi-youtube" aria-hidden="true"></i>
                             </a>
+                            <?php } ?>
+
+                            <?php if (!empty(trim($linkedin ?? ''))) { ?>
+                            <a href="<?php echo htmlspecialchars(trim($linkedin), ENT_QUOTES, 'UTF-8'); ?>"
+                               target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <?php } ?>
+
+                            <?php if (!empty(trim($twitter ?? ''))) { ?>
+                            <a href="<?php echo htmlspecialchars(trim($twitter), ENT_QUOTES, 'UTF-8'); ?>"
+                               target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                                <i class="bi bi-twitter-x" aria-hidden="true"></i>
+                            </a>
+                            <?php } ?>
 
                         </div>
+                        <?php } ?>
                     </div>
 
                 </div>

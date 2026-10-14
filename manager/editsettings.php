@@ -18,13 +18,19 @@ if(isset($_POST['editRecord'])){
 	$alternate_no = mysqli_real_escape_string($con, $_POST['alternate_no']);
 	$whatsapp_no = mysqli_real_escape_string($con, $_POST['whatsapp_no']);
 	$reception_time = mysqli_real_escape_string($con, $_POST['reception_time']);
-	$address = mysqli_real_escape_string($con, $_POST['address']);
-	$youtubelink = mysqli_real_escape_string($con, $_POST['youtubelink']);
-	$facebook = mysqli_real_escape_string($con, $_POST['facebook']);
-	$youtube = mysqli_real_escape_string($con, $_POST['youtube']);
-	$instagram = mysqli_real_escape_string($con, $_POST['instagram']);
-	$twitter = mysqli_real_escape_string($con, $_POST['twitter']);
-	$linkedin = mysqli_real_escape_string($con, $_POST['linkedin']);
+	$working_days = mysqli_real_escape_string($con, $_POST['working_days']);
+	$closed_days = mysqli_real_escape_string($con, $_POST['closed_days']);
+	$no_of_experience = mysqli_real_escape_string($con, $_POST['no_of_experience']);
+	$surgeries = mysqli_real_escape_string($con, $_POST['surgeries']);
+	$no_of_patients = mysqli_real_escape_string($con, $_POST['no_of_patients']);
+	$satisfied_patients = mysqli_real_escape_string($con, $_POST['satisfied_patients']);
+	$address = mysqli_real_escape_string($con, trim($_POST['address'] ?? ''));
+	$youtubelink = mysqli_real_escape_string($con, trim($_POST['youtubelink'] ?? ''));
+	$facebook = mysqli_real_escape_string($con, trim($_POST['facebook'] ?? ''));
+	$youtube = mysqli_real_escape_string($con, trim($_POST['youtube'] ?? ''));
+	$instagram = mysqli_real_escape_string($con, trim($_POST['instagram'] ?? ''));
+	$twitter = mysqli_real_escape_string($con, trim($_POST['twitter'] ?? ''));
+	$linkedin = mysqli_real_escape_string($con, trim($_POST['linkedin'] ?? ''));
 	$googletag = mysqli_real_escape_string($con, $_POST['googletag']);
 	$map_iframe = mysqli_real_escape_string($con, $_POST['map_iframe']);
 	$footerdesc = mysqli_real_escape_string($con, $_POST['footerdesc']);
@@ -52,11 +58,17 @@ if(isset($_POST['editRecord'])){
 		alternate_no = '$alternate_no',
 		whatsapp_no = '$whatsapp_no',
 		reception_time = '$reception_time',
-		address = '$address ',
-		youtubelink = '$youtubelink ',
+		working_days = '$working_days',
+		closed_days = '$closed_days',
+		no_of_experience = '$no_of_experience',
+		surgeries = '$surgeries',
+		no_of_patients = '$no_of_patients',
+		satisfied_patients = '$satisfied_patients',
+		address = '$address',
+		youtubelink = '$youtubelink',
 		facebook = '$facebook',
-		youtube = '$youtube' ,			
-		instagram = '$instagram ',
+		youtube = '$youtube',			
+		instagram = '$instagram',
 		twitter = '$twitter', 
 		linkedin = '$linkedin', 
 		map_iframe = '$map_iframe',
@@ -137,9 +149,39 @@ if(isset($_POST['editRecord'])){
 			<input type="text" id="whatsapp" name='whatsapp_no' class="form-control" value="<?php echo $rwpinfo['whatsapp_no']; ?>">
 		</div>
 
-		<div class="col-md-6 mb-3">
+		<div class="col-md-4 mb-3">
+			<label for="working_days" >Day Field (Working Days)</label>
+			<input type="text" id="working_days" name="working_days" class="form-control" placeholder="e.g. Monday – Saturday" value="<?php echo $rwpinfo['working_days'] ?? ''; ?>">
+		</div>
+
+		<div class="col-md-4 mb-3">
 			<label for="receptiontime" >Reception Time</label>
-			<input type="text" id="receptiontime" name="reception_time" class="form-control" placeholder="e.g. 24 Hours / 9:00 AM - 10:00 PM" value="<?php echo $rwpinfo['reception_time']; ?>">
+			<input type="text" id="receptiontime" name="reception_time" class="form-control" placeholder="e.g. 24 Hours / 10:00 AM - 6:00 PM" value="<?php echo $rwpinfo['reception_time']; ?>">
+		</div>
+
+		<div class="col-md-4 mb-3">
+			<label for="closed_days" >Closed Day Field</label>
+			<input type="text" id="closed_days" name="closed_days" class="form-control" placeholder="e.g. Sunday : Closed" value="<?php echo $rwpinfo['closed_days'] ?? ''; ?>">
+		</div>
+
+		<div class="col-md-3 mb-3">
+			<label for="no_of_experience" >No. of Experience</label>
+			<input type="text" id="no_of_experience" name="no_of_experience" class="form-control" placeholder="e.g. 15+" value="<?php echo $rwpinfo['no_of_experience']; ?>">
+		</div>
+
+		<div class="col-md-3 mb-3">
+			<label for="surgeries" >Surgeries</label>
+			<input type="text" id="surgeries" name="surgeries" class="form-control" placeholder="e.g. 5,000+" value="<?php echo $rwpinfo['surgeries']; ?>">
+		</div>
+
+		<div class="col-md-3 mb-3">
+			<label for="no_of_patients" >No. of Patients</label>
+			<input type="text" id="no_of_patients" name="no_of_patients" class="form-control" placeholder="e.g. 10,000+" value="<?php echo $rwpinfo['no_of_patients'] ?? ''; ?>">
+		</div>
+
+		<div class="col-md-3 mb-3">
+			<label for="satisfied_patients" >Satisfied Patients</label>
+			<input type="text" id="satisfied_patients" name="satisfied_patients" class="form-control" placeholder="e.g. 99% / 10,000+" value="<?php echo $rwpinfo['satisfied_patients'] ?? ''; ?>">
 		</div>
 
 		<div class="col-md-3 mb-3">

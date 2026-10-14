@@ -877,12 +877,20 @@ body {
     .page-banner-section {
         height: 200px;
     }
+
+    .page-banner-section.page-banner-solid {
+        height: 140px;
+    }
 }
 
 @media (max-width: 600px) {
 
     .page-banner-section {
         height: 160px;
+    }
+
+    .page-banner-section.page-banner-solid {
+        height: 120px;
     }
 }
 
