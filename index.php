@@ -1,5 +1,15 @@
 <?php
 
+// // Simple router: /about -> index.php?type=about -> include about.php
+// $route = isset($_GET['type']) ? trim((string)$_GET['type'], '/') : '';
+// if ($route !== '' && $route !== 'index') {
+//     $page = basename($route);
+//     if (is_file(__DIR__ . '/' . $page . '.php')) {
+//         include __DIR__ . '/' . $page . '.php';
+//         exit;
+//     }
+// }
+
 include 'includes/header.php';
 ?>
 
@@ -39,7 +49,7 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
                 <?= $aboutData['sdesc'] ?>
             </div>
 
-            <a href="about.php" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+            <a href="about" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
 
             <div class="about-stats-grid">
                 <div class="stat-card">
@@ -92,7 +102,7 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
                     $serviceFile  = htmlspecialchars($service['featured_img'], ENT_QUOTES, 'UTF-8');
             ?>
 
-                    <a href="services.php?service=<?php echo $serviceUrl; ?>"
+                    <a href="services?service=<?php echo $serviceUrl; ?>"
                        class="service-card">
 
                         <div class="service-card-img">
@@ -258,7 +268,7 @@ $sqlgallery = mysqli_query($con, "
                     ));
             ?>
 
-            <a href="blogs.php?blog=<?php echo urlencode($blogSlug); ?>" class="blog-card">
+            <a href="blogs?blog=<?php echo urlencode($blogSlug); ?>" class="blog-card">
                 <div class="blog-card-img">
                     <img src="<?php echo htmlspecialchars($blog['file'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>">
                     <div class="blog-date">

@@ -37,7 +37,7 @@ if ($navbarResult) {
 <header class="main-header">
 
     <div class="container header-content">
-            <a href="index.php" class="logo" aria-label="Neuro Care Home">
+            <a href="index" class="logo" aria-label="Neuro Care Home">
               <img src="<?= htmlspecialchars($logo ?? 'assets/icons/logo.png', ENT_QUOTES, 'UTF-8'); ?>"
                 alt="Neuro Care Logo"
                 class="logo-img">
@@ -121,16 +121,16 @@ if ($navbarResult) {
 
                 <nav class="nav-links" id="main-navigation" aria-label="Main Navigation">
 
-                    <a href="index.php">
+                    <a href="index">
                         <?php echo htmlspecialchars($navbarTitles['home'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
-                    <a href="about.php">
+                    <a href="about">
                         <?php echo htmlspecialchars($navbarTitles['about'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
                     <div class="nav-dropdown">
-                        <a href="services.php" class="services-toggle"
+                        <a href="services" class="services-toggle"
                            aria-expanded="false" aria-haspopup="true">
                             <span>
                                 <?php echo htmlspecialchars($navbarTitles['services'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
@@ -154,7 +154,7 @@ if ($navbarResult) {
                                 while ($subcategory = mysqli_fetch_assoc($subCategoryResult)) {
                                     $key = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-',$subcategory['sc_name']), '-'));
                                     ?>
-                                    <a href="services.php?service=<?php echo urlencode($key); ?>">
+                                    <a href="services?service=<?php echo urlencode($key); ?>">
                                         <?php
                                         echo htmlspecialchars(
                                             $subcategory['sc_name'],
@@ -172,15 +172,15 @@ if ($navbarResult) {
                         </div>
                     </div>
 
-                    <a href="gallery.php">
+                    <a href="gallery">
                         <?php echo htmlspecialchars($navbarTitles['gallery'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
-                    <a href="blogs.php">
+                    <a href="blogs">
                         <?php echo htmlspecialchars($navbarTitles['blogs'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
-                    <a href="contact.php">
+                    <a href="contact">
                         <?php echo htmlspecialchars($navbarTitles['contact-us'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 

@@ -61,7 +61,7 @@ if ($service && isset($services[$service])) {
     echo '<div class="services-cards">';
 
     foreach ($services as $key => $s) {
-        echo '<a href="services.php?service=' . urlencode($key) . '" class="service-card">';
+        echo '<a href="services?service=' . urlencode($key) . '" class="service-card">';
         echo '<div class="service-card-img"><img src="' . htmlspecialchars($s['image'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($s['alt'], ENT_QUOTES, 'UTF-8') . '"></div>';
         echo '<div class="service-card-body"><h3>' . htmlspecialchars($s['alt'], ENT_QUOTES, 'UTF-8') . '</h3></div>';
         echo '</a>';

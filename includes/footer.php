@@ -90,11 +90,11 @@
         <div class="footer-column">
             <h3>Quick Links</h3>
             <div class="footer-links-grid">
-                <a href="index.php"><i class="bi bi-chevron-right"></i> Home</a>
-                <a href="about.php"><i class="bi bi-chevron-right"></i> About</a>
-                <a href="services.php"><i class="bi bi-chevron-right"></i> Services</a>
-                <a href="blogs.php"><i class="bi bi-chevron-right"></i> Blogs</a>
-                <a href="contact.php"><i class="bi bi-chevron-right"></i> Contact</a>
+                <a href="index"><i class="bi bi-chevron-right"></i> Home</a>
+                <a href="about"><i class="bi bi-chevron-right"></i> About</a>
+                <a href="services"><i class="bi bi-chevron-right"></i> Services</a>
+                <a href="blogs"><i class="bi bi-chevron-right"></i> Blogs</a>
+                <a href="contact"><i class="bi bi-chevron-right"></i> Contact</a>
             </div>
         </div>
 

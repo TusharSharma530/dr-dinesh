@@ -53,7 +53,7 @@ if ($blog && isset($blogs[$blog])) {
     echo '<div class="blog-cards">';
 
     foreach ($blogs as $key => $b) {
-        echo '<a href="blogs.php?blog=' . urlencode($key) . '" class="blog-card">';
+        echo '<a href="blogs?blog=' . urlencode($key) . '" class="blog-card">';
         echo '<div class="blog-card-img">';
         echo '<img src="' . htmlspecialchars($b['image'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($b['alt'], ENT_QUOTES, 'UTF-8') . '">';
         echo '<div class="blog-date"><span class="date-day">' . $b['day'] . '</span><span class="date-month">' . $b['month'] . '</span></div>';

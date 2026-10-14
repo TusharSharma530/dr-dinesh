@@ -324,7 +324,7 @@ img {
 
 /* Fallback banner (no image in DB) -> theme colour background, compact height */
 .page-banner-section.page-banner-solid {
-    height: 180px;
+    height: 140px;
     background: var(--primary-color);
 }
 
@@ -358,7 +358,7 @@ img {
 }
 
 .page-banner-overlay h1 {
-    /* font-size: 40px; */
+    font-size: 36px;
     color: white;
     font-weight: 400;
     margin-bottom: 10px;
