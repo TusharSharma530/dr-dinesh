@@ -51,24 +51,31 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
 
             <a href="about" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
 
-            <div class="about-stats-grid">
-                <div class="stat-card">
-                    <span class="stat-card-num"><?= htmlspecialchars($surgeries ?: '5,000+', ENT_QUOTES, 'UTF-8') ?></span>
-                    <span class="stat-card-label">Surgeries</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-card-num"><?= htmlspecialchars($no_of_experience ?: '15+', ENT_QUOTES, 'UTF-8') ?></span>
-                    <span class="stat-card-label">Years Exp.</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-card-num"><?= htmlspecialchars($no_of_patients ?: '10,000+', ENT_QUOTES, 'UTF-8') ?></span>
-                    <span class="stat-card-label">Total Patients</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-card-num"><?= htmlspecialchars($satisfied_patients ?: '10,000+', ENT_QUOTES, 'UTF-8') ?></span>
-                    <span class="stat-card-label">Satisfied Patients</span>
-                </div>
-            </div>
+            <?php
+            // Dynamic stats — sirf jo value DB se bhari ho wahi card dikhao
+            $statItems = [
+                ['surgeries',         'Surgeries'],
+                ['no_of_experience',  'Years Exp.'],
+                ['no_of_patients',    'Total Patients'],
+                ['satisfied_patients','Satisfied Patients'],
+            ];
+            $renderedStats = '';
+            foreach ($statItems as $statItem) {
+                $statVal = trim((string)($GLOBALS[$statItem[0]] ?? ''));
+                if ($statVal === '') {
+                    continue; // khali value -> ye card mat dikhao
+                }
+                $renderedStats .= '<div class="stat-card">'
+                    . '<span class="stat-card-num" data-count="' . htmlspecialchars($statVal, ENT_QUOTES, 'UTF-8') . '">'
+                    . htmlspecialchars($statVal, ENT_QUOTES, 'UTF-8')
+                    . '</span>'
+                    . '<span class="stat-card-label">' . htmlspecialchars($statItem[1], ENT_QUOTES, 'UTF-8') . '</span>'
+                    . '</div>';
+            }
+            if ($renderedStats !== '') {
+                echo '<div class="about-stats-grid">' . $renderedStats . '</div>';
+            }
+            ?>
 
         </div>
 

@@ -197,6 +197,59 @@ function scrollToTop() {
 })();
 </script>
 
+<script>
+// Counter animation: 
+(function() {
+    var nums = document.querySelectorAll('.stat-card-num[data-count]');
+    if (!nums.length) return;
+
+    function parseVal(str) {
+        str = (str || '').toString().trim();
+        var m = str.match(/^([\d.,]+)(.*)$/);
+        if (!m) return null;
+        var target = parseFloat(m[1].replace(/,/g, ''));
+        if (isNaN(target)) return null;
+        return { target: target, suffix: m[2] || '', comma: m[1].indexOf(',') > -1 };
+    }
+
+    function fmt(n, comma) {
+        n = Math.round(n);
+        return comma ? n.toLocaleString('en-IN') : String(n);
+    }
+
+    function animate(el) {
+        var parsed = parseVal(el.getAttribute('data-count'));
+        if (!parsed) return;
+        var start = null, dur = 2000;
+        function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+            el.textContent = fmt(parsed.target * eased, parsed.comma) + parsed.suffix;
+            if (p < 1) requestAnimationFrame(step);
+            else el.textContent = fmt(parsed.target, parsed.comma) + parsed.suffix;
+        }
+        requestAnimationFrame(step);
+    }
+
+    nums.forEach(function(el) {
+        var parsed = parseVal(el.getAttribute('data-count'));
+        if (parsed) el.textContent = fmt(0, parsed.comma) + parsed.suffix;
+    });
+
+    if (!('IntersectionObserver' in window)) {
+        nums.forEach(animate);
+        return;
+    }
+    var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+            if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); }
+        });
+    }, { threshold: 0.4 });
+    nums.forEach(function(el) { io.observe(el); });
+})();
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
