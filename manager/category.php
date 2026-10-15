@@ -74,13 +74,13 @@ include 'include/sidebar.php';
 			>
 				Top Category
 			</a>
-
+<!-- 
 			<a
 				href="<?=$path;?>manager/category.php?type=2"
 				class="<?=$_GET['type']==2 ? 'active' : '';?>"
 			>
 				Values
-			</a>
+			</a> -->
 
 			<a
 				href="<?=$path;?>manager/category.php?type=3"
