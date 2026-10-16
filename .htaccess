@@ -1,9 +1,12 @@
 RewriteEngine On
 RewriteBase /drdinesh/
+RewriteCond %{THE_REQUEST} /index(\.php)?[\s?] [NC]
+RewriteRule ^index(\.php)?$ home [R=301,L]
 
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
 RewriteCond %{REQUEST_URI} !/manager/
 RewriteRule ^ /%1 [R=301,L]
+RewriteRule ^home/?$ index.php [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

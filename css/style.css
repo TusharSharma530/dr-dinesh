@@ -753,6 +753,81 @@ img {
     margin: 0;
 }
 
+.about-desc {
+    margin-bottom: 8px;
+}
+
+.about-desc h2 {
+    font-size: 36px;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.25;
+}
+.about-desc > p:has(~ h3) {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 4px;
+    margin: 0;
+}
+
+.about-desc h3 {
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 12px; /* 3px (credential line) + 12px = 15px, jaise reference me */
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.about-desc p {
+    color: #667789;
+    font-size: 15px;
+    /* line-height: 1.8; */
+    margin-bottom: 12px;
+}
+
+.about-desc strong,
+.about-desc b {
+    color: var(--primary-color);
+}
+
+.about-desc ul,
+.about-desc ol {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-desc ul li,
+.about-desc ol li {
+    position: relative;
+    padding-left: 26px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    /* line-height: 1.6; */
+}
+
+.about-desc ul li::before,
+.about-desc ol li::before {
+    content: "\2713"; /* check mark (ASCII escape - encoding-proof) */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.about-desc + .read-more-btn {
+    margin-top: 18px;
+}
+
 .services-section {
     padding: 50px 0;
     background: #f9fbfd;

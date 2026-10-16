@@ -43,11 +43,12 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
         <div class="about-text">
             <span class="about-tag">ABOUT US</span>
 
-            <h2><?= htmlspecialchars($aboutData['c_name']) ?></h2>
-
-            <div class="about-degree">
-                <?= $aboutData['sdesc'] ?>
-            </div>
+            <?php $indexDesc = trim((string)($aboutData['sdesc'] ?? '')); ?>
+            <?php if ($indexDesc !== '') { ?>
+                <div class="about-desc">
+                    <?= $indexDesc ?>
+                </div>
+            <?php } ?>
 
             <a href="about" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
 

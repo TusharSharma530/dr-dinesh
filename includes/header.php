@@ -37,7 +37,7 @@ if ($navbarResult) {
 <header class="main-header">
 
     <div class="container header-content">
-            <a href="index" class="logo" aria-label="Neuro Care Home">
+            <a href="home" class="logo" aria-label="Neuro Care Home">
               <img src="<?= htmlspecialchars($logo ?? 'assets/icons/logo.png', ENT_QUOTES, 'UTF-8'); ?>"
                 alt="Neuro Care Logo"
                 class="logo-img">
@@ -121,7 +121,7 @@ if ($navbarResult) {
 
                 <nav class="nav-links" id="main-navigation" aria-label="Main Navigation">
 
-                    <a href="index">
+                    <a href="home">
                         <?php echo htmlspecialchars($navbarTitles['home'] ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </a>
 
